@@ -1,6 +1,25 @@
 .login-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: linear-gradient(to top, transparent, white 150%), url(./background.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.session-form {
+    width: 20%;
+    padding: 15px 15px 0px 15px;
+    background: white;
+    border-radius: 7px;
+}
+
+.signup-form ul {
+    list-style: none;
+    font: 12px/1.4 Lucida;
+    padding-left: 0;
+    margin-top:0;
+    color: red;
 }
