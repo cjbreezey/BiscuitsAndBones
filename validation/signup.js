@@ -1,7 +1,7 @@
 const Validator = require('validator');
 const validText = require('./valid-text');
 
-module.exports = function validateSignUpInput(data) {
+module.exports = function validateSignupInput(data) {
   let errors = {};
 
   data.name = validText(data.name) ? data.name : '';
@@ -46,3 +46,4 @@ module.exports = function validateSignUpInput(data) {
     isValid: Object.keys(errors).length === 0
   };
 };
+
