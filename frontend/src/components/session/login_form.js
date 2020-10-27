@@ -18,6 +18,12 @@ class LoginForm extends React.Component {
 
   // Once the user has been authenticated, redirect to the Tweets page
   componentWillReceiveProps(nextProps) {
+    if (Object.values(nextProps.errors).length > 0) {
+      let transition = document.getElementById('login-transition')
+      transition.classList.toggle('login-slide-out')
+      transition.classList.toggle('login-slide-in')
+    }
+
     if (nextProps.currentUser === true) {
       this.props.history.push('/events');
     }
@@ -41,11 +47,13 @@ class LoginForm extends React.Component {
       email: this.state.email,
       password: this.state.password
     };
-
+    
+  
     let transition = document.getElementById('login-transition')
+    transition.classList.toggle('login-slide-in')
     transition.classList.toggle('login-slide-out')
 
-    this.props.login(user); 
+    this.props.login(user) 
   }
 
   // Render the session errors if there are any

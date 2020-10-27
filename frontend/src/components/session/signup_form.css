@@ -3,8 +3,8 @@
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  transform: translateX(-100%);
-  -webkit-transform: translateX(-100%);
+  transform: translateY(100%);
+  -webkit-transform: translateY(20%);
 }
 
 .signup-slide-in {
@@ -19,13 +19,13 @@
 }
 
 @keyframes slide-out {
-    0% { transform: translateX(0%); }
-    100% { transform: translateX(100%); }
+    0% { transform: translateY(0%); }
+    100% { transform: translateY(40%); }
 }
 
 @-webkit-keyframes slide-out {
-    0% { -webkit-transform: translateX(0%); }
-    100% { -webkit-transform: translateX(100%); }
+    0% { -webkit-transform: translateY(0%); }
+    100% { -webkit-transform: translateY(40%); }
 }
 
 .signup-form-container {

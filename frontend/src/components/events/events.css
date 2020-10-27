@@ -29,7 +29,7 @@
 
 .events-list {
     overflow: auto;
-    width: 70%;
+    width: 60%;
     position: relative;
     height: 30vh;
     border: 1px black ridge;
