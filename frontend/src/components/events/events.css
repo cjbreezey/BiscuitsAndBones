@@ -1,9 +1,50 @@
 .events-index-container {
     position: relative;
+    display: inline-flex;
+    justify-content: space-evenly;
+    flex-direction: row;
     top: 55px;
+    width: 100vw;
+}
+
+.create-event-link {
+    text-decoration: none;
+    position: relative;
+    margin-left: -15px;
+}
+
+.event-index-header {
+    font-family: Montserrat;
+    width: 15%;
+    text-align: right;
+    padding-right: 5px;
 }
 
 .create-event-container {
-    position: relative;
+    position: relative; 
+    margin-left: 15px;
+    margin-right: 15px;
     top: 55px;
+}
+
+.events-list {
+    overflow: auto;
+    width: 70%;
+    position: relative;
+    height: 30vh;
+    border: 1px black ridge;
+    border-radius: 15px;
+}
+
+.events-list::-webkit-scrollbar {
+  display: none;
+}
+
+.event-item {
+    border-bottom: 1px black ridge;
+    width: 95%;
+}
+
+.event-item:last-child {
+    border-bottom: none;
 }
