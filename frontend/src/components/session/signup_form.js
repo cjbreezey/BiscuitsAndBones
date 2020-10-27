@@ -19,7 +19,7 @@ class SignupForm extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.signedIn === true) {
-      this.props.history.push('/login');
+      this.props.history.push('/events');
     }
 
     this.setState({errors: nextProps.errors})
@@ -40,7 +40,7 @@ class SignupForm extends React.Component {
       password2: this.state.password2
     };
 
-    this.props.signup(user, this.props.history); 
+    this.props.signup(user, this.props.history).then(this.props.login(user)); 
   }
 
   renderErrors() {
@@ -60,31 +60,39 @@ class SignupForm extends React.Component {
       <div className="signup-form-container">
         <form className="session-form" onSubmit={this.nameSubmit}>
           <div className="signup-form">
-            <br/>
-              <input type="text"
-                value={this.state.email}
-                onChange={this.update('email')}
-                placeholder="Email"
-              />
-            <br/>
-              <input type="text"
-                value={this.state.name}
-                onChange={this.update('name')}
-                placeholder="Name"
-              />
-            <br/>
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                placeholder="Password"
-              />
-            <br/>
-              <input type="password"
-                value={this.state.password2}
-                onChange={this.update('password2')}
-                placeholder="Confirm Password"
-              />
-            <br/>
+            <br />
+            <input
+              className="session-input"
+              type="text"
+              value={this.state.email}
+              onChange={this.update("email")}
+              placeholder="Email"
+            />
+            <br />
+            <input
+              className="session-input"
+              type="text"
+              value={this.state.name}
+              onChange={this.update("name")}
+              placeholder="Name"
+            />
+            <br />
+            <input
+              className="session-input"
+              type="password"
+              value={this.state.password}
+              onChange={this.update("password")}
+              placeholder="Password"
+            />
+            <br />
+            <input
+              className="session-input"
+              type="password"
+              value={this.state.password2}
+              onChange={this.update("password2")}
+              placeholder="Confirm Password"
+            />
+            <br />
             <input type="submit" value="Signup" />
             {this.renderErrors()}
           </div>

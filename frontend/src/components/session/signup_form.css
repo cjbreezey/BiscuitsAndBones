@@ -9,7 +9,7 @@
   background-size: cover;
 }
 
-input[type=submit] {
+input.session-input[type=submit] {
   width: 100%;
   background-color: #4CAF50;
   color: white;
@@ -22,7 +22,7 @@ input[type=submit] {
   font-family: 'Pacifico', cursive;
 }
 
-input[type=text], select {
+input.session-input[type=text], select {
   width: 100%;
   padding: 12px 10px;
   margin: 2px 0;
@@ -35,7 +35,7 @@ input[type=text], select {
   text-align: center;
 }
 
-input[type=password], select {
+input.session-input[type=password], select {
   width: 100%;
   padding: 12px 10px;
   margin: 2px 0;
