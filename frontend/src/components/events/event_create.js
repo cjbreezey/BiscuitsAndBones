@@ -1,10 +1,6 @@
 import React from 'react';
 import EventBox from './event_box';
-<<<<<<< HEAD
-// import './events.css'
-=======
 import './events.css'
->>>>>>> main
 
 class EventCreate extends React.Component {
   constructor(props) {
