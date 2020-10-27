@@ -7,6 +7,7 @@
     width: 100vw;
     background: transparent;
     font-family: 'Pacifico', cursive;
+    /* z-index: -5; */
 }
 
 .nav-header {
@@ -19,7 +20,7 @@
     margin-top: 0px;
     margin-bottom: 0px;
     align-items: center;
-    color: white;
+    color: black;
 }
 
 .nav-links {
@@ -35,5 +36,25 @@
     position: relative;
     top: 15px;
     text-decoration: none;
-    color: white;
+    color: black;
+}
+
+.nav-links a:hover {
+    color: forestgreen;
+}
+
+.logout-button {
+    display: flex;
+    align-items: center;
+    padding-top: 9px;
+    background: transparent;
+    border: none;
+    font-family: Pacifico;
+    font-size: 16px;
+    color: forestgreen;
+}
+
+.logout-button:hover {
+    cursor: pointer;
+    color: burlywood;
 }

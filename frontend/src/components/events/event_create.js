@@ -1,5 +1,6 @@
 import React from 'react';
 import EventBox from './event_box';
+import './events.css'
 
 class EventCreate extends React.Component {
   constructor(props) {
@@ -7,6 +8,8 @@ class EventCreate extends React.Component {
 
       this.state = {
           description: "",
+          location: "",
+          time: "",
           newEvent: ""
       }
 
@@ -20,28 +23,37 @@ class EventCreate extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     let event = {
-      description: this.state.description
+      description: this.state.description,
+      location: this.state.location,
+      time: this.state.time
     };
 
     this.props.createEvent(event); 
     this.setState({description: ''})
   }
 
-  update() {
-    return e => this.setState({
-      description: e.currentTarget.value
-    });
+  update(field) {
+    return (e) => this.setState({ [field]: e.currentTarget.value })
   }
 
   render() {
     return (
-        <div>
-            <form onSubmit={this.handleSubmit}>
+        <div className="create-event-container">
+            <form className="create-form" onSubmit={this.handleSubmit}>
                 <div>
-                    <input type="textarea"
+                    <input className="create-event-input" type="textarea"
                         value={this.state.description}
-                        onChange={this.update()}
+                        onChange={this.update('description')}
                         placeholder="Write your event..."
+                    />
+                    <input type="text"
+                        value={this.state.location}
+                        onChange={this.update('location')}
+                        placeholder="Set location..."
+                    />
+                    <input type="time"
+                        value={this.state.time}
+                        onChange={this.update('time')}
                     />
                     <input type="submit" value="Submit" />
                 </div>

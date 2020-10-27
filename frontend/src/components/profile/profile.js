@@ -1,5 +1,6 @@
 import React from 'react';
 import EventBox from '../events/event_box';
+import './profile.css'
 
 class Profile extends React.Component {
     constructor(props) {
@@ -21,10 +22,10 @@ class Profile extends React.Component {
     
     render() {
         if (this.state.events.length === 0) {
-          return (<div>This user has no events</div>)
+          return (<div className="profile-container">This user has no events</div>)
         } else {
           return (
-            <div>
+            <div className="profile-container">
               <h2>All of This User's Events</h2>
               {this.state.events.map(event => (
                 <EventBox key={event._id} description={event.description} />

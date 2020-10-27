@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import EventBox from './event_box';
 import { Link } from 'react-router-dom';
+import './events.css'
 
 class Event extends React.Component {
   constructor(props) {
@@ -23,14 +24,14 @@ class Event extends React.Component {
   render() {
     if (this.state.events.length === 0) {
       return (
-      <div>
+      <div className="events-index-container">
           <h1>There are no Events</h1>
           <Link to={'/new_event'}>Create an Event</Link>
       </div>)
 
     } else {
       return (
-        <div>
+        <div className="events-index-container">
           <Link to={'/new_event'}>Create an Event</Link>
           <h2>All Events</h2>
           {this.state.events.map(event => (
