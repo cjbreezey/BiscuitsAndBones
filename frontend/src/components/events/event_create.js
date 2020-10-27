@@ -1,6 +1,10 @@
 import React from 'react';
 import EventBox from './event_box';
+<<<<<<< HEAD
 // import './events.css'
+=======
+import './events.css'
+>>>>>>> main
 
 class EventCreate extends React.Component {
   constructor(props) {
@@ -38,10 +42,10 @@ class EventCreate extends React.Component {
 
   render() {
     return (
-        <div className="create-form-container">
-            <form onSubmit={this.handleSubmit}>
+        <div className="create-event-container">
+            <form className="create-form" onSubmit={this.handleSubmit}>
                 <div>
-                    <input type="textarea"
+                    <input className="create-event-input" type="textarea"
                         value={this.state.description}
                         onChange={this.update('description')}
                         placeholder="Write your event..."

@@ -58,42 +58,43 @@ class SignupForm extends React.Component {
   render() {
     return (
       <div className="signup-form-container">
-        <form className="session-form" onSubmit={this.nameSubmit}>
+        <p className="session-header">Signup</p>
+        <form className="login-signup" onSubmit={this.nameSubmit}>
           <div className="signup-form">
-            <br />
-            <input
-              className="session-input"
-              type="text"
-              value={this.state.email}
-              onChange={this.update("email")}
-              placeholder="Email"
-            />
-            <br />
-            <input
-              className="session-input"
-              type="text"
-              value={this.state.name}
-              onChange={this.update("name")}
-              placeholder="Name"
-            />
-            <br />
-            <input
-              className="session-input"
-              type="password"
-              value={this.state.password}
-              onChange={this.update("password")}
-              placeholder="Password"
-            />
-            <br />
-            <input
-              className="session-input"
-              type="password"
-              value={this.state.password2}
-              onChange={this.update("password2")}
-              placeholder="Confirm Password"
-            />
-            <br />
-            <input type="submit" value="Signup" />
+            <br/>
+              <input 
+                className="session-form"
+                type="text"
+                value={this.state.email}
+                onChange={this.update('email')}
+                placeholder="Email"
+              />
+            <br/>
+              <input 
+                type="text"
+                className="session-form"
+                value={this.state.name}
+                onChange={this.update('name')}
+                placeholder="Name"
+              />
+            <br/>
+              <input
+                className="session-form" 
+                type="password"
+                value={this.state.password}
+                onChange={this.update('password')}
+                placeholder="Password"
+              />
+            <br/>
+              <input
+                className="session-form"
+                type="password"
+                value={this.state.password2}
+                onChange={this.update('password2')}
+                placeholder="Confirm Password"
+              />
+            <br/>
+            <input className="session-form" type="submit" value="Woof!" />
             {this.renderErrors()}
           </div>
         </form>

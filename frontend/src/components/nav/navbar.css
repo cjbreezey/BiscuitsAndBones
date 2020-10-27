@@ -38,3 +38,23 @@
     text-decoration: none;
     color: black;
 }
+
+.nav-links a:hover {
+    color: forestgreen;
+}
+
+.logout-button {
+    display: flex;
+    align-items: center;
+    padding-top: 9px;
+    background: transparent;
+    border: none;
+    font-family: Pacifico;
+    font-size: 16px;
+    color: forestgreen;
+}
+
+.logout-button:hover {
+    cursor: pointer;
+    color: burlywood;
+}
