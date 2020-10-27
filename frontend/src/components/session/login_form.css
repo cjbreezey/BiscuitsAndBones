@@ -1,16 +1,33 @@
 .login-form {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   height: 100vh;
   background-image: linear-gradient(to top, transparent, white 150%), url(./background.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  padding-bottom: 50px;
 }
 
-.session-form {
-    width: 20%;
+.session-header {
+  opacity: 0.8;
+  display: flex;
+  justify-content: center;
+  background: white;
+  color: burlywood;
+  font-size: 30px;
+  font-family: Pacifico;
+  padding-bottom: 3px;
+  margin-bottom: 0px;
+  width: 150px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+
+.login-signup {
+    width: 300px;
     padding: 15px 15px 0px 15px;
     background: white;
     border-radius: 7px;
