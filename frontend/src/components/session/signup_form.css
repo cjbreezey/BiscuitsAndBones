@@ -1,3 +1,33 @@
+#signup-transition {
+  position: absolute; 
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(100%);
+  -webkit-transform: translateY(20%);
+}
+
+.signup-slide-in {
+  animation: slide-in 0.5s forwards;
+  -webkit-animation: slide-in 0.5s forwards;
+}
+
+.signup-slide-out {
+  opacity: .7;
+  animation: slide-out 0.5s forwards;
+  -webkit-animation: slide-out 0.5s forwards;
+}
+
+@keyframes slide-out {
+    0% { transform: translateY(0%); }
+    100% { transform: translateY(40%); }
+}
+
+@-webkit-keyframes slide-out {
+    0% { -webkit-transform: translateY(0%); }
+    100% { -webkit-transform: translateY(40%); }
+}
+
 .signup-form-container {
   display: flex;
   justify-content: center;

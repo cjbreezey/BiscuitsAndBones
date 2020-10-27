@@ -7,7 +7,8 @@
     width: 100vw;
     background: transparent;
     font-family: 'Pacifico', cursive;
-    /* z-index: -5; */
+    z-index: 5;
+    border-bottom: .5px black ridge;
 }
 
 .nav-header {
@@ -37,6 +38,7 @@
     top: 15px;
     text-decoration: none;
     color: black;
+    margin-right: 1em;
 }
 
 .nav-links a:hover {
@@ -49,6 +51,7 @@
     padding-top: 9px;
     background: transparent;
     border: none;
+    outline: none;
     font-family: Pacifico;
     font-size: 16px;
     color: forestgreen;
