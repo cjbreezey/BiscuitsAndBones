@@ -1,6 +1,7 @@
 import React from 'react';
 import EventBox from './event_box';
 import './events.css'
+import EventMap from '../map/event_map'
 
 class EventCreate extends React.Component {
   constructor(props) {
@@ -60,6 +61,7 @@ class EventCreate extends React.Component {
             </form>
             <br />
             <EventBox description={this.state.newEvent} />
+            <EventMap />
         </div>
     )
   }
