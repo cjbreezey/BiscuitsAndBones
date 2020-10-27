@@ -19,22 +19,22 @@ class MainPage extends React.Component {
             <div>
               Peter Min
               <div className="our-links">
-                <a href=""><i class="fa fa-github-square" aria-hidden="true"/></a>
-                <a href=""><i class="fa fa-linkedin-square" aria-hidden="true"/></a>
+                <a href="https://github.com/pmin825"><i class="fa fa-github-square" aria-hidden="true"/></a>
+                <a href="https://www.linkedin.com/in/peter-min-02a62a13a/"><i class="fa fa-linkedin-square" aria-hidden="true"/></a>
               </div>
             </div>
             <div>
               Jonathan Siu
               <div className="our-links">
-                <a href=""><i class="fa fa-github-square" aria-hidden="true"/></a>
-                <a href=""><i class="fa fa-linkedin-square" aria-hidden="true"/></a>
+                <a href="https://github.com/jonsiu826"><i class="fa fa-github-square" aria-hidden="true"/></a>
+                <a href="https://www.linkedin.com/in/jonathansiu826/"><i class="fa fa-linkedin-square" aria-hidden="true"/></a>
               </div>
             </div>
             <div>
               Chris Lee
               <div className="our-links">
-                <a href=""><i class="fa fa-github-square" aria-hidden="true"/></a>
-                <a href=""><i class="fa fa-linkedin-square" aria-hidden="true"/></a>
+                <a href="https://github.com/cjbreezey"><i class="fa fa-github-square" aria-hidden="true"/></a>
+                <a href="https://www.linkedin.com/in/christopher-j-lee/"><i class="fa fa-linkedin-square" aria-hidden="true"/></a>
               </div>
             </div>
             <div>
