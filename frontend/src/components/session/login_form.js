@@ -18,6 +18,12 @@ class LoginForm extends React.Component {
 
   // Once the user has been authenticated, redirect to the Tweets page
   componentWillReceiveProps(nextProps) {
+    if (Object.values(nextProps.errors).length > 0) {
+      let transition = document.getElementById('login-transition')
+      transition.classList.toggle('login-slide-out')
+      transition.classList.toggle('login-slide-in')
+    }
+
     if (nextProps.currentUser === true) {
       this.props.history.push('/events');
     }
@@ -41,8 +47,13 @@ class LoginForm extends React.Component {
       email: this.state.email,
       password: this.state.password
     };
+    
+  
+    let transition = document.getElementById('login-transition')
+    transition.classList.toggle('login-slide-in')
+    transition.classList.toggle('login-slide-out')
 
-    this.props.login(user); 
+    this.props.login(user) 
   }
 
   // Render the session errors if there are any
@@ -61,29 +72,31 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div className="login-form">
-        <p className="session-header">Login</p>
-        <form className="login-signup" onSubmit={this.handleSubmit}>
-          <div className="signup-form">
-              <input 
-                className="session-form"
-                type="text"
-                value={this.state.email}
-                onChange={this.update('email')}
-                placeholder="Email"
-              />
-            <br/>
-              <input 
-                className="session-form"
-                type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                placeholder="Password"
-              />
-            <br/>
-            <input className="session-form" type="submit" value="Woof!" />
-            {this.renderErrors()}
-          </div>
-        </form>
+        <div id="login-transition" className="login-slide-in">
+          <p className="session-header">Login</p>
+          <form className="login-signup" onSubmit={this.handleSubmit}>
+            <div className="signup-form">
+                <input 
+                  className="session-form"
+                  type="text"
+                  value={this.state.email}
+                  onChange={this.update('email')}
+                  placeholder="Email"
+                />
+              <br/>
+                <input 
+                  className="session-form"
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.update('password')}
+                  placeholder="Password"
+                />
+              <br/>
+              <input id="login-toggle" className="session-form" type="submit" value="Woof!" />
+              {this.renderErrors()}
+            </div>
+          </form>
+        </div>
       </div>
     );
   }
