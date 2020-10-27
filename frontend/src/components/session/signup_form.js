@@ -19,6 +19,12 @@ class SignupForm extends React.Component {
 
 
   componentWillReceiveProps(nextProps) {
+    if (Object.values(nextProps.errors).length > 0) {
+      let transition = document.getElementById('signup-transition')
+      transition.classList.toggle('signup-slide-out')
+      transition.classList.toggle('signup-slide-in')
+    }
+    
     if (nextProps.signedIn === true) {
       this.props.history.push('/events');
     }
@@ -42,6 +48,7 @@ class SignupForm extends React.Component {
     };
 
     let transition = document.getElementById('signup-transition')
+    transition.classList.toggle('signup-slide-in')
     transition.classList.toggle('signup-slide-out')
 
     this.props.signup(user, this.props.history);
