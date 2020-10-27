@@ -42,6 +42,9 @@ class LoginForm extends React.Component {
       password: this.state.password
     };
 
+    let transition = document.getElementById('login-transition')
+    transition.classList.toggle('login-slide-out')
+
     this.props.login(user); 
   }
 
@@ -61,29 +64,31 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div className="login-form">
-        <p className="session-header">Login</p>
-        <form className="login-signup" onSubmit={this.handleSubmit}>
-          <div className="signup-form">
-              <input 
-                className="session-form"
-                type="text"
-                value={this.state.email}
-                onChange={this.update('email')}
-                placeholder="Email"
-              />
-            <br/>
-              <input 
-                className="session-form"
-                type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                placeholder="Password"
-              />
-            <br/>
-            <input className="session-form" type="submit" value="Woof!" />
-            {this.renderErrors()}
-          </div>
-        </form>
+        <div id="login-transition" className="login-slide-in">
+          <p className="session-header">Login</p>
+          <form className="login-signup" onSubmit={this.handleSubmit}>
+            <div className="signup-form">
+                <input 
+                  className="session-form"
+                  type="text"
+                  value={this.state.email}
+                  onChange={this.update('email')}
+                  placeholder="Email"
+                />
+              <br/>
+                <input 
+                  className="session-form"
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.update('password')}
+                  placeholder="Password"
+                />
+              <br/>
+              <input id="login-toggle" className="session-form" type="submit" value="Woof!" />
+              {this.renderErrors()}
+            </div>
+          </form>
+        </div>
       </div>
     );
   }

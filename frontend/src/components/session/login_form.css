@@ -1,3 +1,31 @@
+#login-transition {
+  position: absolute; 
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+}
+
+.login-slide-in {
+  animation: slide-in 0.5s forwards;
+  -webkit-animation: slide-in 0.5s forwards;
+}
+
+.login-slide-out {
+  opacity: .7;
+  animation: slide-out 0.5s forwards;
+  -webkit-animation: slide-out 0.5s forwards;
+}
+
+@keyframes slide-in {
+    100% { transform: translateX(0%); }
+}
+
+@-webkit-keyframes slide-in {
+    100% { -webkit-transform: translateX(0%); }
+}
+
 .login-form {
   display: flex;
   justify-content: center;
@@ -28,7 +56,7 @@
 
 .login-signup {
     width: 300px;
-    padding: 15px 15px 0px 15px;
+    padding: 15px 15px 15px 15px;
     background: white;
     border-radius: 7px;
 }
