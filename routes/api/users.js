@@ -45,6 +45,7 @@ router.post("/signup", (req, res) => {
     }
   });
 });
+
 //LOGIN
 router.post("/login", (req, res) => {
   const { errors, isValid } = validateLoginInput(req.body);
@@ -74,6 +75,7 @@ router.post("/login", (req, res) => {
     });
   });
 });
+
 //PRIVATE AUTH
 router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
   res.json({
