@@ -12,23 +12,25 @@
 }
 
 .nav-header {
+    text-decoration: none;
     position: relative;
     display: inline-flex;
     justify-content: flex-start;
     height: 100%;
-    width: 75%;
+    width: 60%;
     left: 5px;
     margin-top: 0px;
     margin-bottom: 0px;
     align-items: center;
     color: black;
+    font-size: 35px;
 }
 
 .nav-links {
     position: relative;
     display: inline-flex;
-    justify-content: space-evenly;
-    width: 25%;
+    justify-content: flex-end;
+    width: 40%;
     height: 100%;
     top: -22px;
 }
@@ -46,6 +48,7 @@
 }
 
 .logout-button {
+    margin-right: 1em;
     display: flex;
     align-items: center;
     padding-top: 9px;
