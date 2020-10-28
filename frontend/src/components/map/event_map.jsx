@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+// import React from 'react'
+
+// class EventMap extends React.Component {
+//     constructor(props) {
+//         super(props)
+//     }
+
+
+    
+//     render() {
+//         return (
+//             <div id='map-container' ref={ map => this.mapNode = map }>    
+//                 Map
+=======
 import React from 'react';
 import {GoogleApiWrapper, Map, InfoWindow, Marker} from 'google-maps-react'
 import PlacesAutocomplete, {geocodeByAddress, getLatLng,} from 'react-places-autocomplete';
@@ -206,9 +221,14 @@ export default GoogleApiWrapper({
 //                     defaultZoom={12} 
 //                     defaultCenter={{ lat: 49.2827291, lng: -123.1207375}}
 //                 />
+>>>>>>> master
 //             </div>
 //         )
 //     }
 // }
 
+<<<<<<< HEAD
+// export default EventMap;
+=======
 // export default EventMap
+>>>>>>> master

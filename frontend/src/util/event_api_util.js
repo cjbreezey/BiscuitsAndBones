@@ -12,6 +12,6 @@ export const writeEvent = data => {
   return axios.post('/api/events/', data)
 }
 
-export const deleteEvent = (eventId) => {
-  return axios.delete(`/api/events/${eventId}`)
+export const deleteEvent = (id) => {
+  return axios.delete(`/api/events/${id}`)
 };

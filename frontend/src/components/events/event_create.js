@@ -29,8 +29,11 @@ class EventCreate extends React.Component {
       time: this.state.time
     };
 
-    this.props.createEvent(event); 
+    this.props.createEvent(event)
     this.setState({description: ''})
+    this.setState({location: ''})
+    this.setState({time: ''})
+    this.props.history.push("/events")
   }
 
   update(field) {

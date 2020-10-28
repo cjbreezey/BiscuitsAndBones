@@ -1,16 +1,20 @@
 import { connect } from 'react-redux';
-import { fetchEvents } from '../../actions/event_actions';
+import { fetchEvents, deleteEvent, receiveEvent } from '../../actions/event_actions';
 import Events from './events';
 
 const mapStateToProps = (state) => {
+  // debugger
   return {
-    events: Object.values(state.events.all)
+    events: Object.values(state.events)
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchEvents: () => dispatch(fetchEvents())
+    fetchEvents: () => dispatch(fetchEvents()),
+    deleteEvent: (eventId) => dispatch(deleteEvent(eventId)),
+    receiveEvent: (event) => dispatch(receiveEvent(event))
+
   };
 };
 

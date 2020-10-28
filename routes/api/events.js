@@ -52,4 +52,12 @@ router.post('/',
     }
   );
 
+  router.delete("/:eventid", passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    Event.deleteOne({ _id: req.params.eventid })
+      .then (e => {res.json(e)}) 
+      .catch(e => res.status(404).json({ noeventfound: 'No Event Found' }))
+  }
+);
+
   module.exports = router;

@@ -1,4 +1,4 @@
-import { getEvents, getUserEvents, writeEvent } from '../util/event_api_util';
+import * as EventApiUtil from '../util/event_api_util';
 
 export const RECEIVE_EVENTS = "RECEIVE_EVENTS";
 export const RECEIVE_USER_EVENTS = "RECEIVE_USER_EVENTS";
@@ -25,26 +25,28 @@ export const removeEvent = eventId => ({
     eventId
 })
 
-export const fetchEvents = () => dispatch => (
-  getEvents()
+export const fetchEvents = () => dispatch => {
+  return EventApiUtil.getEvents()
     .then(events => dispatch(receiveEvents(events)))
     .catch(err => console.log(err))
-);
+};
 
-export const fetchUserEvents = id => dispatch => (
-  getUserEvents(id)
+export const fetchUserEvents = id => dispatch => {
+  return EventApiUtil.getUserEvents(id)
     .then(events => dispatch(receiveUserEvents(events)))
     .catch(err => console.log(err))
-);
+};
 
-export const createEvent = data => dispatch => (
-  writeEvent(data)
+export const createEvent = data => dispatch => {
+  return EventApiUtil.writeEvent(data)
     .then(event => dispatch(receiveEvent(event)))
     .catch(err => console.log(err))
-);
+};
 
-export const deleteEvent = data => dispatch => (
-    deleteEvent(data)
-        .then(event => dispatch(removeEvent(event)))
+export const deleteEvent = eventId => dispatch => {
+  // debugger
+  return EventApiUtil.deleteEvent(eventId)
+        .then(res => dispatch(removeEvent(eventId)))
         .catch(err => console.log(err)) 
-);
+
+}
