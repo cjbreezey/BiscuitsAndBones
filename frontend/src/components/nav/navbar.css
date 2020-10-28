@@ -12,6 +12,7 @@
 }
 
 .nav-header {
+    cursor: pointer;
     text-decoration: none;
     position: relative;
     display: inline-flex;
@@ -41,6 +42,7 @@
     text-decoration: none;
     color: black;
     margin-right: 1em;
+    font-size: 25px;
 }
 
 .nav-links a:hover {
@@ -50,13 +52,12 @@
 .logout-button {
     margin-right: 1em;
     display: flex;
-    align-items: center;
-    padding-top: 9px;
+    padding-top: 13.5px;
     background: transparent;
     border: none;
     outline: none;
     font-family: Pacifico;
-    font-size: 16px;
+    font-size: 25px;
     color: forestgreen;
 }
 

@@ -3,7 +3,6 @@ import { fetchEvents, deleteEvent, receiveEvent } from '../../actions/event_acti
 import Events from './events';
 
 const mapStateToProps = (state) => {
-  debugger
   return {
     currentUser: state.session.user,
     events: Object.values(state.events)
@@ -13,9 +12,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchEvents: () => dispatch(fetchEvents()),
-    deleteEvent: (eventId) => dispatch(deleteEvent(eventId)),
-    receiveEvent: (event) => dispatch(receiveEvent(event))
-
+    deleteEvent: (eventId) => dispatch(deleteEvent(eventId))
   };
 };
 

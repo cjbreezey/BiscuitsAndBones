@@ -8,6 +8,7 @@
 }
 
 .create-event-link {
+    height: fit-content;
     text-decoration: none;
     position: relative;
     margin-left: -15px;
@@ -31,9 +32,10 @@
     overflow: auto;
     width: 60%;
     position: relative;
-    height: 30vh;
+    height: 75vh;
     border: 1px black ridge;
     border-radius: 15px;
+    padding-right: 20px;
 }
 
 .events-list::-webkit-scrollbar {
@@ -45,10 +47,54 @@
     width: 95%;
 }
 
-.event-item:last-child {
+.event-item button {
+    outline: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.events-list .event-item-container:last-child .event-item{
     border-bottom: none;
 }
 
+.event-item-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.event-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.event-dropdown {
+    background: rgb(225, 225, 225);
+    width: 95%;
+    height:0px;
+    -webkit-transition:height, 0.5s linear;
+    -moz-transition: height, 0.5s linear;
+    -ms-transition: height, 0.5s linear;
+    -o-transition: height, 0.5s linear;
+    transition: height, 0.5s linear;
+}
+
+.event-dropdown.open {
+    height:200px;
+    -webkit-transition:height, 0.5s linear;
+    -moz-transition: height, 0.5s linear;
+    -ms-transition: height, 0.5s linear;
+    -o-transition: height, 0.5s linear;
+    transition: height, 0.5s linear;
+}
+
+.event-dropdown-items {
+    list-style: none;
+    font-family: Montserrat;
+    font-weight: 600;
+    display: none;
+    
 .google-map {
     height: 400px;
     width: 400px;
