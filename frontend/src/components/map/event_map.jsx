@@ -107,6 +107,6 @@ export class EventMap extends React.Component {
 }
 
 export default GoogleApiWrapper({
-    apiKey: (process.env.REACT_APP_SECRET_KEY)
+    apiKey: (process.env.mapApikey)
 })(EventMap)
 
