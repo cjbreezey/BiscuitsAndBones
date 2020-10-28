@@ -48,3 +48,8 @@
 .event-item:last-child {
     border-bottom: none;
 }
+
+.google-map {
+    height: 400px;
+    width: 400px;
+}

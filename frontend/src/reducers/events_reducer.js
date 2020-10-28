@@ -1,5 +1,4 @@
-import { STATES } from 'mongoose';
-import { RECEIVE_EVENTS, RECEIVE_USER_EVENTS, RECEIVE_EVENT, REMOVE_EVENT } from '../actions/event_actions';
+import { RECEIVE_EVENTS, RECEIVE_EVENT, REMOVE_EVENT } from '../actions/event_actions';
   
   const EventsReducer = (oldstate = {}, action) => {
     Object.freeze(oldstate);
