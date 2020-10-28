@@ -1,17 +1,12 @@
 const Validator = require('validator');
 const validText = require('./valid-text');
 
-module.exports = function validateEventInput(data) {
+module.exports = function validatePlaydateInput(data) {
   let errors = {};
 
-  data.title = validText(data.title) ? data.title : '';
   data.location = validText(data.location) ? data.location : '';
   data.description = validText(data.description) ? data.description : '';
   data.time = validText(data.time) ? data.time : '';
-
-  if (Validator.isEmpty(data.title)) {
-    errors.title = "Please input a title for your playdate"
-  }
  
   if (Validator.isEmpty(data.location)) {
     errors.location = 'Please pick a location to host your playdate.';
