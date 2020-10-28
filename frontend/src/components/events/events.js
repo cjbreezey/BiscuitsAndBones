@@ -12,7 +12,7 @@ class Events extends React.Component {
     }
   }
 
-    componentDidMount() {
+  componentDidMount() {
     // debugger
     this.props.fetchEvents();
   }
