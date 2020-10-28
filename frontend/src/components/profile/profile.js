@@ -17,12 +17,12 @@ class Profile extends React.Component {
     }
 
     componentWillReceiveProps(newState) {
-      debugger
+      // debugger
         this.setState({ events: newState.events });
     }   
     
     render() {
-      debugger
+      // debugger
         if (this.state.events.length === 0) {
           return (<div className="profile-container">This user has no events</div>)
         } else {

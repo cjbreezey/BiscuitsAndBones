@@ -15,10 +15,10 @@ import { RECEIVE_EVENTS, RECEIVE_USER_EVENTS, RECEIVE_EVENT, REMOVE_EVENT } from
       //   debugger
       //   return newState;
       case RECEIVE_EVENT:
-        debugger
+        // debugger
         return { [action.event._id]: action.event }
       case REMOVE_EVENT:
-        debugger
+        // debugger
         let newState = Object.assign({}, oldstate);
         newState = oldstate.filter(event => event._id !== action.eventId)
         //     delete newState[action.eventId];

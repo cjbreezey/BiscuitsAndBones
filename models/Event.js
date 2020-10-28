@@ -30,7 +30,7 @@ const EventSchema = new Schema({
   longitude: {
     type: Number, 
     // required: true,
-  },
+  }
 }, {
   timestamps: true,
 })
