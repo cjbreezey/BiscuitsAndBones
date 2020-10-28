@@ -17,12 +17,18 @@ class Profile extends React.Component {
     }
 
     componentWillReceiveProps(newState) {
+<<<<<<< HEAD
       // debugger
+=======
+>>>>>>> master
         this.setState({ events: newState.events });
     }   
     
     render() {
+<<<<<<< HEAD
       // debugger
+=======
+>>>>>>> master
         if (this.state.events.length === 0) {
           return (<div className="profile-container">This user has no events</div>)
         } else {
@@ -30,7 +36,7 @@ class Profile extends React.Component {
             <div className="profile-container">
               <h2>All of This User's Events</h2>
               {this.state.events.map(event => (
-                <EventBox key={event._id} event={event} deleteEvent={this.props.deleteEvent} />
+                <EventBox key={event._id} event={event} currentUser={this.props.currentUser} deleteEvent={this.props.deleteEvent} />
               ))}
             </div>
           );
