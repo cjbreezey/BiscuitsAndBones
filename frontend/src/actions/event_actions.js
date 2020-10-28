@@ -44,7 +44,6 @@ export const createEvent = data => dispatch => {
 };
 
 export const deleteEvent = eventId => dispatch => {
-  // debugger
   return EventApiUtil.deleteEvent(eventId)
         .then(res => dispatch(removeEvent(eventId)))
         .catch(err => console.log(err)) 
