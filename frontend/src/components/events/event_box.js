@@ -9,15 +9,10 @@ class EventBox extends React.Component {
   }
 
   handleclick(e){
-<<<<<<< HEAD
-=======
-    // this.props.receiveEvent(this.props.event)
->>>>>>> master
     this.props.deleteEvent(this.props.event._id)
   }
 
   dropdownClick(e){
-    debugger
     let dropdown = document.getElementById(`dropdown-slide-${this.props.event._id}`)
     dropdown.classList.toggle('open')
 
@@ -38,7 +33,7 @@ class EventBox extends React.Component {
 
     let deletebutton;
     if (this.props.currentUser && this.props.currentUser.id === this.props.event.host_id){
-      deletebutton = <button onClick={() => this.props.deleteEvent(this.props.event._id)}> Delete Event</button>
+      deletebutton = <button onClick={() => this.props.deleteEvent(this.props.event._id)}> X </button>
     } else {
       deletebutton = null
     }
@@ -47,15 +42,17 @@ class EventBox extends React.Component {
 
     return (
       <div className="event-item-container">
-        <div onClick={this.dropdownClick} className="event-item">
-          <h3>{this.props.event.description}</h3>
-          <button onClick={() => this.props.deleteEvent(this.props.event._id)}> Delete Event</button>
+        <div className="event-item">
+          <h3 onClick={this.dropdownClick} >{this.props.event.title}</h3>
+          {deletebutton}
         </div>
         <div id={`dropdown-slide-${this.props.event._id}`} className="event-dropdown">
           <ul id={`dropdown-items-${this.props.event._id}`} className="event-dropdown-items">
+            <li> This is going to be the map.</li>
             <li>{this.props.event.location}</li>
             <li>{this.props.event.date}</li>
             <li>{this.props.event.time}</li>
+            <li>{this.props.event.description}</li>  
           </ul>
         </div>
       </div>
