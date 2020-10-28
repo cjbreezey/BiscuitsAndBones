@@ -1,9 +1,6 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import EventBox from './event_box';
-import { Link } from 'react-router-dom';
-import EventMap from '../map/event_map'
-import { GoogleMap, withScriptjs, withGoogleMap } from 'react-google-maps'
 import './events.css'
 
 class Events extends React.Component {
@@ -31,14 +28,12 @@ class Events extends React.Component {
   }
 
   render() {
-    const WrappedMap = withScriptjs(withGoogleMap(EventMap));
 
     if (this.state.events.length === 0) {
       return (
       <div className="events-index-container">
           <h1>There are no Events</h1>
           <Link to={'/new_event'}>Create an Event</Link>
-          {/* <EventMap /> */}
       </div>)
 
     } else {
