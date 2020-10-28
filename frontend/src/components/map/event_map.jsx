@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-// import React from 'react'
-
-// class EventMap extends React.Component {
-//     constructor(props) {
-//         super(props)
-//     }
-
-
-    
-//     render() {
-//         return (
-//             <div id='map-container' ref={ map => this.mapNode = map }>    
-//                 Map
-=======
 import React from 'react';
 import {GoogleApiWrapper, Map, InfoWindow, Marker} from 'google-maps-react'
 import PlacesAutocomplete, {geocodeByAddress, getLatLng,} from 'react-places-autocomplete';
@@ -35,28 +20,11 @@ export class EventMap extends React.Component {
         }
     }
 
-    // onMarkerClick = (props, marker, e) =>
-    //     this.setState({
-    //         selectedPlace: props,
-    //         activeMarker: marker,
-    //         showingInfoWindow: true
-    //     });
-
-    // onMapClicked = (props) => {
-    //     if (this.state.showingInfoWindow) {
-    //         this.setState({
-    //             showingInfoWindow: false,
-    //             activeMarker: null
-    //         })
-    //     }
-    // };
-
     handleChange = address => {
         this.setState({ address });
     };
 
     handleSelect = address => {
-        // debugger
         geocodeByAddress(address)
             .then(results => getLatLng(results[0]))
             .then(latLng => {
@@ -65,11 +33,9 @@ export class EventMap extends React.Component {
                 this.setState({ mapCenter: latLng });
             })
             .catch(error => console.error('Error', error));
-            // debugger
     };
 
     render() {
-        // console.log(this.state)
         return (
             <div className="google-map">
                 <PlacesAutocomplete
@@ -144,91 +110,3 @@ export default GoogleApiWrapper({
     apiKey: (process.env.REACT_APP_SECRET_KEY)
 })(EventMap)
 
-
-// import React from 'react'
-// import MapMarker from './mapmarker'
-
-// const google = window.google
-
-// class EventMap extends React.Component {
-//     constructor(props) {
-//         super(props);
-//     }
-
-//     componentDidMount() {
-//         const mapOptions = {
-//             center: { lat: 37.798887, lng: -122.401373 },
-//             zoom: 11
-//         }
-//         const map = this.refs.map;
-//         this.map = new google.maps.Map(map, mapOptions)
-
-//         this.mapMarker = new MapMarker(this.map);
-//         // this.mapMarker.updateMarkers(this.props.events);
-
-//         // this.registerListeners();
-//     }
-
-//     componentDidUpdate() {
-//         // this.mapMarker.updateMarkers(this.props.events)
-//     }
-
-//     // registerListeners() {
-//     //     google.maps.event.addListener(this.map, 'idle', () => {
-//     //         const {north, south, east, west} = this.map.getBounds().toJSON();
-//     //         const bounds = {
-//     //             northEast: {lat: north, lng: east},
-//     //             southWest: {lat: south, lng: west}
-//     //         }
-//     //     })
-
-//     //     const p1 = new Promise((res, rej) => {
-//     //         this.props.updateFilter('bounds', bounds)
-//     //     })
-
-//     //     const p2 = new Promise((res, rej) => {
-//     //         this.props.fetchEventsFiltered()
-//     //     })
-
-//     //     p1.then(() => p2)
-
-//     // }
-
-//     render() {
-//         return (
-//             <div id='map-container'>
-//                 <div className='this-map' ref="map">
-//                     Map
-//                 </div>
-//             </div>
-//         )
-//     }
-
-// }
-
-// export default EventMap
-
-// import { GoogleMap, withScriptjs, withGoogleMap } from 'react-google-maps'
-
-// class EventMap extends React.Component {
-//     render() {
-
-//         // const WrappedMap = withScriptjs(withGoogleMap(EventMap));
-
-//         return (
-//             <div>
-//                 <GoogleMap 
-//                     defaultZoom={12} 
-//                     defaultCenter={{ lat: 49.2827291, lng: -123.1207375}}
-//                 />
->>>>>>> master
-//             </div>
-//         )
-//     }
-// }
-
-<<<<<<< HEAD
-// export default EventMap;
-=======
-// export default EventMap
->>>>>>> master
