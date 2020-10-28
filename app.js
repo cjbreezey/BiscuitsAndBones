@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const passport = require('passport');
 const users = require("./routes/api/users");
 const events = require("./routes/api/events");
+const reviews = require("./routes/api/reviews");
 const path = require('path')
 const playdates = require('./routes/api/playdates');
 
@@ -29,6 +30,7 @@ require('./config/passport')(passport)
 
 app.use("/api/users", users);
 app.use("/api/events", events);
+app.use("/api/reviews", reviews);
 app.use("/api/playdates", playdates);
 
 const port = process.env.PORT || 5000;
