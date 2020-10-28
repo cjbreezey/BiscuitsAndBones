@@ -34,7 +34,7 @@ const EventSchema = new Schema({
   lng: {
     type: Number, 
     // required: true,
-  },
+  }
 }, {
   timestamps: true,
 })
