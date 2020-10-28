@@ -4,7 +4,7 @@ import EventBox from './event_box';
 import { Link } from 'react-router-dom';
 import './events.css'
 
-class Event extends React.Component {
+class Events extends React.Component {
   constructor(props) {
     super(props);
 
@@ -13,15 +13,23 @@ class Event extends React.Component {
     }
   }
 
+    componentDidMount() {
+    // debugger
+    this.props.fetchEvents();
+  }
+
   componentWillMount() {
+    // debugger
     this.props.fetchEvents();
   }
 
   componentWillReceiveProps(newState) {
+    // debugger
     this.setState({ events: newState.events });
   }
 
   render() {
+    console.log(this.state)
     if (this.state.events.length === 0) {
       return (
       <div className="events-index-container">
@@ -34,9 +42,9 @@ class Event extends React.Component {
         <div className="events-index-container">
           <h2 className="event-index-header">All Events</h2>
           <ul className="events-list">
-            {this.state.events.map(event => (
-              <EventBox key={event._id} description={event.description} />
-              ))}
+            {this.state.events.map((event) => {
+              return <EventBox event={event} key={event._id} receiveEvent={this.props.receiveEvent} deleteEvent={this.props.deleteEvent}/>
+            })}
           </ul>
           <Link className="create-event-link" to={'/new_event'}>Create an Event</Link>
         </div>
@@ -45,4 +53,4 @@ class Event extends React.Component {
   }
 }
 
-export default withRouter(Event);
+export default withRouter(Events);

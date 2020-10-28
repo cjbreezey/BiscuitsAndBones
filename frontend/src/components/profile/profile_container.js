@@ -1,17 +1,22 @@
 import { connect } from 'react-redux';
-import { fetchUserEvents } from '../../actions/event_actions';
+import { fetchEvents, deleteEvent } from '../../actions/event_actions';
 import Profile from './profile';
 
 const mapStateToProps = (state) => {
+  debugger
+  const currentUser = state.session.user
+  const events = Object.values(state.events).filter(event => event.host_id === currentUser.id)
   return {
-    events: Object.values(state.events.user),
-    currentUser: state.session.user
+    events,
+    currentUser
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchUserEvents: id => dispatch(fetchUserEvents(id))
+    fetchEvents: () => dispatch(fetchEvents()),
+    deleteEvent: (id) => dispatch(deleteEvent(id))
+
   };
 };
 
