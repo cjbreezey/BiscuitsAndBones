@@ -3,8 +3,9 @@ import { fetchEvents, deleteEvent, receiveEvent } from '../../actions/event_acti
 import Events from './events';
 
 const mapStateToProps = (state) => {
-  // debugger
+  debugger
   return {
+    currentUser: state.session.user,
     events: Object.values(state.events)
   };
 };
