@@ -4,6 +4,7 @@ import Events from './events';
 
 const mapStateToProps = (state) => {
   return {
+    currentUser: state.session.user,
     events: Object.values(state.events)
   };
 };

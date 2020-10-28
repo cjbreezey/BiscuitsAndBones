@@ -6,6 +6,10 @@ const EventSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "users",
   },
+  title: {
+    type: String,
+    required: true,
+  },
   location: {
     type: String,
     required: true,
@@ -23,11 +27,11 @@ const EventSchema = new Schema({
     type: String,
     required: true,
   },
-  latitude: {
+  lat: {
     type: Number,
     // required: true,
   },
-  longitude: {
+  lng: {
     type: Number, 
     // required: true,
   },

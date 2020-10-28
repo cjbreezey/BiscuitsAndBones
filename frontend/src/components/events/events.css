@@ -94,4 +94,8 @@
     font-family: Montserrat;
     font-weight: 600;
     display: none;
+    
+.google-map {
+    height: 400px;
+    width: 400px;
 }
