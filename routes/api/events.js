@@ -45,12 +45,20 @@ router.post('/',
         date: req.body.date,
         time: req.body.time,
         description: req.body.description,
-        latitude: req.body.latitude,
-        longitude: req.body.longitude,
+        lat: req.body.lat,
+        lng: req.body.lng,
       });
   
       newEvent.save().then(event => res.json(event));
     }
   );
+
+  router.delete("/:eventid", passport.authenticate('jwt', { session: false }),
+    (req, res) => {
+      Event.deleteOne({ _id: req.params.eventid })
+        .then(e => { res.json(e) })
+        .catch(e => res.status(404).json({ noeventfound: 'No Event Found' }))
+    }
+);
 
   module.exports = router;
