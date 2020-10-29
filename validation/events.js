@@ -6,6 +6,7 @@ module.exports = function validateEventInput(data) {
 
   data.title = validText(data.title) ? data.title : '';
   data.location = validText(data.location) ? data.location : '';
+  data.date = validText(data.date) ? data.date : '';
   data.description = validText(data.description) ? data.description : '';
   data.time = validText(data.time) ? data.time : '';
 
@@ -15,6 +16,10 @@ module.exports = function validateEventInput(data) {
  
   if (Validator.isEmpty(data.location)) {
     errors.location = 'Please pick a location to host your playdate.';
+  }
+
+  if (Validator.isEmpty(data.date)) {
+    errors.date = 'Please choose a date for your playdate'
   }
 
   if (Validator.isEmpty(data.description, { min: 6, max: 120 })) {

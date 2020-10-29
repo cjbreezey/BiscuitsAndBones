@@ -8,7 +8,7 @@ import { GoogleApiWrapper, Map, InfoWindow, Marker } from 'google-maps-react'
 class EventCreate extends React.Component {
   constructor(props) {
       super(props);
-
+      debugger
       this.state = {
           title: "",
           description: "",
