@@ -1,41 +1,60 @@
 .events-index-container {
     position: relative;
     display: inline-flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     flex-direction: row;
-    top: 55px;
+    height: 100vh;
     width: 100vw;
+    background-image: url(./background3.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.create-event-container {
+    height: 100vh;
+}
+
+.create-form {
+    margin-top: 50px;
+}
+
+.index-left {
+    border-radius: 5px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 75px;
+    left: 50px;
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.802);
+}
+
+.index-right {
+    margin-top: 50px;
+    width: 75vw;
+    margin-left: 100px
 }
 
 .create-event-link {
     height: fit-content;
     text-decoration: none;
-    position: relative;
-    margin-left: -15px;
 }
 
 .event-index-header {
     font-family: Montserrat;
-    width: 15%;
-    text-align: right;
-    padding-right: 5px;
-}
-
-.create-event-container {
-    position: relative; 
-    margin-left: 15px;
-    margin-right: 15px;
-    top: 55px;
+    margin-top: -5px;
 }
 
 .events-list {
-    overflow: auto;
-    width: 60%;
     position: relative;
+    overflow: auto;
     height: 75vh;
-    border: 1px black ridge;
-    border-radius: 15px;
-    padding-right: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .events-list::-webkit-scrollbar {
@@ -44,12 +63,11 @@
 
 .event-item h3 {
     cursor: pointer;
-    width: 83%;
+    width: 95%;
 }
 
 
 .event-item button {
-    top: 17px;
     position: relative;
     width: fit-content;
     outline: none;
@@ -73,14 +91,17 @@
 
 .event-item {
     display: flex;
-    border-bottom: 1px black ridge;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: rgba(255, 255, 255, 0.802);
+    height: 75px;
     width: 95%;
-    flex-direction: row;
-    justify-content: space-between;
 }
 
+
 .event-dropdown {
-    background: rgb(225, 225, 225);
+    background: rgba(225, 225, 225, 0.802);
     width: 95%;
     height:0px;
     opacity: 0;
@@ -108,7 +129,7 @@
     font-weight: 600;
     display: none;
     position: relative;
-    top: 150px;
+    top: 144px;
 }
 
 .event-dropdown-items li:first-child {
@@ -121,12 +142,6 @@
 }
 
 .event-dropdown-items li:nth-child(2) {
-    color: Black;
     font-size: 25px;
 }
 
-
-.google-map {
-    height: 400px;
-    width: 400px;
-}

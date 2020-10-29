@@ -47,6 +47,7 @@ router.post('/',
         description: req.body.description,
         lat: req.body.lat,
         lng: req.body.lng,
+        attendees: [req.user.id]
       });
   
       newEvent.save().then(event => res.json(event));
@@ -54,24 +55,45 @@ router.post('/',
 
   router.delete("/:eventid", passport.authenticate('jwt', { session: false }),
   (req, res) => {
-    Event.deleteOne({ _id: req.params.eventid })
+    Event.deleteOne({ _id: req.params.eventId })
       .then (e => {res.json(e)}) 
       .catch(e => res.status(404).json({ noeventfound: 'No Event Found' }))
 });
 
+  router.patch("/:id", (req, res) => {
+    let selected = {_id: req.params.id};
+    let update = req.body;
+
+    Event.findOneAndUpdate(selected, update, {new:true}).then(event => {
+      let updated = {
+        host_id: event.user.id,
+        title: event.title,
+        location: event.location,
+        date: event.date,
+        time: event.time,
+        description: event.description,
+        lat: event.lat,
+        lng: event.lng, 
+        attendees: event.attendees
+      }
+      res.json(updated);
+    })
+    .catch(err => res.status(404).json(err));
+  }) 
+
   router.post('/:eventid', passport.authenticate('jwt', { session: false }), (req, res) => {
     Event.findOneAndUpdate(
-        {_id: req.params.activityid},
+        {_id: req.params.eventId},
         { $addToSet: { attendees: req.user._id} },
         { new: true } 
     )
-        .then( activity => {res.json(activity)}).
+        .then( event => {res.json(event)}).
         catch(err => res.status(404).json({ noeventfound: 'Could not join playdate.' })
     );
 
     User.findOneAndUpdate(
         {_id: req.user._id},
-        { $addToSet: { attending: req.params.activityid } },
+        { $addToSet: { attending: req.params.eventId } },
       ).
       catch( err =>
         res.status(404).json({ noeventfound: 'Could not join playdate.' })
@@ -84,6 +106,14 @@ router.post('/',
         .then(e => { res.json(e) })
         .catch(e => res.status(404).json({ noeventfound: 'No Event Found' }))
     }
+);
+
+router.delete("/:eventid", passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    Event.deleteOne({ _id: req.params.eventid })
+      .then (e => {res.json(e)}) 
+      .catch(e => res.status(404).json({ noeventfound: 'No Event Found' }))
+  }
 );
 
   module.exports = router;

@@ -13,6 +13,7 @@ class EventCreate extends React.Component {
           title: "",
           description: "",
           location: "",
+          date: "",
           time: "",
           newEvent: "",
           date: "",
@@ -39,6 +40,7 @@ class EventCreate extends React.Component {
       title: this.state.title,
       description: this.state.description,
       location: this.state.address,
+      date: this.state.date,
       time: this.state.time,
       date: this.state.date,
       lat: this.state.mapCenter.lat,
@@ -49,6 +51,7 @@ class EventCreate extends React.Component {
     this.setState({title: ''})
     this.setState({description: ''})
     this.setState({location: ''})
+    this.setState({date: ''})
     this.setState({time: ''})
     this.setState({date: ''})
     this.props.history.push("/events")
@@ -92,14 +95,14 @@ class EventCreate extends React.Component {
                     />
                     <br />
                     <input type="date"
-                        value={this.state.date}
-                        onChange={this.update('date')}
+                      value={this.state.date}
+                      onChange={this.update('date')}
                     />
                     <br />
-              <input type="time"
-                  value={this.state.time}
-                  onChange={this.update('time')}
-              />
+                    <input type="time"
+                      value={this.state.time}
+                      onChange={this.update('time')}
+                    />
             <PlacesAutocomplete
               value={this.state.address}
               onChange={this.handleChange}
@@ -139,8 +142,7 @@ class EventCreate extends React.Component {
               )}
             </PlacesAutocomplete>
                     <input type="submit" value="Submit" />
-                    <div className="google-map">
-                      <Map google={this.props.google}
+                      <Map className="google-map" google={this.props.google}
                         initialCenter={{
                           lat: this.state.mapCenter.lat,
                           lng: this.state.mapCenter.lng
@@ -157,7 +159,6 @@ class EventCreate extends React.Component {
                           }}
                         />
                         </Map>
-                    </div>
                 </div>
             </form>
             <br />
