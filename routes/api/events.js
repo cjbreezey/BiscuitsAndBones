@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const Event = require('../../models/Event');
 const validateEventInput = require('../../validation/events');
+mongoose.set('useFindAndModify', false);
 
 router.get('/', (req, res) => {
     Event.find()
@@ -61,11 +62,12 @@ router.post('/',
 });
 
   router.patch("/:id", (req, res) => {
-    let selected = {_id: req.params.id};
-    let update = req.body;
+    debugger
+    const filter = {_id: req.params.id};
+    const update = req.body;
 
-    Event.findOneAndUpdate(selected, update, {new:true}).then(event => {
-      let updated = {
+    Event.findOneAndUpdate(filter, update, {new:true}).then(event => {
+      const updatedEvent = {
         host_id: event.user.id,
         title: event.title,
         location: event.location,
@@ -76,31 +78,12 @@ router.post('/',
         lng: event.lng, 
         attendees: event.attendees
       }
-      res.json(updated);
+      res.json(updatedEvent);
     })
-    .catch(err => res.status(404).json(err));
+    // .catch(err => res.status(404).json(err));
   }) 
 
-  router.post('/:eventid', passport.authenticate('jwt', { session: false }), (req, res) => {
-    Event.findOneAndUpdate(
-        {_id: req.params.eventId},
-        { $addToSet: { attendees: req.user._id} },
-        { new: true } 
-    )
-        .then( event => {res.json(event)}).
-        catch(err => res.status(404).json({ noeventfound: 'Could not join playdate.' })
-    );
-
-    User.findOneAndUpdate(
-        {_id: req.user._id},
-        { $addToSet: { attending: req.params.eventId } },
-      ).
-      catch( err =>
-        res.status(404).json({ noeventfound: 'Could not join playdate.' })
-    ) 
-  });
-
-  router.delete("/:eventid", passport.authenticate('jwt', { session: false }),
+router.delete("/:eventid", passport.authenticate('jwt', { session: false }),
     (req, res) => {
       Event.deleteOne({ _id: req.params.eventid })
         .then(e => { res.json(e) })
