@@ -36,13 +36,17 @@ class Events extends React.Component {
     } else {
       return (
         <div className="events-index-container">
-          <h2 className="event-index-header">All Events</h2>
-          <ul className="events-list">
-            {this.state.events.map((event) => {
-              return <EventBox event={event} key={event._id} currentUser={this.props.currentUser} deleteEvent={this.props.deleteEvent}/>
-            })}
-          </ul>
-          <Link className="create-event-link" to={'/new_event'}>Create an Event</Link>
+          <div className="index-left">
+            <h2 className="event-index-header">All Events</h2>
+            <Link className="create-event-link" to={'/new_event'}>Create an Event</Link>
+          </div>
+          <div className="index-right">
+            <ul className="events-list">
+              {this.state.events.map((event) => {
+                return <EventBox event={event} key={event._id} currentUser={this.props.currentUser} deleteEvent={this.props.deleteEvent}/>
+              })}
+            </ul>
+          </div>
         </div>
       );
     }

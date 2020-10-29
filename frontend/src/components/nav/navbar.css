@@ -11,6 +11,10 @@
     border-bottom: .5px black ridge;
 }
 
+.nav-bar.logged-in {
+    background: white;
+}
+
 .nav-header {
     cursor: pointer;
     text-decoration: none;
