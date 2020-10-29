@@ -43,7 +43,7 @@ class EventBox extends React.Component {
     }
 
     if (!this.props.event.date) return null
-    debugger
+    // debugger
     return (
       <div className="event-item-container">
         <div className="event-item">
