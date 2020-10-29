@@ -46,9 +46,9 @@ class ProfileItem extends React.Component {
         } else {
             deletebutton = null
         }
-        debugger
+        // debugger
         if (!this.props.event.date) return null
-        debugger
+        // debugger
         return (
             <div className="event-item-container">
                 <div className="event-item">
@@ -62,7 +62,7 @@ class ProfileItem extends React.Component {
                         <li>{this.props.event.date.slice(0, 10)}</li>
                         <li>{this.props.event.time}</li>
                         <li>{this.props.event.description}</li>
-                        <li><Link to={`/profile/${this.props.event.host_id}`}>User</Link></li>
+                        <li><Link to={`/users/${this.props.event.host_id}`}>User</Link></li>
                     </ul>
                 </div>
             </div>

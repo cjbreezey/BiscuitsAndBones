@@ -7,6 +7,8 @@ const jwt = require('jsonwebtoken');
 const passport = require('passport');
 const validateSignUpInput = require('../../validation/signup');
 const validateLoginInput = require('../../validation/login');
+const validateUserUpdate = require('../../validation/update_user');
+// mongoose.set('useFindAndModify', false);
 
 //REGISTER
 router.post("/signup", (req, res) => {
@@ -74,6 +76,28 @@ router.post("/login", (req, res) => {
       }
     });
   });
+});
+
+router.patch("/:id", passport.authenticate('jwt', { session: false }), (req, res) => {
+  // debugger
+  const { errors, isValid } = validateUserUpdate(req.body);
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
+  let filter = { _id: req.user._id };
+  let update = req.body;
+  User.findOneAndUpdate(filter, update, { new: true })
+    .then(user => {
+      let updateUser = {
+        id: user._id,
+        name: user.name,
+        picture: user.picture,
+        bio: user.bio,
+      }
+      res.json(updateUser)
+    })
+    .catch(err =>
+      res.status(400).json(err))
 });
 
 //PRIVATE AUTH
