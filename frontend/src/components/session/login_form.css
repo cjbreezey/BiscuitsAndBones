@@ -40,10 +40,9 @@
 }
 
 .session-header {
-  opacity: 0.8;
   display: flex;
   justify-content: center;
-  background: white;
+  background: rgba(255, 255, 255, 0.802);
   color: burlywood;
   font-size: 30px;
   font-family: Pacifico;
