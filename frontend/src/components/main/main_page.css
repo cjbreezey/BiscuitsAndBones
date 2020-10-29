@@ -34,8 +34,7 @@
 .gtku-container {
     margin: 0px 20%;
     height: 150px;
-    background: gainsboro;
-    opacity: .8;
+    background: rgba(220, 220, 220, 0.809);
     border-radius: 25px;
 }
 

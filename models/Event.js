@@ -34,7 +34,11 @@ const EventSchema = new Schema({
   lng: {
     type: Number, 
     // required: true,
-  }
+  },
+  attendees: [{
+    type: Schema.Types.ObjectId,
+    ref: 'users',
+  }],
 }, {
   timestamps: true,
 })
