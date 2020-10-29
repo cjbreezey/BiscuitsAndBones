@@ -8,7 +8,7 @@ import { GoogleApiWrapper, Map, InfoWindow, Marker } from 'google-maps-react'
 class EventCreate extends React.Component {
   constructor(props) {
       super(props);
-
+      debugger
       this.state = {
           title: "",
           description: "",
@@ -16,6 +16,7 @@ class EventCreate extends React.Component {
           date: "",
           time: "",
           newEvent: "",
+          date: "",
           lat: "",
           lng: "",
           address: "",
@@ -41,6 +42,7 @@ class EventCreate extends React.Component {
       location: this.state.address,
       date: this.state.date,
       time: this.state.time,
+      date: this.state.date,
       lat: this.state.mapCenter.lat,
       lng: this.state.mapCenter.lng
     };
@@ -51,6 +53,7 @@ class EventCreate extends React.Component {
     this.setState({location: ''})
     this.setState({date: ''})
     this.setState({time: ''})
+    this.setState({date: ''})
     this.props.history.push("/events")
   }
 

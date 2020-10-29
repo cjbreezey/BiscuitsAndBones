@@ -1,4 +1,4 @@
-
+import {Link} from 'react-router-dom'
 import React from 'react';
 
 class EventBox extends React.Component {
@@ -43,7 +43,7 @@ class EventBox extends React.Component {
     }
 
     if (!this.props.event.date) return null
-
+    debugger
     return (
       <div className="event-item-container">
         <div className="event-item">
@@ -57,6 +57,7 @@ class EventBox extends React.Component {
             <li>{this.props.event.date.slice(0, 10)}</li>
             <li>{this.props.event.time}</li>
             <li>{this.props.event.description}</li>
+            <li><Link to={`/profile/${this.props.event.host_id}`}>User</Link></li>
           </ul>
         </div>
       </div>
