@@ -8,13 +8,13 @@
     background: transparent;
     font-family: 'Pacifico', cursive;
     z-index: 5;
-    border-bottom: .5px black ridge;
     display: flex;
     justify-content: space-between;
 }
 
 .nav-bar.logged-in {
     background: rgba(222, 184, 135, 0.604);
+    border-bottom: .5px black ridge;
 }
 
 .nav-header {

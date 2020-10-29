@@ -82,12 +82,15 @@
 
 
 .event-item {
+    margin-top: 5px;
     display: flex;
     align-items: center;
     padding-left: 10px;
     padding-right: 10px;
     background: rgba(255, 255, 255, 0.802);
     height: 75px;
+    border: 1.5px solid white;
+
 }
 
 
@@ -104,7 +107,7 @@
 }
 
 .event-dropdown.open {
-    height:275px;
+    height: 300px;
     opacity: 1;
     -webkit-transition:height, 0.3s linear;
     -moz-transition: height, 0.3s linear;

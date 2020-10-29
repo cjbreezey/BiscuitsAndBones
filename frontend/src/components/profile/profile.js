@@ -26,10 +26,12 @@ class Profile extends React.Component {
         } else {
           return (
             <div className="profile-container">
-              <h2>All of This User's Events</h2>
-              {this.state.events.map(event => (
-                <ProfileItem key={event._id} event={event} currentUser={this.props.currentUser} deleteEvent={this.props.deleteEvent} />
-              ))}
+              <div className="profile-events">
+                <h2>All of This User's Events</h2>
+                {this.state.events.map(event => (
+                  <ProfileItem key={event._id} event={event} currentUser={this.props.currentUser} deleteEvent={this.props.deleteEvent} />
+                ))}
+              </div>
             </div>
           );
         }
