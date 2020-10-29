@@ -38,7 +38,7 @@ class ProfileItem extends React.Component {
         } else {
             deletebutton = null
         }
-
+        debugger
         if (!this.props.event.date) return null
         debugger
         return (
