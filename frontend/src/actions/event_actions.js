@@ -6,18 +6,18 @@ export const RECEIVE_EVENT = "RECEIVE_EVENT";
 export const REMOVE_EVENT = "REMOVE_EVENT";
 
 export const receiveEvents = events => ({
-  type: RECEIVE_EVENTS,
-  events
+    type: RECEIVE_EVENTS,
+    events
 });
 
 export const receiveEvent = event => ({
-  type: RECEIVE_EVENT,
-  event
+    type: RECEIVE_EVENT,
+    event
 });
 
 export const receiveUserEvents = events => ({
-  type: RECEIVE_USER_EVENTS,
-  events
+    type: RECEIVE_USER_EVENTS,
+    events
 });
 
 export const removeEvent = eventId => ({
@@ -45,7 +45,18 @@ export const createEvent = data => dispatch => {
 
 export const deleteEvent = eventId => dispatch => {
   return EventApiUtil.deleteEvent(eventId)
-        .then(res => dispatch(removeEvent(eventId)))
-        .catch(err => console.log(err)) 
+    .then(eventId => dispatch(removeEvent(eventId)))
+    .catch(err => console.log(err)) 
+}
 
+export const updateEvent = event => dispatch => {
+  return EventApiUtil.updateEvent(event)
+    .then(event => dispatch(receiveEvent(event)))
+    .catch(err => console.log(err)) 
+}
+
+export const joinEvent = eventId => dispatch => {
+  return EventApiUtil.joinEvent(eventId)
+    .then(res => dispatch(receiveEvent(res.data))) 
+    .catch(err => console.log(err))
 }
