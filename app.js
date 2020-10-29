@@ -7,7 +7,7 @@ const passport = require('passport');
 const users = require("./routes/api/users");
 const events = require("./routes/api/events");
 const path = require('path')
-const playdates = require('./routes/api/playdates');
+
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('frontend/build'));
@@ -29,7 +29,7 @@ require('./config/passport')(passport)
 
 app.use("/api/users", users);
 app.use("/api/events", events);
-app.use("/api/playdates", playdates);
+
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server is running on port ${port}`));
