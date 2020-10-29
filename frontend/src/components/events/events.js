@@ -14,6 +14,7 @@ class Events extends React.Component {
 
   componentDidMount() {
     this.props.fetchEvents();
+ 
   }
 
   componentWillMount() {
@@ -43,7 +44,7 @@ class Events extends React.Component {
           <div className="index-right">
             <ul className="events-list">
               {this.state.events.map((event) => {
-                return <EventBox event={event} key={event._id} currentUser={this.props.currentUser} deleteEvent={this.props.deleteEvent}/>
+                return <EventBox event={event} key={event._id} currentUser={this.props.currentUser} deleteEvent={this.props.deleteEvent} joinEvent={this.props.joinEvent} updateEvent={this.props.updateEvent}/>
               })}
             </ul>
           </div>
