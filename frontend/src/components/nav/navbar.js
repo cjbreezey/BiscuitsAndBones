@@ -7,40 +7,45 @@ class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.logoutUser = this.logoutUser.bind(this);
-    this.getLinks = this.getLinks.bind(this);
+    this.loggedIn = this.loggedIn.bind(this);
   }
 
   logoutUser(e) {
       e.preventDefault();
       this.props.logout();
   }
-
-  // Selectively render links dependent on whether the user is logged in
-  getLinks() {
-      if (this.props.loggedIn) {
-        return (
-            <div className="nav-links">
+  
+  loggedIn() {
+    if (this.props.loggedIn) {
+      return(
+        <div className="nav-bar logged-in">
+          <Link className="nav-header" to={'/'}>Biscuits and Bones</Link>
+          <div className="nav-links">
                 <Link to={'/events'}>All Playdates</Link>
                 <Link to={'/profile'}>Profile</Link>
                 <button className="logout-button" onClick={this.logoutUser}>Logout</button>
-            </div>
-        );
-      } else {
-        return (
-            <div className="nav-links">
+          </div>
+        </div>
+      )
+    } else {
+      return(
+        <div className="nav-bar">
+          <Link className="nav-header" to={'/'}>Biscuits and Bones</Link>
+          <div className="nav-links">
                   <Link to={'/signup'}>Signup</Link>
                   <Link to={'/login'}>Login</Link>          
-            </div>
-        );
-      }
+          </div>
+        </div>
+      )
+    }
   }
+  // Selectively render links dependent on whether the user is logged in
 
   render() {
       return (
-        <div className="nav-bar">
-          <Link className="nav-header" to={'/'}>Biscuits and Bones</Link>
-          { this.getLinks() }
-        </div>
+        <>
+          {this.loggedIn()}
+        </>
       );
   }
 }

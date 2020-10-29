@@ -139,8 +139,7 @@ class EventCreate extends React.Component {
               )}
             </PlacesAutocomplete>
                     <input type="submit" value="Submit" />
-                    <div className="google-map">
-                      <Map google={this.props.google}
+                      <Map className="google-map" google={this.props.google}
                         initialCenter={{
                           lat: this.state.mapCenter.lat,
                           lng: this.state.mapCenter.lng
@@ -157,7 +156,6 @@ class EventCreate extends React.Component {
                           }}
                         />
                         </Map>
-                    </div>
                 </div>
             </form>
             <br />
