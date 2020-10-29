@@ -14,6 +14,12 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
+  bio: {
+    type: String
+  },
+  pet_name: {
+    type: String
+  },
   hosting: [{
     type: Schema.Types.ObjectId,
     ref: 'events'
