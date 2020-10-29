@@ -50,8 +50,33 @@ router.post('/',
       });
   
       newEvent.save().then(event => res.json(event));
-    }
-  );
+});
+
+  router.delete("/:eventid", passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    Event.deleteOne({ _id: req.params.eventid })
+      .then (e => {res.json(e)}) 
+      .catch(e => res.status(404).json({ noeventfound: 'No Event Found' }))
+});
+
+  router.post('/:eventid', passport.authenticate('jwt', { session: false }), (req, res) => {
+    Event.findOneAndUpdate(
+        {_id: req.params.activityid},
+        { $addToSet: { attendees: req.user._id} },
+        { new: true } 
+    )
+        .then( activity => {res.json(activity)}).
+        catch(err => res.status(404).json({ noeventfound: 'Could not join playdate.' })
+    );
+
+    User.findOneAndUpdate(
+        {_id: req.user._id},
+        { $addToSet: { attending: req.params.activityid } },
+      ).
+      catch( err =>
+        res.status(404).json({ noeventfound: 'Could not join playdate.' })
+    ) 
+  });
 
   router.delete("/:eventid", passport.authenticate('jwt', { session: false }),
     (req, res) => {
