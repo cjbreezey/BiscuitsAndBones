@@ -16,17 +16,25 @@ class ProfileItem extends React.Component {
     dropdownClick(e) {
         let dropdown = document.getElementById(`dropdown-slide-${this.props.event._id}`)
         dropdown.classList.toggle('open')
-
+        
         let dropdownItem = document.getElementById(`dropdown-items-${this.props.event._id}`)
-
+        
         if (dropdownItem.style.display === "") {
+            dropdownItem.style.borderbottom ="1px solid black"
             dropdownItem.style.display = "block";
-        }
-        else if (dropdownItem.style.display === "none") {
+        } else if (dropdownItem.style.display === "none") {
+            dropdownItem.style.borderbottom ="1px solid black"
             dropdownItem.style.display = "block";
         } else {
+            dropdownItem.style.borderbottom ="none"
             dropdownItem.style.display = "none";
         }
+
+        dropdownItem.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+        })
+
     }
 
     render() {

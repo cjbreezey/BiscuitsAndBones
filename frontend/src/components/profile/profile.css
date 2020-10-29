@@ -1,12 +1,19 @@
 .profile-container {
     position: relative;
+    display: inline-flex;
+    justify-content: space-around;
+    flex-direction: row;
     height: 100vh;
     width: 100vw;
-    top: 50px;
 }
 
-.profile-events {
-    position: relative;
-    padding-bottom: 50px;
-    overflow: scroll;
+.profile-container .events-list {
+    top: 55vh;
 }
+
+/* .profile-events {
+    display: inline-flex;
+    position: relative;
+    margin-top: 50px;
+    overflow: scroll;
+} */
