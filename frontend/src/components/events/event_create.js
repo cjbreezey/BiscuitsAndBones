@@ -78,7 +78,7 @@ class EventCreate extends React.Component {
     return (
         <div className="create-event-container">
             <form className="create-form" onSubmit={this.handleSubmit}>
-                <div>
+                <div className="create-inputs"> 
                     <input className="create-event-input" type="text"
                         value={this.state.title}
                         onChange={this.update('title')}
@@ -106,7 +106,7 @@ class EventCreate extends React.Component {
               onSelect={this.handleSelect}
             >
               {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
-                <div>
+                <div className="create-event-input">
                   <input
                     {...getInputProps({
                       placeholder: 'Search Location...',
@@ -139,7 +139,7 @@ class EventCreate extends React.Component {
               )}
             </PlacesAutocomplete>
                     <input type="submit" value="Submit" />
-                      <Map className="google-map" google={this.props.google}
+                      <Map className="google-map" style={{width:'auto', height: '300px'}} google={this.props.google}
                         initialCenter={{
                           lat: this.state.mapCenter.lat,
                           lng: this.state.mapCenter.lng
