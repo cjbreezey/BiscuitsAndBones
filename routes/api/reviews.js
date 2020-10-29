@@ -25,13 +25,13 @@ router.get('/:id', (req, res) => {
       );
 });
 
-router.delete('/:reviewId', (req, res) => {
-    Review.findByIdAndDelete(req.params.id)
-        .then(review => res.json(review))
-        .catch(err =>
-            res.status(404).json({ noreviewfound: 'No review found with that ID' })
-        );
-});
+  router.delete("/:reviewId", passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    Event.deleteOne({ _id: req.params.reviewid })
+      .then (e => {res.json(e)}) 
+      .catch(e => res.status(404).json({ noreviewfound: 'No Review Found' }))
+  }
+);
 
 // router.patch('/:id', (req, res) => {
 //     Review.findByIdAndUpdate(req.params.id, req.body, { new: true })
@@ -42,10 +42,10 @@ router.delete('/:reviewId', (req, res) => {
 
 router.post(
     '/',
-    // passport.authenticate('jwt', { session: false }),
+    passport.authenticate('jwt', { session: false }),
     (req, res) => {
         const { errors, isValid } = validateReviewInput(req.body);
-        debugger
+
         if (!isValid) {
             return res.status(400).json(errors);
         }
