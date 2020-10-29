@@ -13,6 +13,7 @@ class EventCreate extends React.Component {
           title: "",
           description: "",
           location: "",
+          date: "",
           time: "",
           newEvent: "",
           lat: "",
@@ -38,6 +39,7 @@ class EventCreate extends React.Component {
       title: this.state.title,
       description: this.state.description,
       location: this.state.address,
+      date: this.state.date,
       time: this.state.time,
       lat: this.state.mapCenter.lat,
       lng: this.state.mapCenter.lng
@@ -47,6 +49,7 @@ class EventCreate extends React.Component {
     this.setState({title: ''})
     this.setState({description: ''})
     this.setState({location: ''})
+    this.setState({date: ''})
     this.setState({time: ''})
     this.props.history.push("/events")
   }
@@ -87,16 +90,16 @@ class EventCreate extends React.Component {
                         onChange={this.update('description')}
                         placeholder="Description..."
                     />
-                    {/* <input type="text"
-                        value={this.state.location}
-                        onChange={this.update('location')}
-                        placeholder="Set location..."
-                    /> */}
                     <br />
-              <input type="time"
-                  value={this.state.time}
-                  onChange={this.update('time')}
-              />
+                    <input type="date"
+                      value={this.state.date}
+                      onChange={this.update('date')}
+                    />
+                    <br />
+                    <input type="time"
+                      value={this.state.time}
+                      onChange={this.update('time')}
+                    />
             <PlacesAutocomplete
               value={this.state.address}
               onChange={this.handleChange}

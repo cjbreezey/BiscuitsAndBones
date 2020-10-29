@@ -1,18 +1,19 @@
+
 import React from 'react';
 
 class EventBox extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props)
 
     this.handleclick = this.handleclick.bind(this);
     this.dropdownClick = this.dropdownClick.bind(this);
   }
 
-  handleclick(e){
+  handleclick(e) {
     this.props.deleteEvent(this.props.event._id)
   }
 
-  dropdownClick(e){
+  dropdownClick(e) {
     let dropdown = document.getElementById(`dropdown-slide-${this.props.event._id}`)
     dropdown.classList.toggle('open')
 
@@ -35,11 +36,13 @@ class EventBox extends React.Component {
     if (!this.props.event) return null;
 
     let deletebutton;
-    if (this.props.currentUser && this.props.currentUser.id === this.props.event.host_id){
+    if (this.props.currentUser && this.props.currentUser.id === this.props.event.host_id) {
       deletebutton = <button onClick={() => this.props.deleteEvent(this.props.event._id)}> X </button>
     } else {
       deletebutton = null
     }
+
+    if (!this.props.event.date) return null
 
     return (
       <div className="event-item-container">
@@ -51,9 +54,9 @@ class EventBox extends React.Component {
           <ul id={`dropdown-items-${this.props.event._id}`} className="event-dropdown-items">
             <li> This is going to be the map.</li>
             <li>{this.props.event.location}</li>
-            <li>{this.props.event.date}</li>
+            <li>{this.props.event.date.slice(0, 10)}</li>
             <li>{this.props.event.time}</li>
-            <li>{this.props.event.description}</li>  
+            <li>{this.props.event.description}</li>
           </ul>
         </div>
       </div>
