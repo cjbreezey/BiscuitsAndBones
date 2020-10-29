@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import EventBox from './event_box';
+import EventCreate from './event_create'
 import './events.css'
 
 class Events extends React.Component {
@@ -14,6 +15,7 @@ class Events extends React.Component {
 
   componentDidMount() {
     this.props.fetchEvents();
+ 
   }
 
   componentWillMount() {
@@ -42,8 +44,9 @@ class Events extends React.Component {
           </div>
           <div className="index-right">
             <ul className="events-list">
+              {/* <EventCreate /> */}
               {this.state.events.map((event) => {
-                return <EventBox event={event} key={event._id} currentUser={this.props.currentUser} deleteEvent={this.props.deleteEvent}/>
+                return <EventBox event={event} key={event._id} currentUser={this.props.currentUser} deleteEvent={this.props.deleteEvent} joinEvent={this.props.joinEvent} updateEvent={this.props.updateEvent}/>
               })}
             </ul>
           </div>

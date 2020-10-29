@@ -4,6 +4,10 @@ export const getEvents = () => {
   return axios.get('/api/events')
 };
 
+export const getEvent = (eventId) => {
+  return axios.get(`/api/events/${eventId}`)
+};
+
 export const getUserEvents = id => {
   return axios.get(`/api/events/user/${id}`)
 };
@@ -17,9 +21,7 @@ export const deleteEvent = (id) => {
 };
 
 export const updateEvent = data => { 
-  return axios.patch(`/api/event/${data._id}`, data)
+  debugger
+  return axios.patch(`/api/events/${data._id}`, data)
 }
 
-export const joinEvent = eventId => {
-    return axios.post(`/api/events/${eventId}`)
-}
