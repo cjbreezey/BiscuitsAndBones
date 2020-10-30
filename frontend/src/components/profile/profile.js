@@ -35,27 +35,6 @@ class Profile extends React.Component {
     }
     
     render() {
-<<<<<<< HEAD
-      debugger 
-        if (this.props.events.length === 0) {
-          return (<div className="profile-container">This user has no events</div>)
-        } else {
-          return (
-            <div className="profile-container">
-              <div>
-                <h3>About Me</h3>
-                <ul>
-                  <li>{this.props.currentUser.name}</li>
-                  <li>{this.props.bio}</li>
-                  <li>{this.props.pet_name}</li>
-                    {this.editLink()}
-                </ul>
-              </div>
-              <h2>All of This User's Events</h2>
-              {this.props.events.map(event => (
-                <ProfileItem key={event._id} event={event} currentUser={this.props.currentUser} deleteEvent={this.props.deleteEvent} />
-              ))}
-=======
       debugger
         if (this.props.events.length === 0) {
           return (
@@ -96,7 +75,6 @@ class Profile extends React.Component {
                   </ul>
                 </div>
               </div>
->>>>>>> master
             </div>
           );
         }
