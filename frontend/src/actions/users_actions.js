@@ -45,7 +45,7 @@ export const updateUser = (user) => dispatch => {
     // debugger
     return UsersAPIUtil.updateUser(user).then((payload) => {
         // debugger
-        dispatch(receiveUser(payload.data))
+        dispatch(receiveUser(payload))
     },
         (err) => dispatch(receiveUserErrors(err.response.data)))
 }

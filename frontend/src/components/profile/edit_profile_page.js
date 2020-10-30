@@ -27,6 +27,7 @@ class EditProfilePage extends React.Component {
     }
 
     routeToProfile() {
+        debugger
         this.props.history.push(`/profile/${this.props.currentUser.id}`)
     }
 
