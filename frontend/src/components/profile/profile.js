@@ -38,17 +38,24 @@ class Profile extends React.Component {
       debugger
         if (this.props.events.length === 0) {
           return (
-              <div>
-                <div className="profile-container">
-                  <h3>About Me</h3>
-                  <ul>
+            <div className="profile-container">
+              <div className="index-left">
+                <div className="profile-box">
+                  <h3 className="event-index-header">About Me</h3>
+                  <ul className="profile-info">
                     <li>{this.props.currentUser.name}</li>
                     <li>{this.props.currentUser.bio}</li>
                     <li>{this.props.currentUser.pet_name}</li>
-                      {this.editLink()}
+                    <li>{this.editLink()}</li>
                   </ul>
+                  <Link className="create-event-link" to={'/new_event'}>Create an Event</Link>
                 </div>
-              <div className="profile-container">This user has no events</div>
+              </div>
+              <div className="index-right">
+                <div className="profile-events">
+                  <div className="empty-events">This user has no upcoming events.</div>
+                </div>
+              </div>
             </div>
           )
         } else {
@@ -58,9 +65,9 @@ class Profile extends React.Component {
                 <div className="profile-box">
                   <h3 className="event-index-header">About Me</h3>
                   <ul className="profile-info">
-                    <li>{this.props.currentUser.name}</li>
-                    <li>{this.props.currentUser.bio}</li>
-                    <li>{this.props.currentUser.pet_name}</li>
+                    <li>Name: {this.props.currentUser.name}</li>
+                    <li>Bio: {this.props.currentUser.bio}</li>
+                    <li>Pet Name: {this.props.currentUser.pet_name}</li>
                     <li>{this.editLink()}</li>
                   </ul>
                   <Link className="create-event-link" to={'/new_event'}>Create an Event</Link>
