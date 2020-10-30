@@ -26,7 +26,7 @@ export const fetchUser = (id) => dispatch => {
 export const updateUser = (user) => dispatch => {
     // debugger
     return UsersAPIUtil.updateUser(user).then((payload) => {
-        // debugger
+        debugger
         dispatch(receiveUser(payload.data))
     },
         (err) => dispatch(receiveUserErrors(err.response.data)))
