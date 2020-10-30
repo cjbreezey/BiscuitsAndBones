@@ -47,7 +47,6 @@ class EditProfilePage extends React.Component {
                             <input type="text" value={this.state.pet_name} onChange={this.update('pet_name')} />
                         </label> 
                         <button>Submit</button>
-
                     </form>
                 </div>
             </div>
