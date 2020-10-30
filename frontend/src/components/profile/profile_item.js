@@ -13,21 +13,30 @@ class ProfileItem extends React.Component {
         this.props.deleteEvent(this.props.event._id)
     }
 
-    dropdownClick(e) {
-        let dropdown = document.getElementById(`dropdown-slide-${this.props.event._id}`)
-        dropdown.classList.toggle('open')
-
-        let dropdownItem = document.getElementById(`dropdown-items-${this.props.event._id}`)
-
-        if (dropdownItem.style.display === "") {
-            dropdownItem.style.display = "block";
-        }
-        else if (dropdownItem.style.display === "none") {
-            dropdownItem.style.display = "block";
-        } else {
-            dropdownItem.style.display = "none";
-        }
+  dropdownClick(e) {
+    let dropdown = document.getElementById(`dropdown-slide-${this.props.event._id}`)
+    dropdown.classList.toggle('open')
+    
+    let dropdownItem = document.getElementById(`dropdown-items-${this.props.event._id}`)
+    
+    if (dropdownItem.style.display === "") {
+      dropdownItem.style.borderbottom ="1px solid black"
+      dropdownItem.style.display = "block";
     }
+    else if (dropdownItem.style.display === "none") {
+      dropdownItem.style.borderbottom ="1px solid black"
+      dropdownItem.style.display = "block";
+    } else {
+      dropdownItem.style.borderbottom ="none"
+      dropdownItem.style.display = "none";
+    }
+
+    dropdown.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    })
+
+  }
 
     render() {
         if (!this.props.event) return null;
@@ -49,12 +58,11 @@ class ProfileItem extends React.Component {
                 </div>
                 <div id={`dropdown-slide-${this.props.event._id}`} className="event-dropdown">
                     <ul id={`dropdown-items-${this.props.event._id}`} className="event-dropdown-items">
-                        <li> This is going to be the map.</li>
+                        <li></li>
                         <li>{this.props.event.location}</li>
                         <li>{this.props.event.date.slice(0, 10)}</li>
                         <li>{this.props.event.time}</li>
                         <li>{this.props.event.description}</li>
-                        <li><Link to={`/users/${this.props.event.host_id}`}>User</Link></li>
                     </ul>
                 </div>
             </div>

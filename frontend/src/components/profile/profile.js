@@ -53,19 +53,27 @@ class Profile extends React.Component {
         } else {
           return (
             <div className="profile-container">
-              <div>
-                <h3>About Me</h3>
-                <ul>
-                  <li>Name: {this.props.currentUser.name}</li>
-                  <li>Bio: {this.props.currentUser.bio}</li>
-                  <li>Pet Name: {this.props.currentUser.pet_name}</li>
-                    {this.editLink()}
-                </ul>
+              <div className="index-left">
+                <div className="profile-box">
+                  <h3 className="event-index-header">About Me</h3>
+                  <ul className="profile-info">
+                    <li>{this.props.currentUser.name}</li>
+                    <li>{this.state.bio}</li>
+                    <li>{this.state.pet_name}</li>
+                    <li>{this.editLink()}</li>
+                  </ul>
+                  <Link className="create-event-link" to={'/new_event'}>Create an Event</Link>
+                </div>
               </div>
-              <h2>All of This User's Events</h2>
-              {this.props.events.map(event => (
-                <ProfileItem key={event._id} event={event} currentUser={this.props.currentUser} deleteEvent={this.props.deleteEvent} />
-              ))}
+              <div className="index-right">
+                <div className="profile-events">
+                  <ul className="events-list">
+                    {this.state.events.map(event => (
+                      <ProfileItem key={event._id} event={event} currentUser={this.props.currentUser} deleteEvent={this.props.deleteEvent} />
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
           );
         }

@@ -78,7 +78,7 @@ class EventCreate extends React.Component {
         <div className="create-event-container">
             <form className="create-form" onSubmit={this.handleSubmit}>
                 <div className="create-inputs"> 
-                    <input className="create-event-input" type="text"
+                    <input autofocus className="create-event-input" type="text"
                         value={this.state.title}
                         onChange={this.update('title')}
                         placeholder="Title..."
