@@ -76,7 +76,8 @@ class EventCreate extends React.Component {
   render() {
     return (
         <div className="create-event-container">
-            <form className="create-form" onSubmit={this.handleSubmit}>
+            <div className="create-center-box">
+              <form className="create-form" onSubmit={this.handleSubmit}>
                 <div className="create-inputs"> 
                     <input autofocus className="create-event-input" type="text"
                         value={this.state.title}
@@ -84,18 +85,20 @@ class EventCreate extends React.Component {
                         placeholder="Title..."
                     />
                     <br />
-                    <textarea className="create-event-input"
+                    <textarea wrap="hard" className="description-input"
                         value={this.state.description}
                         onChange={this.update('description')}
                         placeholder="Description..."
                     />
                     <br />
-                    <input type="date"
+                    <input className="create-event-input"
+                      type="date"
                       value={this.state.date}
                       onChange={this.update('date')}
                     />
                     <br />
-                    <input type="time"
+                    <input className="create-event-input"
+                      type="time"
                       value={this.state.time}
                       onChange={this.update('time')}
                     />
@@ -107,7 +110,8 @@ class EventCreate extends React.Component {
               {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
                 <div className="create-event-input">
                   <input
-                    {...getInputProps({
+                      className="create-event-input"
+                      {...getInputProps({
                       placeholder: 'Search Location...',
                       className: 'location-search-input',
                     })}
@@ -137,29 +141,27 @@ class EventCreate extends React.Component {
                 </div>
               )}
             </PlacesAutocomplete>
-                    <input type="submit" value="Submit" />
-                      <Map className="google-map" style={{width:'auto', height: '300px'}} google={this.props.google}
-                        initialCenter={{
-                          lat: this.state.mapCenter.lat,
-                          lng: this.state.mapCenter.lng
-                        }}
-                        center={{
-                          lat: this.state.mapCenter.lat,
-                          lng: this.state.mapCenter.lng
-                        }}
-                      >
-                        <Marker
-                          position={{
-                            lat: this.state.mapCenter.lat,
-                            lng: this.state.mapCenter.lng
-                          }}
-                        />
-                        </Map>
-                </div>
+            <input className="create-event-input" type="submit" value="Submit" />
+            </div>
+            <Map className="google-map" style={{width:'500px', height: '300px', left: '25vw'}} google={this.props.google}
+                    initialCenter={{
+                      lat: this.state.mapCenter.lat,
+                      lng: this.state.mapCenter.lng
+                    }}
+                    center={{
+                      lat: this.state.mapCenter.lat,
+                      lng: this.state.mapCenter.lng
+                    }}
+                  >
+                    <Marker
+                      position={{
+                        lat: this.state.mapCenter.lat,
+                        lng: this.state.mapCenter.lng
+                      }}
+                    />
+                  </Map>
             </form>
-            <br />
-            <EventBox description={this.state.newEvent} />
-            {/* <EventMap /> */}
+            </div>
         </div>
     )
   }

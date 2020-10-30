@@ -11,7 +11,6 @@ class EditEvent extends React.Component {
   }
 
 
-
   handleSubmit(e) {
     e.preventDefault();
     this.props.event.attendees.push(this.props.currentUser.id)
@@ -20,7 +19,6 @@ class EditEvent extends React.Component {
   }
 
   render() {
-    // debugger
     return (
       <div className="join-event-container">
         <form className="join-event-form" onSubmit={this.handleSubmit}>

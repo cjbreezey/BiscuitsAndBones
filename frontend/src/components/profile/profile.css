@@ -5,16 +5,16 @@
     flex-direction: row;
     height: 100vh;
     width: 100vw;
+    background-image: url(./background3.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .profile-container .events-list {
     display: flex;
     flex-direction: column;
 }
-
-/* .profile-container .event-item {
-    margin-top: 0px;
-} */
 
 .profile-events {
     height: 100vh;
@@ -39,9 +39,20 @@
 }
 
 .profile-info {
+    font-family: Oswald;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-left: 0;
     list-style: none;
 }
+
+.profile-info li:last-child a {
+    text-decoration: none;
+    color: white;
+}
+
+.profile-info li:last-child:hover a {
+    color: black;
+}
+
