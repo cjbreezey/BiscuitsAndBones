@@ -55,7 +55,7 @@ router.post('/',
 });
 
   router.patch("/:id", (req, res) => {
-    debugger
+    // debugger
     const filter = {_id: req.params.id};
     const update = req.body;
 

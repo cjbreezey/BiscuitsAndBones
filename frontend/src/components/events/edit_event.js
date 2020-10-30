@@ -19,7 +19,7 @@ class EditEvent extends React.Component {
   }
 
   render() {
-    debugger
+    // debugger
     let button;
     {this.props.event.attendees.map((attendee) => {
       if (attendee === this.props.currentUser.id){

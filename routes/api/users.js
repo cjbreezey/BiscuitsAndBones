@@ -79,7 +79,7 @@ router.post("/login", (req, res) => {
 });
 
 router.patch("/:id", passport.authenticate('jwt', { session: false }), (req, res) => {
-  debugger
+  // debugger
   const { errors, isValid } = validateUserUpdate(req.body);
   if (!isValid) {
     return res.status(400).json(errors);
@@ -88,7 +88,7 @@ router.patch("/:id", passport.authenticate('jwt', { session: false }), (req, res
   let update = req.body;
   User.findOneAndUpdate(filter, update, { new: true })
     .then(user => {
-      debugger
+      // debugger
       let updateUser = {
         id: user._id,
         name: user.name,
@@ -116,6 +116,12 @@ router.get("/:id", passport.authenticate('jwt', { session: false }), (req, res) 
     })
     .catch(err =>
       res.status(400).json(err))
+});
+
+router.get('/', (req, res) => {
+    User.find()
+        .then(users => res.json(users))
+        .catch(err => res.status(404).json({ nousersfound: 'No users found' }));
 });
 
 //PRIVATE AUTH
