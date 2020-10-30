@@ -84,7 +84,7 @@ class ProfileItem extends React.Component {
                           <li>{this.props.event.location}</li>
                           <li>{this.props.event.date.slice(0, 10)}</li>
                           <li>{this.props.event.time}</li>
-                          <li>{this.props.event.description}</li>
+                          <li className="index-event-description">{this.props.event.description}</li>
                       </ul>
                   </div>
               </div>

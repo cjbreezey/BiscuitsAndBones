@@ -93,7 +93,7 @@ class EventBox extends React.Component {
               </Map></li>
               <li>{this.props.event.location}</li>
               <li>{this.props.event.date.slice(0, 10)}, {this.props.event.time}</li>
-              <li>{this.props.event.description}</li>
+              <li className="index-event-description">{this.props.event.description}</li>
               <li><Link to={`/profile/${this.props.event.host_id}`}>Host's Profile</Link></li>
               <li><EditEvent event={this.props.event} currentUser={this.props.currentUser} updateEvent={this.props.updateEvent} /></li>
             </ul>

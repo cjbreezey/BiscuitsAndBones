@@ -287,6 +287,10 @@ input.join-event-input[type=submit] {
     z-index: 10;
 }
 
+.index-event-description {
+    padding-right: 100px;
+}
+
 input.create-event-input[type=text] {
     height: 35px;
     width: 200px;
