@@ -100,6 +100,22 @@ router.patch("/:id", passport.authenticate('jwt', { session: false }), (req, res
       res.status(400).json(err))
 });
 
+router.get("/:id", passport.authenticate('jwt', { session: false }), (req, res) => {
+  User.findById(req.params.id)
+    .then(user => {
+      let returnedUser = {
+        id: user._id,
+        name: user.name,
+        picture: user.picture,
+        bio: user.bio,
+        pet_name: user.pet_name
+      }
+      res.json(returnedUser)
+    })
+    .catch(err =>
+      res.status(400).json(err))
+});
+
 //PRIVATE AUTH
 router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
   res.json({
