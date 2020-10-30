@@ -13,9 +13,10 @@
 }
 
 .nav-bar.logged-in {
-    background: rgba(222, 184, 135, 0.604);
+    background: rgba(46, 139, 86, 0.556);
     border-bottom: .5px black ridge;
 }
+
 
 .nav-header {
     cursor: pointer;
@@ -31,6 +32,7 @@
     align-items: center;
     color: black;
     font-size: 35px;
+    padding-left: 12px;
 }
 
 .nav-header:hover {
@@ -71,5 +73,5 @@
 
 .logout-button:hover {
     cursor: pointer;
-    color: burlywood;
+    color: slategray;
 }

@@ -8,12 +8,40 @@
 }
 
 .profile-container .events-list {
-    top: 55vh;
+    display: flex;
+    flex-direction: column;
 }
 
-/* .profile-events {
-    display: inline-flex;
-    position: relative;
-    margin-top: 50px;
-    overflow: scroll;
+/* .profile-container .event-item {
+    margin-top: 0px;
 } */
+
+.profile-events {
+    height: 100vh;
+}
+
+.profile-box {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 20px;
+    background: rgba(119, 136, 153, 0.508);
+    border-radius: 5px;
+    width: 70%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-box .event-index-header {
+    margin-bottom: 0;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+    list-style: none;
+}

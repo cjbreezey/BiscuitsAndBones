@@ -39,8 +39,10 @@ class Events extends React.Component {
       return (
         <div className="events-index-container">
           <div className="index-left">
-            <h2 className="event-index-header">All Events</h2>
-            <Link className="create-event-link" to={'/new_event'}>Create an Event</Link>
+            <div className="create-event-box">
+              <h2 className="event-index-header">All Events</h2>
+              <Link className="create-event-link" to={'/new_event'}>Create an Event</Link>
+            </div>
           </div>
           <div className="index-right">
             <ul className="events-list">

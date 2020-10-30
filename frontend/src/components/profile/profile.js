@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ProfileItem from '../profile/profile_item';
-import { Link } from 'react-router-dom'
 import './profile.css'
 
 class Profile extends React.Component {
@@ -41,14 +40,16 @@ class Profile extends React.Component {
           return (
             <div className="profile-container">
               <div className="index-left">
-                <h3 className="event-index-header">About Me</h3>
-                <ul>
-                  <li>{this.props.currentUser.name}</li>
-                  <li>{this.state.bio}</li>
-                  <li>{this.state.pet_name}</li>
-                  <li>{this.editLink()}</li>
-                </ul>
-                <Link className="create-event-link" to={'/new_event'}>Create an Event</Link>
+                <div className="profile-box">
+                  <h3 className="event-index-header">About Me</h3>
+                  <ul className="profile-info">
+                    <li>{this.props.currentUser.name}</li>
+                    <li>{this.state.bio}</li>
+                    <li>{this.state.pet_name}</li>
+                    <li>{this.editLink()}</li>
+                  </ul>
+                  <Link className="create-event-link" to={'/new_event'}>Create an Event</Link>
+                </div>
               </div>
               <div className="index-right">
                 <div className="profile-events">
