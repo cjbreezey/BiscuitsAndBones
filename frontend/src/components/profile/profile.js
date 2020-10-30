@@ -6,9 +6,9 @@ import './profile.css'
 
 class Profile extends React.Component {
     constructor(props) {
-    debugger 
+    // debugger 
         super(props);
-        debugger
+        // debugger
         // this.state = {
         //   name: this.props.currentUser.name,
         //   bio: this.props.currentUser.bio,
@@ -19,7 +19,9 @@ class Profile extends React.Component {
     
     componentDidMount() {
         // console.log(this.props.currentUser.id)
+        // debugger
         this.props.fetchEvents();
+        this.props.fetchUser(this.props.profileUser);
         // this.props.fetchUser(this.props.currentUser.id)
     }
 
@@ -36,7 +38,9 @@ class Profile extends React.Component {
     }
     
     render() {
-      debugger
+      // debugger 
+      if (!this.props.profileInfo) return null;
+      
         if (this.props.events.length === 0) {
           return (
             <div className="profile-container">
@@ -44,9 +48,9 @@ class Profile extends React.Component {
                 <div className="profile-box">
                   <h3 className="event-index-header">About Me</h3>
                   <ul className="profile-info">
-                    <li>{this.props.currentUser.name}</li>
-                    <li>{this.props.currentUser.bio}</li>
-                    <li>{this.props.currentUser.pet_name}</li>
+                    <li>{this.props.profileInfo.name}</li>
+                    <li>{this.props.profileInfo.bio}</li>
+                    <li>{this.props.profileInfo.pet_name}</li>
                     <li>{this.editLink()}</li>
                   </ul>
                   <Link className="create-event-link" to={'/new_event'}>Create an Event</Link>
@@ -66,9 +70,9 @@ class Profile extends React.Component {
                 <div className="profile-box">
                   <h3 className="event-index-header">About Me</h3>
                   <ul className="profile-info">
-                    <li>Name: {this.props.currentUser.name}</li>
-                    <li>Bio: {this.props.currentUser.bio}</li>
-                    <li>Pet Name: {this.props.currentUser.pet_name}</li>
+                    <li>Name: {this.props.profileInfo.name}</li>
+                    <li>Bio: {this.props.profileInfo.bio}</li>
+                    <li>Pet Name: {this.props.profileInfo.pet_name}</li>
                     <li>{this.editLink()}</li>
                   </ul>
                   <Link className="create-event-link" to={'/new_event'}>Create an Event</Link>

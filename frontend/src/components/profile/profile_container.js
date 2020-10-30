@@ -4,12 +4,16 @@ import { fetchUser } from '../../actions/users_actions';
 import Profile from './profile';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
+  // debugger
+  const profileUser = ownProps.match.params.user_id
+  const profileInfo = state.users[profileUser] 
   const currentUser = state.session.user
   const events = Object.values(state.events).filter(event => event.host_id === ownProps.match.params.user_id)
   return {
     events,
-    currentUser
+    currentUser,
+    profileUser,
+    profileInfo
   };
 };
 
@@ -17,7 +21,7 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchEvents: () => dispatch(fetchEvents()),
     deleteEvent: (id) => dispatch(deleteEvent(id)),
-    // fetchUser: (id) => dispatch(fetchUser(id))
+    fetchUser: (id) => dispatch(fetchUser(id))
   };
 };
 

@@ -8,7 +8,7 @@ import { GoogleApiWrapper, Map, InfoWindow, Marker } from 'google-maps-react'
 class EventCreate extends React.Component {
   constructor(props) {
       super(props);
-      debugger
+      // debugger
       this.state = {
           title: "",
           description: "",
@@ -44,7 +44,7 @@ class EventCreate extends React.Component {
       lat: this.state.mapCenter.lat,
       lng: this.state.mapCenter.lng
     };
-    debugger
+    // debugger
     this.props.createEvent(event)
     this.setState({title: ''})
     this.setState({description: ''})
@@ -65,7 +65,7 @@ class EventCreate extends React.Component {
     geocodeByAddress(address)
       .then(results => getLatLng(results[0]))
       .then(latLng => {
-        debugger
+        // debugger
         console.log('Success', latLng);
         this.setState({ address });
         this.setState({ mapCenter: latLng });

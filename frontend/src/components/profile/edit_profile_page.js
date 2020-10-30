@@ -3,7 +3,7 @@ import './edit_profile.css';
 
 class EditProfilePage extends React.Component {
     constructor(props) {
-        debugger 
+        // debugger 
         super(props);
         this.state = this.props.currentUser;
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -11,7 +11,7 @@ class EditProfilePage extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
-        debugger
+        // debugger
         // let user = {
         //     name: this.state.name,
         //     bio: this.state.bio,
@@ -31,7 +31,7 @@ class EditProfilePage extends React.Component {
     }
 
     render() {
-        debugger 
+        // debugger 
         return (
             <div className="edit-form-container">
                 <div>
