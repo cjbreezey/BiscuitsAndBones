@@ -25,7 +25,7 @@ export default function(state = initialState, action) {
         isSignedIn: true
       }
     case RECEIVE_USER:
-      debugger
+      // debugger
       return {
         isAuthenticated: true,
         user: action.user

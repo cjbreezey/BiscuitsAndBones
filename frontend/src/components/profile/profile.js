@@ -6,19 +6,19 @@ import './profile.css'
 class Profile extends React.Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            events: [],
-            name: this.props.currentUser.name,
-            bio: "bio goes here",
-            picture: "",
-            pet_name: "pet name goes here"
-        }
+        debugger
+        // this.state = {
+        //   name: this.props.currentUser.name,
+        //   bio: this.props.currentUser.bio,
+        //   pet_name: this.props.currentUser.pet_name,
+        //   events: []
+        // }
     }
     
-    componentWillMount() {
+    componentDidMount() {
         // console.log(this.props.currentUser.id)
         this.props.fetchEvents();
+        // this.props.fetchUser(this.props.currentUser.id)
     }
 
     componentWillReceiveProps(newState) {
@@ -34,8 +34,22 @@ class Profile extends React.Component {
     }
     
     render() {
-        if (this.state.events.length === 0) {
-          return (<div className="profile-container">This user has no events</div>)
+      debugger
+        if (this.props.events.length === 0) {
+          return (
+              <div>
+                <div className="profile-container">
+                  <h3>About Me</h3>
+                  <ul>
+                    <li>{this.props.currentUser.name}</li>
+                    <li>{this.props.currentUser.bio}</li>
+                    <li>{this.props.currentUser.pet_name}</li>
+                      {this.editLink()}
+                  </ul>
+                </div>
+              <div className="profile-container">This user has no events</div>
+            </div>
+          )
         } else {
           return (
             <div className="profile-container">
