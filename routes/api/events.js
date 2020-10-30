@@ -54,13 +54,6 @@ router.post('/',
       newEvent.save().then(event => res.json(event));
 });
 
-  router.delete("/:eventid", passport.authenticate('jwt', { session: false }),
-  (req, res) => {
-    Event.deleteOne({ _id: req.params.eventId })
-      .then (e => {res.json(e)}) 
-      .catch(e => res.status(404).json({ noeventfound: 'No Event Found' }))
-});
-
   router.patch("/:id", (req, res) => {
     debugger
     const filter = {_id: req.params.id};
@@ -82,14 +75,6 @@ router.post('/',
     })
     // .catch(err => res.status(404).json(err));
   }) 
-
-router.delete("/:eventid", passport.authenticate('jwt', { session: false }),
-    (req, res) => {
-      Event.deleteOne({ _id: req.params.eventid })
-        .then(e => { res.json(e) })
-        .catch(e => res.status(404).json({ noeventfound: 'No Event Found' }))
-    }
-);
 
 router.delete("/:eventid", passport.authenticate('jwt', { session: false }),
   (req, res) => {

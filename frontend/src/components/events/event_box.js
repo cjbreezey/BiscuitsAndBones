@@ -1,6 +1,7 @@
 import {Link} from 'react-router-dom'
 import React from 'react';
 import EditEvent from './edit_event'
+import { GoogleApiWrapper, Map, InfoWindow, Marker } from 'google-maps-react'
 
 class EventBox extends React.Component {
   constructor(props) {
@@ -13,6 +14,7 @@ class EventBox extends React.Component {
   // handleclick(e) {
   //   this.props.deleteEvent(this.props.event._id)
   // }
+
   // componentDidMount() {
   //   this.props.fetchEvent(this.props.event._id);
   // }
@@ -45,14 +47,14 @@ class EventBox extends React.Component {
   
   render() {
     if (!this.props.event) return null;
-
+    debugger
     let deletebutton;
     if (this.props.currentUser && this.props.currentUser.id === this.props.event.host_id) {
       deletebutton = <button onClick={() => this.props.deleteEvent(this.props.event._id)}> X </button>
     } else {
       deletebutton = null
     }
-    
+    debugger
     // let joinButton = (
     //   <button onClick={() => this.props.joinEvent(this.props.event._id)}></button>
     // )
@@ -67,14 +69,29 @@ class EventBox extends React.Component {
         </div>
         <div id={`dropdown-slide-${this.props.event._id}`} className="event-dropdown">
           <ul id={`dropdown-items-${this.props.event._id}`} className="event-dropdown-items">
-            <li><EditEvent event={this.props.event} currentUser={this.props.currentUser} updateEvent={this.props.updateEvent} /></li>
             {/* <button onClick={() => this.props.joinEvent(this.props.event._id)}></button> */}
-            <li> This is going to be the map.</li>
+            <li><Map className="google-map" style={{ width: 'auto', height: '300px' }} google={this.props.google}
+              initialCenter={{
+                lat: this.props.event.lat,
+                lng: this.props.event.lng
+              }}
+              center={{
+                lat: this.props.event.lat,
+                lng: this.props.event.lng
+              }}
+            >
+              <Marker
+                position={{
+                  lat: this.props.event.lat,
+                  lng: this.props.event.lng
+                }}
+              />
+            </Map></li>
             <li>{this.props.event.location}</li>
-            <li>{this.props.event.date.slice(0, 10)}</li>
-            <li>{this.props.event.time}</li>
+            <li>{this.props.event.date.slice(0, 10)}, {this.props.event.time}</li>
             <li>{this.props.event.description}</li>
-            <li><Link to={`/profile/${this.props.event.host_id}`}>User</Link></li>
+            <li><Link to={`/profile/${this.props.event.host_id}`}>Host's Profile</Link></li>
+            <li><EditEvent event={this.props.event} currentUser={this.props.currentUser} updateEvent={this.props.updateEvent} /></li>
           </ul>
         </div>
       </div>
@@ -82,4 +99,7 @@ class EventBox extends React.Component {
   }
 }
 
-export default EventBox;
+// export default EventBox;
+export default GoogleApiWrapper({
+  apiKey: (process.env.REACT_APP_SECRET_KEY)
+})(EventBox)

@@ -16,7 +16,7 @@ class EditEvent extends React.Component {
     e.preventDefault();
     this.props.event.attendees.push(this.props.currentUser.id)
     this.props.updateEvent(this.props.event);
-    alert("Hello");
+    alert(`You have joined "${this.props.event.title}"`);
   }
 
   render() {
@@ -24,7 +24,7 @@ class EditEvent extends React.Component {
     return (
       <div className="join-event-container">
         <form className="join-event-form" onSubmit={this.handleSubmit}>
-            <input type="submit" value="Join Event" />
+            <input className="join-event-input" type="submit" value="Join Event" />
         </form>
         {/* <EventBox description={this.state.newEvent} /> */}
         {/* <EventMap /> */}
