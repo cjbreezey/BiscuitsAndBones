@@ -16,6 +16,7 @@ class NavBar extends React.Component {
   }
   
   loggedIn() {
+    // debugger 
     if (this.props.loggedIn) {
       return(
         <div className="nav-bar logged-in">

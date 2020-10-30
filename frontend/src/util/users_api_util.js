@@ -6,7 +6,7 @@ export const fetchUsers = () => {
 }
 
 export const fetchUser = (id) => {
-    debugger
+    // debugger
     return axios.get(`/api/users/${id}`)
 }
 

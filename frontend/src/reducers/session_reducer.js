@@ -24,12 +24,12 @@ export default function(state = initialState, action) {
         ...state,
         isSignedIn: true
       }
-    case RECEIVE_USER:
-      // debugger
-      return {
-        isAuthenticated: true,
-        user: action.user
-      }
+    // case RECEIVE_USER:
+    //   // debugger
+    //   return {
+    //     isAuthenticated: true,
+    //     user: action.user
+    //   }
       // return Object.assign({}, state, { [action.user.id]: action.user })
     default:
       return state;

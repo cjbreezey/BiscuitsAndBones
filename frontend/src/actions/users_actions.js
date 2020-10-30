@@ -10,10 +10,13 @@ export const receiveUsers = users => ({
     users
 })
 
-export const receiveUser = user => ({
-    type: RECEIVE_USER,
-    user
-})
+export const receiveUser = user => {
+    console.log(user)
+    return {
+        type: RECEIVE_USER,
+        user
+    }
+}
 
 export const receiveUserErrors = errors => ({
     type: RECEIVE_USER_ERRORS,
@@ -32,7 +35,7 @@ export const fetchUsers = () => dispatch => {
 }
 
 export const fetchUser = (id) => dispatch => {
-    debugger
+    // debugger
     return UsersAPIUtil.fetchUser(id).then(
         (user) => (dispatch(receiveUser(user))),
         (err) => dispatch(receiveUserErrors(err.response.data)))

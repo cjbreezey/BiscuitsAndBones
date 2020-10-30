@@ -6,7 +6,7 @@ import { withRouter } from 'react-router-dom'
 import NavBar from './navbar';
 
 const mapStateToProps = (state, ownProps) => {
-debugger 
+// debugger 
   return {
     // profileUser: ownProps.match.params.user_id,
     loggedIn: state.session.isAuthenticated,
