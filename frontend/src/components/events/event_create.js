@@ -91,8 +91,10 @@ class EventCreate extends React.Component {
                         placeholder="Description..."
                     />
                     <br />
-                    <input className="create-event-input"
+                    <input 
+                      className="create-event-input"
                       type="date"
+                      id="event-date"
                       value={this.state.date}
                       onChange={this.update('date')}
                     />

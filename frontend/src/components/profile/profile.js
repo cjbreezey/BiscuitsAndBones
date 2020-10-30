@@ -5,6 +5,7 @@ import './profile.css'
 
 class Profile extends React.Component {
     constructor(props) {
+    debugger 
         super(props);
         debugger
         // this.state = {

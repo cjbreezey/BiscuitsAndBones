@@ -8,7 +8,7 @@ mongoose.set('useFindAndModify', false);
 
 router.get('/', (req, res) => {
     Event.find()
-        .sort({ date: -1 })
+        .sort({ date: 1 })
         .then(events => res.json(events))
         .catch(err => res.status(404).json({ noeventsfound: 'No events found' }));
 });

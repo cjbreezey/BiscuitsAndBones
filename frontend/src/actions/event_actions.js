@@ -56,7 +56,7 @@ export const deleteEvent = eventId => dispatch => {
 }
 
 export const updateEvent = event => dispatch => {
-  debugger 
+  // debugger 
   return EventApiUtil.updateEvent(event)
     .then(event => dispatch(receiveEvent(event)))
     .catch(err => console.log(err)) 
