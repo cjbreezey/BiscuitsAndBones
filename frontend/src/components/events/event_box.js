@@ -14,6 +14,7 @@ class EventBox extends React.Component {
   // handleclick(e) {
   //   this.props.deleteEvent(this.props.event._id)
   // }
+
   // componentDidMount() {
   //   this.props.fetchEvent(this.props.event._id);
   // }
@@ -46,14 +47,14 @@ class EventBox extends React.Component {
   
   render() {
     if (!this.props.event) return null;
-
+    debugger
     let deletebutton;
     if (this.props.currentUser && this.props.currentUser.id === this.props.event.host_id) {
       deletebutton = <button onClick={() => this.props.deleteEvent(this.props.event._id)}> X </button>
     } else {
       deletebutton = null
     }
-    
+    debugger
     // let joinButton = (
     //   <button onClick={() => this.props.joinEvent(this.props.event._id)}></button>
     // )
