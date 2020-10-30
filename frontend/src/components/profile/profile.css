@@ -11,13 +11,54 @@
     background-size: cover;
 }
 
-.profile-container .events-list {
+.profile-container > .events-list {
     display: flex;
     flex-direction: column;
 }
 
-.profile-events {
-    height: 100vh;
+.profile-upcoming-events {
+    height: 50vh;
+}
+
+.profile-upcoming-events > h3 {
+    border-bottom: 1px solid white;
+    position: relative;
+    left: 10px;
+    color: white;
+    padding-left: 25px;
+    margin-top: 55px;
+    margin-bottom: 5px;
+    width: 95%;
+    font-family: Pacifico;
+}
+
+.profile-upcoming-events > .events-list {
+    top: 0;
+    height: 100%;
+    position: relative;
+}
+
+.profile-past-events > h3 {
+    border-bottom: 1px solid white;
+    position: relative;
+    left: 10px;
+    color: white;
+    padding-left: 25px;
+    margin-top: 55px;
+    margin-bottom: 5px;
+    width: 95%;
+    font-family: Pacifico;
+}
+
+.profile-past-events {
+    height: 30vh;
+    margin-top: -20px;
+}
+
+.profile-past-events .events-list {
+    top: 0;
+    height: 100%;
+    position: relative;
 }
 
 .profile-box {
