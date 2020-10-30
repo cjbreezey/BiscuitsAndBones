@@ -56,13 +56,6 @@ class EventBox extends React.Component {
     }
     if (!this.props.event.date) return null
 
-    // let test = new Date().getDate() // test = 30
-    // // console.log(test)
-    // let today = new Date().setDate(test); // 
-    // console.log(today)
-    // let inputDate = new Date(this.props.event.date).setHours(0,0,0,0);
-    // console.log(inputDate)
-
     let day = new Date();
     let today = new Date(day.getFullYear(), day.getMonth(), day.getDate() - 1);
     let inputDate = new Date(this.props.event.date)
