@@ -7,6 +7,8 @@ const jwt = require('jsonwebtoken');
 const passport = require('passport');
 const validateSignUpInput = require('../../validation/signup');
 const validateLoginInput = require('../../validation/login');
+const validateUserUpdate = require('../../validation/update_user');
+// mongoose.set('useFindAndModify', false);
 
 //REGISTER
 router.post("/signup", (req, res) => {
@@ -31,7 +33,7 @@ router.post("/signup", (req, res) => {
           newUser
             .save()
             .then(user => {
-              const payload = { id: user.id, name: user.name };
+              const payload = { id: user.id, name: user.name, bio: null };
               jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
                 res.json({
                   success: true,
@@ -61,7 +63,7 @@ router.post("/login", (req, res) => {
     }
     bcrypt.compare(password, user.password).then(isMatch => {
       if (isMatch) {
-        const payload = { id: user.id, name: user.name };
+        const payload = { id: user.id, name: user.name, bio: user.bio, pet_name: user.pet_name };
         jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
           res.json({
             success: true,
@@ -74,6 +76,46 @@ router.post("/login", (req, res) => {
       }
     });
   });
+});
+
+router.patch("/:id", passport.authenticate('jwt', { session: false }), (req, res) => {
+  debugger
+  const { errors, isValid } = validateUserUpdate(req.body);
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
+  let filter = { _id: req.user.id };
+  let update = req.body;
+  User.findOneAndUpdate(filter, update, { new: true })
+    .then(user => {
+      debugger
+      let updateUser = {
+        id: user._id,
+        name: user.name,
+        picture: user.picture,
+        bio: user.bio,
+        pet_name: user.pet_name
+      }
+      res.json(updateUser)
+    })
+    .catch(err =>
+      res.status(400).json(err))
+});
+
+router.get("/:id", passport.authenticate('jwt', { session: false }), (req, res) => {
+  User.findById(req.params.id)
+    .then(user => {
+      let returnedUser = {
+        id: user._id,
+        name: user.name,
+        picture: user.picture,
+        bio: user.bio,
+        pet_name: user.pet_name
+      }
+      res.json(returnedUser)
+    })
+    .catch(err =>
+      res.status(400).json(err))
 });
 
 //PRIVATE AUTH

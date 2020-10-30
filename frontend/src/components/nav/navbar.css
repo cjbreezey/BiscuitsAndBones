@@ -8,12 +8,15 @@
     background: transparent;
     font-family: 'Pacifico', cursive;
     z-index: 5;
-    border-bottom: .5px black ridge;
+    display: flex;
+    justify-content: space-between;
 }
 
 .nav-bar.logged-in {
-    background: white;
+    background: rgba(46, 139, 86, 0.556);
+    border-bottom: .5px black ridge;
 }
+
 
 .nav-header {
     cursor: pointer;
@@ -22,27 +25,30 @@
     display: inline-flex;
     justify-content: flex-start;
     height: 100%;
-    width: 60%;
+    width: fit-content;
     left: 5px;
     margin-top: 0px;
     margin-bottom: 0px;
     align-items: center;
     color: black;
     font-size: 35px;
+    padding-left: 12px;
+}
+
+.nav-header:hover {
+    color: white;
+    cursor: pointer;
 }
 
 .nav-links {
     position: relative;
     display: inline-flex;
     justify-content: flex-end;
-    width: 40%;
+    min-width: max-content;
     height: 100%;
-    top: -22px;
 }
 
 .nav-links a {
-    position: relative;
-    top: 15px;
     text-decoration: none;
     color: black;
     margin-right: 1em;
@@ -50,22 +56,22 @@
 }
 
 .nav-links a:hover {
-    color: forestgreen;
+    color: white;
 }
 
 .logout-button {
     margin-right: 1em;
+    padding: 0;
     display: flex;
-    padding-top: 13.5px;
     background: transparent;
     border: none;
     outline: none;
     font-family: Pacifico;
     font-size: 25px;
-    color: forestgreen;
+    color: white;
 }
 
 .logout-button:hover {
     cursor: pointer;
-    color: burlywood;
+    color: slategray;
 }
