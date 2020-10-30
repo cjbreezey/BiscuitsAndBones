@@ -24,7 +24,7 @@ class EditEvent extends React.Component {
     return (
       <div className="join-event-container">
         <form className="join-event-form" onSubmit={this.handleSubmit}>
-            <input type="submit" value="Join Event" />
+            <input className="join-event-input" type="submit" value="Join Event" />
         </form>
         {/* <EventBox description={this.state.newEvent} /> */}
         {/* <EventMap /> */}

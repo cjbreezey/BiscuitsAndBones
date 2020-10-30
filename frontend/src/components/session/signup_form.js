@@ -74,7 +74,7 @@ class SignupForm extends React.Component {
           <form className="login-signup" onSubmit={this.nameSubmit}>
             <div className="signup-form">
               <br/>
-                <input 
+                <input autofocus
                   className="session-form"
                   type="text"
                   value={this.state.email}

@@ -76,7 +76,7 @@ class LoginForm extends React.Component {
           <p className="session-header">Login</p>
           <form className="login-signup" onSubmit={this.handleSubmit}>
             <div className="signup-form">
-                <input 
+                <input autofocus
                   className="session-form"
                   type="text"
                   value={this.state.email}

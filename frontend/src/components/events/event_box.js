@@ -68,7 +68,6 @@ class EventBox extends React.Component {
         </div>
         <div id={`dropdown-slide-${this.props.event._id}`} className="event-dropdown">
           <ul id={`dropdown-items-${this.props.event._id}`} className="event-dropdown-items">
-            <li><EditEvent event={this.props.event} currentUser={this.props.currentUser} updateEvent={this.props.updateEvent} /></li>
             {/* <button onClick={() => this.props.joinEvent(this.props.event._id)}></button> */}
             <li><Map className="google-map" style={{ width: 'auto', height: '300px' }} google={this.props.google}
               initialCenter={{
@@ -88,10 +87,10 @@ class EventBox extends React.Component {
               />
             </Map></li>
             <li>{this.props.event.location}</li>
-            <li>{this.props.event.date.slice(0, 10)}</li>
-            <li>{this.props.event.time}</li>
+            <li>{this.props.event.date.slice(0, 10)}, {this.props.event.time}</li>
             <li>{this.props.event.description}</li>
             <li><Link to={`/profile/${this.props.event.host_id}`}>User</Link></li>
+            <li><EditEvent event={this.props.event} currentUser={this.props.currentUser} updateEvent={this.props.updateEvent} /></li>
           </ul>
         </div>
       </div>
