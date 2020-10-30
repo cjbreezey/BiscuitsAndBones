@@ -232,12 +232,14 @@ input.join-event-input[type=submit] {
     border: 1px solid black;
 }
 
-
 .create-inputs {
+    width: fit-content;
     position: relative;
     top: 5.5vh;
     left: 225px;
     z-index: 5;
+    display: flex;
+    flex-direction: column;
 }
 
 .title-bar {
@@ -251,16 +253,6 @@ input.join-event-input[type=submit] {
 .title-bar h3:nth-child(2) {
     color: rgb(0, 95, 95);
 }
-
-/* .create-inputs {
-    display: flex;
-    flex-direction: column;
-}
-
-/* .create-event-input {
-    display: flex;
-    margin-left: 40px;
-} */
 
 .create-event-container {
     position: relative;
@@ -300,7 +292,6 @@ input.create-event-input[type=text] {
     width: 200px;
     color: black;
     border-radius: 4px;
-    cursor: pointer;
     position: relative;
     font-family: 'Oswald';
     text-align: center;
@@ -308,11 +299,11 @@ input.create-event-input[type=text] {
 }
 
 .description-input {
+    cursor: text;
     height: 100px;
     width: 200px;
     color: black;
     border-radius: 4px;
-    cursor: pointer;
     position: relative;
     font-family: 'Oswald';
     text-align: center;

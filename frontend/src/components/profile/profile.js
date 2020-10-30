@@ -75,7 +75,7 @@ class Profile extends React.Component {
                 </div>
               </div>
               <div className="index-right">
-                <div className="profile-events">
+                <div className="profile-upcoming-events">
                   <h3>Upcoming Events</h3>
                   <ul className="events-list">
                     {this.props.events.map(event => (
@@ -83,7 +83,7 @@ class Profile extends React.Component {
                     ))}
                   </ul>
                 </div>
-                <div className="profile-events">
+                <div className="profile-past-events">
                   <h3>Past Events</h3>
                   <ul className="events-list">
                     {this.props.events.map(event => (
