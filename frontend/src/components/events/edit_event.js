@@ -16,7 +16,7 @@ class EditEvent extends React.Component {
     e.preventDefault();
     this.props.event.attendees.push(this.props.currentUser.id)
     this.props.updateEvent(this.props.event);
-    alert("Hello");
+    alert(`You have joined "${this.props.event.title}"`);
   }
 
   render() {
