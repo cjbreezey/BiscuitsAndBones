@@ -47,42 +47,49 @@ class ProfileItem extends React.Component {
         } else {
             deletebutton = null
         }
-      
+
         if (!this.props.event.date) return null
-        
-        return (
+
+      let day = new Date();
+      let today = new Date(day.getFullYear(), day.getMonth(), day.getDate() - 1);
+      let inputDate = new Date(this.props.event.date)
+      if (today >= inputDate) {
+        return null
+      } else {
+          return (
             <div className="event-item-container">
-                <div className="event-item">
-                    <h3 onClick={this.dropdownClick} >{this.props.event.title}</h3>
-                    {deletebutton}
-                </div>
-                <div id={`dropdown-slide-${this.props.event._id}`} className="event-dropdown">
-                    <ul id={`dropdown-items-${this.props.event._id}`} className="event-dropdown-items">
-                        <li><Map className="google-map" style={{ width: 'auto', height: '300px' }} google={this.props.google}
-                          initialCenter={{
-                            lat: this.props.event.lat,
-                            lng: this.props.event.lng
-                          }}
-                          center={{
-                            lat: this.props.event.lat,
-                            lng: this.props.event.lng
-                          }}
-                        >
-                          <Marker
-                            position={{
+                  <div className="event-item">
+                      <h3 onClick={this.dropdownClick} >{this.props.event.title}</h3>
+                      {deletebutton}
+                  </div>
+                  <div id={`dropdown-slide-${this.props.event._id}`} className="event-dropdown">
+                      <ul id={`dropdown-items-${this.props.event._id}`} className="event-dropdown-items">
+                          <li><Map className="google-map" style={{ width: 'auto', height: '300px' }} google={this.props.google}
+                            initialCenter={{
                               lat: this.props.event.lat,
                               lng: this.props.event.lng
                             }}
-                          />
-                        </Map></li>
-                        <li>{this.props.event.location}</li>
-                        <li>{this.props.event.date.slice(0, 10)}</li>
-                        <li>{this.props.event.time}</li>
-                        <li>{this.props.event.description}</li>
-                    </ul>
-                </div>
-            </div>
-        );
+                            center={{
+                              lat: this.props.event.lat,
+                              lng: this.props.event.lng
+                            }}
+                          >
+                            <Marker
+                              position={{
+                                lat: this.props.event.lat,
+                                lng: this.props.event.lng
+                              }}
+                            />
+                          </Map></li>
+                          <li>{this.props.event.location}</li>
+                          <li>{this.props.event.date.slice(0, 10)}</li>
+                          <li>{this.props.event.time}</li>
+                          <li className="index-event-description">{this.props.event.description}</li>
+                      </ul>
+                  </div>
+              </div>
+          );
+        }
     }
 }
 

@@ -5,19 +5,60 @@
     flex-direction: row;
     height: 100vh;
     width: 100vw;
+    background-image: url(./background3.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
-.profile-container .events-list {
+.profile-container > .events-list {
     display: flex;
     flex-direction: column;
 }
 
-/* .profile-container .event-item {
-    margin-top: 0px;
-} */
+.profile-upcoming-events {
+    height: 50vh;
+}
 
-.profile-events {
-    height: 100vh;
+.profile-upcoming-events > h3 {
+    border-bottom: 1px solid white;
+    position: relative;
+    left: 10px;
+    color: white;
+    padding-left: 25px;
+    margin-top: 55px;
+    margin-bottom: 5px;
+    width: 95%;
+    font-family: Pacifico;
+}
+
+.profile-upcoming-events > .events-list {
+    top: 0;
+    height: 100%;
+    position: relative;
+}
+
+.profile-past-events > h3 {
+    border-bottom: 1px solid white;
+    position: relative;
+    left: 10px;
+    color: white;
+    padding-left: 25px;
+    margin-top: 55px;
+    margin-bottom: 5px;
+    width: 95%;
+    font-family: Pacifico;
+}
+
+.profile-past-events {
+    height: 30vh;
+    margin-top: -20px;
+}
+
+.profile-past-events .events-list {
+    top: 0;
+    height: 100%;
+    position: relative;
 }
 
 .profile-box {
@@ -39,6 +80,7 @@
 }
 
 .profile-info {
+    font-family: Oswald;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,6 +88,12 @@
     list-style: none;
 }
 
-.profile-container li {
-    text-align: center;
+.profile-info li:last-child a {
+    text-decoration: none;
+    color: white;
 }
+
+.profile-info li:last-child:hover a {
+    color: black;
+}
+

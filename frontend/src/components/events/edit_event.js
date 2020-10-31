@@ -11,15 +11,14 @@ class EditEvent extends React.Component {
   }
 
 
-
   handleSubmit(e) {
     e.preventDefault();
     this.props.event.attendees.push(this.props.currentUser.id)
     this.props.updateEvent(this.props.event);
+    alert(`You have joined "${this.props.event.title}"`)
   }
 
   render() {
-    debugger
     let button;
     {this.props.event.attendees.map((attendee) => {
       if (attendee === this.props.currentUser.id){
@@ -33,12 +32,6 @@ class EditEvent extends React.Component {
       }
     })}
 
-    // let join;
-    // let remove;
-    //   if (this.props.event && this.props.event.attendees.include(""))
-    //    <form className="join-event-form" onSubmit={this.handleSubmit}>
-    //         <input className="join-event-input" type="submit" value="Join Event" />
-    //     </form>
     return (
       <div className="join-event-container">
         {button}

@@ -3,6 +3,7 @@ import './edit_profile.css';
 
 class EditProfilePage extends React.Component {
     constructor(props) {
+        // debugger 
         super(props);
         this.state = this.props.currentUser;
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -10,7 +11,7 @@ class EditProfilePage extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
-        debugger
+        // debugger
         // let user = {
         //     name: this.state.name,
         //     bio: this.state.bio,
@@ -26,10 +27,12 @@ class EditProfilePage extends React.Component {
     }
 
     routeToProfile() {
+        debugger
         this.props.history.push(`/profile/${this.props.currentUser.id}`)
     }
 
     render() {
+        // debugger 
         return (
             <div className="edit-form-container">
                 <div>
@@ -45,7 +48,6 @@ class EditProfilePage extends React.Component {
                             <input type="text" value={this.state.pet_name} onChange={this.update('pet_name')} />
                         </label> 
                         <button>Submit</button>
-
                     </form>
                 </div>
             </div>

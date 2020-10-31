@@ -14,12 +14,16 @@ class Events extends React.Component {
   }
 
   componentDidMount() {
+    debugger 
     this.props.fetchEvents();
- 
+    // this.props.fetchUsers();
+    
   }
 
   componentWillMount() {
+    debugger 
     this.props.fetchEvents();
+    this.props.fetchUsers();
   }
 
   componentWillReceiveProps(newState) {
