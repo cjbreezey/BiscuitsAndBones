@@ -10,10 +10,12 @@ export const receiveEvents = events => ({
     events
 });
 
-export const receiveEvent = event => ({
+export const receiveEvent = event => {
+  return {
     type: RECEIVE_EVENT,
     event
-});
+  }
+};
 
 export const receiveUserEvents = events => ({
     type: RECEIVE_USER_EVENTS,
@@ -56,9 +58,8 @@ export const deleteEvent = eventId => dispatch => {
 }
 
 export const updateEvent = event => dispatch => {
-  // debugger 
   return EventApiUtil.updateEvent(event)
-    .then(event => dispatch(receiveEvent(event)))
+    .then(event => dispatch(receiveEvent(event.data)))
     .catch(err => console.log(err)) 
 }
 

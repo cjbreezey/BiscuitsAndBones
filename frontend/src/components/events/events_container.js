@@ -4,7 +4,6 @@ import { fetchUsers } from '../../actions/users_actions'
 import Events from './events';
 
 const mapStateToProps = (state) => {
-  debugger
   return {
     currentUser: state.session.user,
     events: Object.values(state.events)

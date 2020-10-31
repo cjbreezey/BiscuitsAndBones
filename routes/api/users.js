@@ -64,7 +64,7 @@ router.post("/login", (req, res) => {
     bcrypt.compare(password, user.password).then(isMatch => {
       if (isMatch) {
         const payload = { id: user.id, name: user.name, bio: user.bio, pet_name: user.pet_name };
-        jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
+        jwt.sign(payload, keys.secretOrKey, { expiresIn: 9000 }, (err, token) => {
           res.json({
             success: true,
             token: "Bearer " + token
@@ -79,7 +79,6 @@ router.post("/login", (req, res) => {
 });
 
 router.patch("/:id", passport.authenticate('jwt', { session: false }), (req, res) => {
-  // debugger
   const { errors, isValid } = validateUserUpdate(req.body);
   if (!isValid) {
     return res.status(400).json(errors);
@@ -88,7 +87,6 @@ router.patch("/:id", passport.authenticate('jwt', { session: false }), (req, res
   let update = req.body;
   User.findOneAndUpdate(filter, update, { new: true })
     .then(user => {
-      // debugger
       let updateUser = {
         id: user._id,
         name: user.name,

@@ -16,13 +16,12 @@ class NavBar extends React.Component {
   }
   
   loggedIn() {
-    // debugger 
     if (this.props.loggedIn) {
       return(
         <div className="nav-bar logged-in">
           <Link className="nav-header" to={'/'}>Biscuits and Bones</Link>
           <div className="nav-links">
-                <Link to={'/events'}>All Playdates</Link>
+                <Link to={'/'}>All Playdates</Link>
                 <Link to={`/profile/${this.props.currentUser.id}`}>Profile</Link>
                 <button className="logout-button" onClick={this.logoutUser}>Logout</button>
           </div>

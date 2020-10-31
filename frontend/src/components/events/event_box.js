@@ -47,7 +47,6 @@ class EventBox extends React.Component {
   
   render() {
     if (!this.props.event) return null;
-    // debugger
     let deletebutton;
     if (this.props.currentUser && this.props.currentUser.id === this.props.event.host_id) {
       deletebutton = <button onClick={() => this.props.deleteEvent(this.props.event._id)}> X </button>
