@@ -25,9 +25,9 @@ router.get('/:id', (req, res) => {
       );
 });
 
-  router.delete("/:reviewId", passport.authenticate('jwt', { session: false }),
+  router.delete("/:reviewid", passport.authenticate('jwt', { session: false }),
   (req, res) => {
-    Event.deleteOne({ _id: req.params.reviewid })
+    Review.deleteOne({ _id: req.params.reviewid })
       .then (e => {res.json(e)}) 
       .catch(e => res.status(404).json({ noreviewfound: 'No Review Found' }))
   }
@@ -52,7 +52,7 @@ router.post(
 
         const newReview = new Review({
             reviewer_id: req.user.id, 
-            reviewee_id: req.user.id,
+            event_id: req.body.event.id,
             rating: req.body.rating,
             description: req.body.description
         });

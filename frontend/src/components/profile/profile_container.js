@@ -4,7 +4,6 @@ import { fetchUser } from '../../actions/users_actions';
 import Profile from './profile';
 
 const mapStateToProps = (state, ownProps) => {
-  // debugger
   const profileUser = ownProps.match.params.user_id
   const profileInfo = state.users[profileUser] 
   const currentUser = state.session.user

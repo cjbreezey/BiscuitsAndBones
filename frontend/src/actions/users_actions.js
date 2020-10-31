@@ -28,24 +28,20 @@ export const clearUserErrors = () => ({
 })
 
 export const fetchUsers = () => dispatch => {
-    // debugger
     return UsersAPIUtil.fetchUsers().then(
         (payload) => (dispatch(receiveUsers(payload))),
         (err) => dispatch(receiveUserErrors(err.response.data)))
 }
 
 export const fetchUser = (id) => dispatch => {
-    // debugger
     return UsersAPIUtil.fetchUser(id).then(
         (user) => (dispatch(receiveUser(user))),
         (err) => dispatch(receiveUserErrors(err.response.data)))
 }
 
 export const updateUser = (user) => dispatch => {
-    // debugger
     return UsersAPIUtil.updateUser(user).then((payload) => {
-        // debugger
-        dispatch(receiveUser(payload))
+            dispatch(receiveUser(payload))
     },
         (err) => dispatch(receiveUserErrors(err.response.data)))
 }

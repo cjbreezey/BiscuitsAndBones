@@ -6,9 +6,7 @@ import './profile.css'
 
 class Profile extends React.Component {
     constructor(props) {
-    // debugger 
         super(props);
-        // debugger
         // this.state = {
         //   name: this.props.currentUser.name,
         //   bio: this.props.currentUser.bio,
@@ -19,7 +17,6 @@ class Profile extends React.Component {
     
     componentDidMount() {
         // console.log(this.props.currentUser.id)
-        // debugger
         this.props.fetchEvents();
         this.props.fetchUser(this.props.profileUser);
         // this.props.fetchUser(this.props.currentUser.id)
@@ -38,7 +35,6 @@ class Profile extends React.Component {
     }
     
     render() {
-      // debugger 
       if (!this.props.profileInfo) return null;
       
         if (this.props.events.length === 0) {
