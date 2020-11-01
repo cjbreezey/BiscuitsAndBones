@@ -55,13 +55,13 @@ router.post('/',
 });
 
   router.patch("/:id", (req, res) => {
-    // debugger
-    const filter = {_id: req.params.id};
+    const filter = { _id: req.params.id };
     const update = req.body;
-
+    
     Event.findOneAndUpdate(filter, update, {new:true}).then(event => {
       const updatedEvent = {
-        host_id: event.user.id,
+        _id: event._id,
+        host_id: event.host_id,
         title: event.title,
         location: event.location,
         date: event.date,
@@ -73,7 +73,7 @@ router.post('/',
       }
       res.json(updatedEvent);
     })
-    // .catch(err => res.status(404).json(err));
+    .catch(err => res.status(404).json(err));
   }) 
 
 router.delete("/:eventid", passport.authenticate('jwt', { session: false }),

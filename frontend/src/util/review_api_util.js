@@ -4,8 +4,8 @@ export const getReviews = () => {
   return axios.get('/api/reviews')
 };
 
-export const createReview = review => {
-  return axios.post('/api/reviews', review)
+export const createReview = data => {
+  return axios.post('/api/reviews', data)
 };
 
 export const deleteReview = id => {
