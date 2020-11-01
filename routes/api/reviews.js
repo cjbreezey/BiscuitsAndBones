@@ -45,14 +45,14 @@ router.post(
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
         const { errors, isValid } = validateReviewInput(req.body);
-
+      debugger
         if (!isValid) {
             return res.status(400).json(errors);
         }
 
         const newReview = new Review({
-            reviewer_id: req.user.id, 
-            event_id: req.body.event.id,
+            reviewer_id: req.body.reviewer_id, 
+            event_id: req.body.event_id,
             rating: req.body.rating,
             description: req.body.description
         });

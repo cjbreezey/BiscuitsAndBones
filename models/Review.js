@@ -6,9 +6,9 @@ const ReviewSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "users",
   },
-  reviewee_id: {
+    event_id: {
     type: Schema.Types.ObjectId,
-    required: "users",
+    ref: "events",
   },
   rating: {
     type: Number,

@@ -14,7 +14,8 @@ class ReviewsIndexItem extends React.Component {
         } else {
             deletebutton = null
         }
-        if (this.props.review.event_id === this.props.event.id){
+        if (this.props.review.event_id === this.props.event._id){
+            debugger
            return  (<div>
                 <li>{this.props.review.rating}</li>
                 <li>{this.props.review.description}</li>

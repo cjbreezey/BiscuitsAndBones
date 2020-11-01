@@ -4,12 +4,16 @@ export const RECEIVE_REVIEWS = "RECEIVE_REVIEWS";
 export const RECEIVE_REVIEW = "RECEIVE_REVIEW";
 export const REMOVE_REVIEW = "REMOVE_REVIEW";
 
-export const receiveReviews = reviews => ({
+export const receiveReviews = reviews => {
+  debugger
+  return {
     type: RECEIVE_REVIEWS,
     reviews
-});
+  }
+};
 
 export const receiveReview = review => {
+  // debugger
   return {
     type: RECEIVE_REVIEW,
     review
@@ -22,6 +26,7 @@ export const removeReview = reviewId => ({
 })
 
 export const fetchReviews = () => dispatch => {
+  debugger
   return ReviewApiUtil.getReviews()
     .then(reviews => dispatch(receiveReviews(reviews)))
     .catch(err => console.log(err))
@@ -29,6 +34,7 @@ export const fetchReviews = () => dispatch => {
 
 
 export const createReview = data => dispatch => {
+  // debugger
   return ReviewApiUtil.createReview(data)
     .then(payload => dispatch(receiveReview(payload)))
     .catch(err => console.log(err))

@@ -88,7 +88,7 @@ class Profile extends React.Component {
                   <h3>Past Events</h3>
                   <ul className="events-list">
                     {this.props.events.map(event => (
-                      <PastProfileItem key={event._id} event={event} fetchReviews={this.props.fetchReviews} deleteReview={this.props.deleteReview} currentUser={this.props.currentUser} deleteEvent={this.props.deleteEvent} />
+                      <PastProfileItem key={event._id} reviews={this.props.reviews} event={event} fetchReviews={this.props.fetchReviews} deleteReview={this.props.deleteReview} currentUser={this.props.currentUser} createReview={this.props.createReview} deleteEvent={this.props.deleteEvent} />
                     ))}
                   </ul>
                 </div>

@@ -1,10 +1,12 @@
 import axios from 'axios';
 
 export const getReviews = () => {
+  // debugger
   return axios.get('/api/reviews')
 };
 
 export const createReview = data => {
+  // debugger
   return axios.post('/api/reviews', data)
 };
 
