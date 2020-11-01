@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom'
 import React from 'react';
 import { GoogleApiWrapper, Map, InfoWindow, Marker } from 'google-maps-react';
-import ReviewsIndex from '../reviews/reviews_index'
+import ReviewsIndex from '../reviews/reviews_index';
+import CreateReview from '../reviews/reviews_create';
 
 
 class PastProfileItem extends React.Component {
@@ -69,7 +70,7 @@ class PastProfileItem extends React.Component {
                 <div className="event-item-container">
                     <div className="event-item">
                         <h3 onClick={this.dropdownClick} >{this.props.event.title}</h3>
-                        {/* {deletebutton} */}
+                        <CreateReview currentUser={this.props.currentUser} event={this.props.event} createReview={this.props.createReview}/>
                     </div>
                     <div id={`dropdown-slide-${this.props.event._id}`} className="event-dropdown">
                         <ul id={`dropdown-items-${this.props.event._id}`} className="event-dropdown-items">
@@ -96,7 +97,7 @@ class PastProfileItem extends React.Component {
                             <li>{this.props.event.description}</li>
                         </ul>
                     </div>
-                     <ReviewsIndex event={this.props.event} fetchReviews={this.props.fetchReviews} currentUser={this.props.currentUser}  deleteReview={this.props.deleteReview}/>
+                     <ReviewsIndex event={this.props.event} reviews={this.props.reviews} fetchReviews={this.props.fetchReviews} currentUser={this.props.currentUser}  deleteReview={this.props.deleteReview}/>
                 </div>
             );
         }

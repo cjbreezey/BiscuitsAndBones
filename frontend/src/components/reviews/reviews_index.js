@@ -8,7 +8,7 @@ class ReviewsIndex extends React.Component {
     super(props);
 
     this.state = {
-      reviews: []
+      reviews: this.props.reviews
     }
   }
 
@@ -23,11 +23,13 @@ class ReviewsIndex extends React.Component {
     // this.props.fetchUsers();
   }
 
-//   componentWillReceiveProps(newState) {
-//     this.setState({ events: newState.events });
-//   }
+  componentWillReceiveProps(newState) {
+      debugger
+    this.setState({ reviews: newState.reviews });
+  }
 
   render() {
+      debugger
     if (this.state.reviews.length === 0) {
       return (
       <div>
