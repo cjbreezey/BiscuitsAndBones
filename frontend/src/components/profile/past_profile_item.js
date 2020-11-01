@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import React from 'react';
-import { GoogleApiWrapper, Map, InfoWindow, Marker } from 'google-maps-react'
+import { GoogleApiWrapper, Map, InfoWindow, Marker } from 'google-maps-react';
+import ReviewsIndex from '../reviews/reviews_index'
 
 
 class PastProfileItem extends React.Component {
@@ -39,14 +40,23 @@ class PastProfileItem extends React.Component {
     }
 
     render() {
-        if (!this.props.event) return null;
+        // if (!this.props.event) return null;
 
-        let deletebutton;
-        if (this.props.currentUser && this.props.currentUser.id === this.props.event.host_id) {
-            deletebutton = <button onClick={() => this.props.deleteEvent(this.props.event._id)}> X </button>
-        } else {
-            deletebutton = null
-        }
+        // let deletebutton;
+        // if (this.props.currentUser && this.props.currentUser.id === this.props.event.host_id) {
+        //     deletebutton = <button onClick={() => this.props.deleteEvent(this.props.event._id)}> X </button>
+        // } else {
+        //     deletebutton = null
+        // }
+
+           // let deletebutton;
+        // if (this.props.currentUser && this.props.currentUser.id === this.props.event.host_id) {
+        //     deletebutton = <button onClick={() => this.props.deleteEvent(this.props.event._id)}> X </button>
+        // } else {
+        //     deletebutton = null
+        // }
+
+
         if (!this.props.event.date) return null
 
         let day = new Date();
@@ -59,7 +69,7 @@ class PastProfileItem extends React.Component {
                 <div className="event-item-container">
                     <div className="event-item">
                         <h3 onClick={this.dropdownClick} >{this.props.event.title}</h3>
-                        {deletebutton}
+                        {/* {deletebutton} */}
                     </div>
                     <div id={`dropdown-slide-${this.props.event._id}`} className="event-dropdown">
                         <ul id={`dropdown-items-${this.props.event._id}`} className="event-dropdown-items">
@@ -86,6 +96,7 @@ class PastProfileItem extends React.Component {
                             <li>{this.props.event.description}</li>
                         </ul>
                     </div>
+                     <ReviewsIndex event={this.props.event} fetchReviews={this.props.fetchReviews} currentUser={this.props.currentUser}  deleteReview={this.props.deleteReview}/>
                 </div>
             );
         }

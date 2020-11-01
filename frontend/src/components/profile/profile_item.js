@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 import React from 'react';
-import { GoogleApiWrapper, Map, InfoWindow, Marker } from 'google-maps-react'
+import { GoogleApiWrapper, Map, InfoWindow, Marker } from 'google-maps-react';
+
+
 
 
 class ProfileItem extends React.Component {
@@ -87,6 +89,7 @@ class ProfileItem extends React.Component {
                           <li className="index-event-description">{this.props.event.description}</li>
                       </ul>
                   </div>
+                   
               </div>
           );
         }
