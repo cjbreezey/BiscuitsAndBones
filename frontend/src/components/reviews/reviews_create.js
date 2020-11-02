@@ -3,7 +3,8 @@ import React from 'react'
 class ReviewCreate extends React.Component {
   constructor(props) {
       super(props);
-    this.handleSubmit = this.handleSubmit.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
+
       this.state = {
           rating: "",
           description: "",
@@ -12,7 +13,7 @@ class ReviewCreate extends React.Component {
       }
   }
 
-    update(field) {
+  update(field) {
     return (e) => this.setState({ [field]: e.currentTarget.value })
   }
 
@@ -29,19 +30,18 @@ class ReviewCreate extends React.Component {
     this.setState({rating: ''})
   }
 
+
   render(){
       return(
         <form>
-          <input 
-                type="text"
-                value={this.state.rating}
-                onChange={this.update('rating')}
-                />
+          <input type="text" value={this.state.rating} onChange={this.update('rating')} placeholder="Enter a rating from 1 - 5">
+          </input>
           <input 
                 type="text"
                 value={this.state.description}
                 onChange={this.update('description')}
-                    />
+                placeholder="Description"
+                />
             <button onClick={this.handleSubmit}> Create Review</button>
         </form>
       )
