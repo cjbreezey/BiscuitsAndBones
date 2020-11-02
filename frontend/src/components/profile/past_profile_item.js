@@ -22,6 +22,17 @@ class PastProfileItem extends React.Component {
         dropdown.classList.toggle('open')
 
         let dropdownItem = document.getElementById(`dropdown-items-${this.props.event._id}`)
+        let reviewsItems = document.getElementById(`reviews-slide-${this.props.event._id}`)
+       
+        if (reviewsItems.style.display === "") {
+            reviewsItems.style.display = "block";
+        }
+        else if (reviewsItems.style.display === "none") {
+            reviewsItems.style.display = "block";
+        } else {
+            reviewsItems.style.borderbottom = "none"
+            reviewsItems.style.display = "none";
+        }
 
         if (dropdownItem.style.display === "") {
             dropdownItem.style.borderbottom = "1px solid black"

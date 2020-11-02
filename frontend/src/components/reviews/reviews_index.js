@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import ReviewsIndexItem from '../reviews/reviews_index_item'
+import './reviews.css'
 
 
 class ReviewsIndex extends React.Component {
@@ -24,23 +25,22 @@ class ReviewsIndex extends React.Component {
   }
 
   componentWillReceiveProps(newState) {
-      debugger
     this.setState({ reviews: newState.reviews });
   }
 
   render() {
-      debugger
     if (this.state.reviews.length === 0) {
       return (
       <div>
-          <h1>There are no Reviews</h1>
+          <h1 className="empty-review-index-header">There are no Reviews</h1>
       </div>)
 
     } else {
       return (
         <div>
-              <h2>All Reviews</h2>
-            <ul>
+              <h1 className="review-index-header">All Reviews</h1>
+              
+            <ul id={`reviews-slide-${this.props.event._id}`} className="reviews-index">
               {this.state.reviews.map((review) => {
                 return <ReviewsIndexItem review={review} key={review._id} event={this.props.event} currentUser={this.props.currentUser} deleteReview={this.props.deleteReview} />
               })}

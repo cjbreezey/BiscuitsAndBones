@@ -22,7 +22,6 @@ class EditEvent extends React.Component {
 
   handleSubmitLeave(e) {
     e.preventDefault();
-    debugger 
     this.props.event.attendees = this.props.event.attendees.filter(attendee => attendee !== this.props.currentUser.id)
     this.props.updateEvent(this.props.event);
     alert(`You have left "${this.props.event.title}"`)
