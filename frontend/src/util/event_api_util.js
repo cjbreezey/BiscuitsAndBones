@@ -21,7 +21,6 @@ export const deleteEvent = (id) => {
 };
 
 export const updateEvent = data => { 
-  // debugger
   return axios.patch(`/api/events/${data._id}`, data)
 }
 

@@ -1,0 +1,47 @@
+.review-index-header {
+    position: fixed;
+    left: 70px;
+    top: 300px;
+    font-family: Pacifico;
+    border-bottom: 1px solid black;
+}
+
+.empty-review-index-header {
+    position: fixed;
+    left: 70px;
+    top: 300px;
+    font-family: Pacifico;
+    border-bottom: 1px solid black;
+}
+
+.reviews-index {
+    position: fixed;
+    top: 400px;
+    left: 10px;
+    display: none;
+    min-width: 275px;
+    list-style: none;
+    overflow: auto;
+    max-height: 250px;
+}
+
+.reviews-list {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.reviews-list > button {
+    position: fixed;
+    left: 255px;
+}
+
+.review-rating {
+    color: seagreen;
+    position: relative;
+    left: -13px;
+}
+
+.review-index-header * {
+    display: none;
+}
+

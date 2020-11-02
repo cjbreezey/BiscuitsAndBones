@@ -45,7 +45,6 @@ router.post(
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
         const { errors, isValid } = validateReviewInput(req.body);
-      debugger
         if (!isValid) {
             return res.status(400).json(errors);
         }
