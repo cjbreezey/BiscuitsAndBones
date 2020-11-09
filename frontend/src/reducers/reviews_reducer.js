@@ -9,11 +9,10 @@ const ReviewsReducer = (oldstate = {}, action) => {
   let newState = Object.assign({}, oldstate);
   switch (action.type) {
     case RECEIVE_REVIEWS:
-      return Object.values(Object.assign({}, action.review.data));
+      return Object.values(Object.assign({}, action.reviews.data));
     case RECEIVE_REVIEW:
       // newState = oldstate.filter(event => event._id === action.eventId)
-      // return newState
-      return { [action.review._id]: action.review };
+      return { [action.review.data._id]: action.review.data };
     case REMOVE_REVIEW:
       newState = oldstate.filter((review) => review._id !== action.reviewId);
       return newState;
