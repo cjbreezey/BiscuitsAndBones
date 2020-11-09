@@ -8,6 +8,8 @@ const passport = require('passport');
 const validateSignUpInput = require('../../validation/signup');
 const validateLoginInput = require('../../validation/login');
 const validateUserUpdate = require('../../validation/update_user');
+const upload = require("../../services/image_upload");
+const singleUpload = upload.single("image");
 // mongoose.set('useFindAndModify', false);
 
 //REGISTER
@@ -120,6 +122,31 @@ router.get('/', (req, res) => {
     User.find()
         .then(users => res.json(users))
         .catch(err => res.status(404).json({ nousersfound: 'No users found' }));
+});
+
+//PROFILE PIC
+router.post("/:id/add-profile-pictures", function (req, res) {
+  const uid = req.params.id;
+  debugger 
+  singleUpload(req, res, function (err){
+    debugger
+    if (err) {
+      return res.json({
+        success: false,
+        errors: {
+          title: "image upload error",
+          detail: err.message,
+          error: err,
+        },
+      });
+    }
+
+    let update = { profilePicture: req.file.location };
+    debugger 
+    User.findByIdAndUpdate(uid, update, {new: true})
+      .then((user) => res.status(200).json({ success: true, user: user }))
+      .catch((err) => res.status(400).json({ success: false, error: err}));
+  });
 });
 
 //PRIVATE AUTH
