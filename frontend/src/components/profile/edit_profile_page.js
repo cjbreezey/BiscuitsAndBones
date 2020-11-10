@@ -26,6 +26,8 @@ class EditProfilePage extends React.Component {
         this.props.history.push(`/profile/${this.props.currentUser.id}`)
     }
 
+    
+
     render() {
         return (
             <div className="edit-form-container">
