@@ -25,12 +25,12 @@ const upload = multer({
         acl: "public-read",
         s3,
         bucket: "biscuitsandbones-profilepics",
-        contentType: multerS3.AUTO_CONTENT_TYPE,
         metadata: function (req, file, cb) {
             cb(null, { fieldname: "TESTING_METADATA"});
         },
+        // contentType: multerS3.AUTO_CONTENT_TYPE,
         key: function (req, file, cb) {
-            cb(null, `${Date.now().toString()}` + '-' + file.originalname);
+            cb(null, file.originalname);
         },
     }),
 });
