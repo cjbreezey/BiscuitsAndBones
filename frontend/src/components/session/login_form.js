@@ -14,6 +14,7 @@ class LoginForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   // Once the user has been authenticated, redirect to the Tweets page
@@ -69,7 +70,42 @@ class LoginForm extends React.Component {
     );
   }
 
+  demoLogin(e) {
+    e.preventDefault()
+    const demo = {email: 'demo@aa.io', password: 'password'}
+    const speed = 100;
+    if (this.state.email !== demo.email) {
+      const inputEmail = setInterval(() => {
+        if (this.state.email !== demo.email) {
+          const temp = demo.email.slice(0, this.state.email.length + 1);
+          this.setState({ email: temp })
+        } else {
+          clearInterval(inputEmail);
+          animatePW()
+        }
+      }, speed)
+    }
+
+    const animatePW = () => {
+      if (this.state.password !== demo.password) {
+        const inputPassword = setInterval(() => {
+          if (this.state.password !== demo.password) {
+            const temp = demo.password.slice(0, this.state.password.length + 1);
+            this.setState({password: temp});
+          } else {
+            clearInterval(inputPassword);
+            this.props.demoLogin(demo)
+          }
+        }, speed)
+      }
+    }
+
+  }
+
   render() {
+
+    const demoButton = <button onClick={this.demoLogin}>Demo Login!</button>
+
     return (
       <div className="login-form">
         <div id="login-transition" className="login-slide-in">
@@ -93,6 +129,7 @@ class LoginForm extends React.Component {
                 />
               <br/>
               <input id="login-toggle" className="session-form" type="submit" value="Woof!" />
+              {demoButton}
               {this.renderErrors()}
             </div>
           </form>
