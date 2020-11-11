@@ -10,7 +10,7 @@ const reviews = require("./routes/api/reviews");
 const path = require('path')
 const cors = require("cors");
 
-app.use(cors());
+// app.use(cors());
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('frontend/build'));
@@ -26,7 +26,7 @@ mongoose
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-// app.use(cors());
+app.use(cors());
 app.use(passport.initialize());
 require('./config/passport')(passport)
 

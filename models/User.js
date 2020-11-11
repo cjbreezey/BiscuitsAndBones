@@ -21,7 +21,7 @@ const UserSchema = new Schema({
     type: String
   },
   profilePicture:{
-    type: String 
+    type: String,
   },
   hosting: [{
     type: Schema.Types.ObjectId,

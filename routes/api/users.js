@@ -10,7 +10,11 @@ const validateLoginInput = require('../../validation/login');
 const validateUserUpdate = require('../../validation/update_user');
 const upload = require("../../services/image_upload");
 const singleUpload = upload.single("image");
-// mongoose.set('useFindAndModify', false);
+
+// const bodyParser = require('body-parser');
+// router.use(bodyParser.urlencoded({extended: true}))
+
+// mongoose.lset('useFindAndModify', false);
 
 //REGISTER
 router.post("/signup", (req, res) => {
@@ -92,7 +96,7 @@ router.patch("/:id", passport.authenticate('jwt', { session: false }), (req, res
       let updateUser = {
         id: user._id,
         name: user.name,
-        picture: user.picture,
+        profilePicture: user.profilePicture,
         bio: user.bio,
         pet_name: user.pet_name
       }
@@ -108,7 +112,7 @@ router.get("/:id", passport.authenticate('jwt', { session: false }), (req, res) 
       let returnedUser = {
         id: user._id,
         name: user.name,
-        picture: user.picture,
+        profilePicture: user.profilePicture,
         bio: user.bio,
         pet_name: user.pet_name
       }
@@ -129,7 +133,6 @@ router.post("/:id/add-profile-pictures", function (req, res) {
   const uid = req.params.id;
   debugger 
   singleUpload(req, res, function (err){
-    debugger
     if (err) {
       return res.json({
         success: false,
@@ -142,7 +145,6 @@ router.post("/:id/add-profile-pictures", function (req, res) {
     }
 
     let update = { profilePicture: req.file.location };
-    debugger 
     User.findByIdAndUpdate(uid, update, {new: true})
       .then((user) => res.status(200).json({ success: true, user: user }))
       .catch((err) => res.status(400).json({ success: false, error: err}));
