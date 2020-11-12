@@ -24,9 +24,13 @@ class EditProfilePage extends React.Component {
     formData.append('pet_name', this.state.pet_name);
     formData.append('id', profileId);
     // this.props.updatePicture(formData)
-    this.props.updatePicture(formData).then(() => {
+    if (formData.get("image") !== 'undefined') {
+      this.props.updatePicture(formData).then(() => {
+        this.props.updateUser(this.state, this.routeToProfile());
+      })
+    } else {
       this.props.updateUser(this.state, this.routeToProfile());
-    }) 
+    }
   }
 
   update(field) {
