@@ -46,7 +46,7 @@ class Profile extends React.Component {
                 <div className="profile-box">
                   <h3 className="event-index-header">About Me</h3>
                   <ul className="profile-info">
-                    <li>{this.props.profileInfo.profilePicture}</li>
+                    <li><img className="profile-picture" src={this.props.profileInfo.profilePicture}/></li>
                     <li>{this.props.profileInfo.name}</li>
                     <li>{this.props.profileInfo.bio}</li>
                     <li>{this.props.profileInfo.pet_name}</li>
@@ -69,7 +69,7 @@ class Profile extends React.Component {
                 <div className="profile-box">
                   <h3 className="event-index-header">About Me</h3>
                   <ul className="profile-info">
-                    <li><img src={this.props.profileInfo.profilePicture}/></li>
+                    <li><img className="profile-picture" src={this.props.profileInfo.profilePicture}/></li>
                     <li>Name: {this.props.profileInfo.name}</li>
                     <li>Bio: {this.props.profileInfo.bio}</li>
                     <li>Pet Name: {this.props.profileInfo.pet_name}</li>
