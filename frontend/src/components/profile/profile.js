@@ -36,7 +36,6 @@ class Profile extends React.Component {
     }
     
     render() {
-      debugger
       if (!this.props.profileInfo) return null;
       
         if (this.props.events.length === 0) {

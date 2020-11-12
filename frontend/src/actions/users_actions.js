@@ -45,3 +45,12 @@ export const updatePicture = (user) => dispatch => {
     },
         (err) => dispatch(receiveUserErrors(err.response.data)))
 }
+
+export const updateUser = (user) => dispatch => {
+    // debugger
+    return UsersAPIUtil.updateUser(user).then((payload) => {
+            dispatch(receiveUser(payload))
+    },
+        (err) => dispatch(receiveUserErrors(err.response.data)))
+}
+
