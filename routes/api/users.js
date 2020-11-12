@@ -92,7 +92,7 @@ router.patch("/:id", passport.authenticate('jwt', { session: false }), (req, res
   let filter = { _id: req.user.id };
   let update = req.body;
   debugger 
-  User.findOneAndUpdate(filter, {$set: {id: req.body.id, name: req.body.name, bio: req.body.bio, pet_name: req.body.pet_name, profilePicture: req.body.profilePicture}}, { new: true })
+  User.findOneAndUpdate(filter, {$set: {id: filter, name: req.body.name, bio: req.body.bio, pet_name: req.body.pet_name}}, { new: true })
     .then(user => {
       let updateUser = {
         id: user._id,
