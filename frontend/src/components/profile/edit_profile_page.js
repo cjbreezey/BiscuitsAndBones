@@ -24,8 +24,11 @@ class EditProfilePage extends React.Component {
     formData.append('bio', this.state.bio);
     formData.append('pet_name', this.state.pet_name);
     formData.append('id', profileId);
-    this.props.updatePicture(formData);
-    // this.props.updateUser(this.state, this.routeToProfile());
+    // this.props.updatePicture(formData)
+    this.props.updatePicture(formData).then((action) => {
+      debugger
+      this.props.updateUser(this.state, this.routeToProfile());
+    }) 
   }
 
   update(field) {
@@ -40,7 +43,7 @@ class EditProfilePage extends React.Component {
 
 
   handleFile(e) {
-    debugger
+    // debugger
     const file = e.currentTarget.files[0];
     const reader = new FileReader();
     reader.onloadend = () => {

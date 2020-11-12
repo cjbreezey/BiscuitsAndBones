@@ -5,7 +5,7 @@ import { updatePicture } from "../../util/users_api_util"
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
+    // debugger
     const profileInfo = ownProps.match.params.id
     const profileUser = state.users[profileInfo] 
     let defaultProfile = {

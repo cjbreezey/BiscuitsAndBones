@@ -6,8 +6,8 @@ const keys = require('../config/keys')
 
 const s3 = new aws.S3(); 
 aws.config.update({
-    AWSsecretAccessKey: process.env.AWS_ACCESS_KEY_ID,
-    AWSaccessKeyId: process.env.AWS_SECRET_ACCESS_KEY,
+    // secretAccessKey: process.env.AWS_ACCESS_KEY_ID,
+    // accessKeyId: process.env.AWS_SECRET_ACCESS_KEY,
     region: "us-west-1"
 });
 
