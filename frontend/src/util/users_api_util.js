@@ -12,10 +12,11 @@ export const updateUser = (data) => {
     return axios.patch(`/api/users/${data.id}`, data)
 }
 
-export const updatePicture = (data) => {
+export const updatePicture = (formData) => {
     debugger
-    return axios.post(`/api/users/${data.get("id")}/add-profile-pictures`, {id: data.get("id"), name: data.get("name"), profilePicture: data.get("profilePicture")})
+    // return axios.post(`/api/users/${data.get("id")}/add-profile-pictures`, {id: data.get("id"), name: data.get("name"), profilePicture: data.get("profilePicture")})
     // return $.ajax({method: 'post', url: `/api/users/${data.get("id")}/add-profile-pictures`, data: data})
+    return axios.post(`/api/users/${formData.get("id")}/add-profile-pictures`, formData )
 }
 
 // export const updatePicture = (data) => {

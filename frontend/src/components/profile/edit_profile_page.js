@@ -20,12 +20,12 @@ class EditProfilePage extends React.Component {
     debugger
     const formData = new FormData();
     formData.append('name', this.state.name);
-    formData.append('profilePicture', this.state.profilePicture);
+    formData.append('image', this.state.profilePicture);
     formData.append('bio', this.state.bio);
     formData.append('pet_name', this.state.pet_name);
     formData.append('id', profileId);
     this.props.updatePicture(formData);
-    this.props.updateUser(this.state, this.routeToProfile());
+    // this.props.updateUser(this.state, this.routeToProfile());
   }
 
   update(field) {
