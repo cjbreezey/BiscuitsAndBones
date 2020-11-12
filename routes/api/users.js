@@ -133,6 +133,7 @@ router.post("/:id/add-profile-pictures", function (req, res) {
   const uid = req.params.id;
   debugger 
   singleUpload(req, res, function (err){
+    debugger
     if (err) {
       return res.json({
         success: false,
@@ -144,7 +145,8 @@ router.post("/:id/add-profile-pictures", function (req, res) {
       });
     }
 
-    let update = { profilePicture: req.file.location };
+    let update = {$set: { profilePicture: req.file.location }};
+    debugger
     User.findByIdAndUpdate(uid, update, {new: true})
       .then((user) => res.status(200).json({ success: true, user: user }))
       .catch((err) => res.status(400).json({ success: false, error: err}));
