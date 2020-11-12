@@ -12,6 +12,7 @@ const upload = require("../../services/image_upload");
 const singleUpload = upload.single("image");
 
 // const bodyParser = require('body-parser');
+// let urlencodedParser = bodyParser.urlencoded({ extended: false })
 // router.use(bodyParser.urlencoded({extended: true}))
 
 // mongoose.lset('useFindAndModify', false);
@@ -129,10 +130,13 @@ router.get('/', (req, res) => {
 });
 
 //PROFILE PIC
-router.post("/:id/add-profile-pictures", function (req, res) {
-  const uid = req.params.id;
+router.post("/:id/add-profile-pictures", singleUpload, (req, res) => {
   debugger 
+  const uid = req.params.id;
+  console.log(req.body.get("id"))
+  console.log(req.file)
   singleUpload(req, res, function (err){
+    debugger
     if (err) {
       return res.json({
         success: false,
@@ -143,8 +147,9 @@ router.post("/:id/add-profile-pictures", function (req, res) {
         },
       });
     }
-
+    
     let update = { profilePicture: req.file.location };
+    debugger 
     User.findByIdAndUpdate(uid, update, {new: true})
       .then((user) => res.status(200).json({ success: true, user: user }))
       .catch((err) => res.status(400).json({ success: false, error: err}));

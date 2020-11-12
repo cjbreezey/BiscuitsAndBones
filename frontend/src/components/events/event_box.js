@@ -68,6 +68,10 @@ class EventBox extends React.Component {
               <h3 onClick={this.dropdownClick} >{this.props.event.title}</h3>
               <h3>{this.props.event.date.slice(0, 10)}</h3>
                   {deletebutton}
+                  <Link to={`/events/${this.props.event._id}`}>
+                    <button>See More Details</button>
+                  </Link>
+                    
             </div>
           </div>
           <div id={`dropdown-slide-${this.props.event._id}`} className="event-dropdown">
