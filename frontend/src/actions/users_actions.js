@@ -39,8 +39,8 @@ export const fetchUser = (id) => dispatch => {
         (err) => dispatch(receiveUserErrors(err.response.data)))
 }
 
-export const updateUser = (user) => dispatch => {
-    return UsersAPIUtil.updateUser(user).then((payload) => {
+export const updatePicture = (user) => dispatch => {
+    return UsersAPIUtil.updatePicture(user).then((payload) => {
             dispatch(receiveUser(payload))
     },
         (err) => dispatch(receiveUserErrors(err.response.data)))
