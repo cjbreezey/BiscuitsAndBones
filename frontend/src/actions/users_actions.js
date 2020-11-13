@@ -39,9 +39,18 @@ export const fetchUser = (id) => dispatch => {
         (err) => dispatch(receiveUserErrors(err.response.data)))
 }
 
+export const updatePicture = (user) => dispatch => {
+    return UsersAPIUtil.updatePicture(user).then((payload) => {
+            dispatch(receiveUser(payload))
+    },
+        (err) => dispatch(receiveUserErrors(err.response.data)))
+}
+
 export const updateUser = (user) => dispatch => {
+    // debugger
     return UsersAPIUtil.updateUser(user).then((payload) => {
             dispatch(receiveUser(payload))
     },
         (err) => dispatch(receiveUserErrors(err.response.data)))
 }
+

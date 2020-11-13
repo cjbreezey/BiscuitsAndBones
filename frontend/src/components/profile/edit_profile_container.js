@@ -1,11 +1,9 @@
 import {connect} from 'react-redux';
-import {updateUser, fetchUser} from '../../actions/users_actions'
+import {fetchUser, updatePicture, updateUser} from '../../actions/users_actions'
 import EditProfilePage from './edit_profile_page'
-import { updatePicture } from "../../util/users_api_util"
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
     const profileInfo = ownProps.match.params.id
     const profileUser = state.users[profileInfo] 
     let defaultProfile = {
@@ -31,8 +29,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchUser: (id) => dispatch(fetchUser(id)),
-        updateUser: (user) => dispatch(updateUser(user)),
-        updatePicture: (data) => updatePicture(data)
+        updatePicture: (data) => dispatch(updatePicture(data)),
+        updateUser: (data) => dispatch(updateUser(data))
     }
 }
 

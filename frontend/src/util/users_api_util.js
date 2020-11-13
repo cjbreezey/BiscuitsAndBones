@@ -10,15 +10,12 @@ export const fetchUser = (id) => {
 }
 
 export const updateUser = (data) => {
+    debugger
     return axios.patch(`/api/users/${data.id}`, data)
 }
 
 export const updatePicture = (formData) => {
-    debugger
-    // return axios.post(`/api/users/${formData.get("id")}/add-profile-pictures`, {id: formData.get("id"), name: formData.get("name"), profilePicture: formData.get("profilePicture")})
-    // return axios.post(`/api/users/${formData.get("id")}/add-profile-pictures`, {banana: formData}, {headers: {'Content-Type': 'multipart/form-data'}, })
-        return axios.post(`/api/users/${formData.get("id")}/add-profile-pictures`, formData )
-    // return fetch (`/api/users/${formData.get("id")}/add-profile-pictures`, { method: 'post', body: formData})
+    return axios.post(`/api/users/${formData.get("id")}/add-profile-pictures`, formData )
 }
 
 // export const updatePicture = (data) => {

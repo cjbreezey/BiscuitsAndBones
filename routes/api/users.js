@@ -92,11 +92,13 @@ router.patch("/:id", passport.authenticate('jwt', { session: false }), (req, res
   }
   let filter = { _id: req.user.id };
   let update = req.body;
-  User.findOneAndUpdate(filter, update, { new: true })
+  debugger 
+  User.findOneAndUpdate(filter, {$set: {id: filter, name: req.body.name, bio: req.body.bio, pet_name: req.body.pet_name}}, { new: true })
     .then(user => {
       let updateUser = {
         id: user._id,
-        name: user.name,
+        name: user.name, 
+        // photoUrl: user.photoUrl,
         profilePicture: user.profilePicture,
         bio: user.bio,
         pet_name: user.pet_name
@@ -130,13 +132,11 @@ router.get('/', (req, res) => {
 });
 
 //PROFILE PIC
-router.post("/:id/add-profile-pictures", singleUpload, (req, res) => {
-  debugger 
+router.post("/:id/add-profile-pictures", function (req, res) {
   const uid = req.params.id;
-  console.log(req.body.get("id"))
-  console.log(req.file)
+
   singleUpload(req, res, function (err){
-    debugger
+
     if (err) {
       return res.json({
         success: false,
@@ -147,9 +147,9 @@ router.post("/:id/add-profile-pictures", singleUpload, (req, res) => {
         },
       });
     }
-    
-    let update = { profilePicture: req.file.location };
-    debugger 
+
+    let update = {$set: { profilePicture: req.file.location }};
+
     User.findByIdAndUpdate(uid, update, {new: true})
       .then((user) => res.status(200).json({ success: true, user: user }))
       .catch((err) => res.status(400).json({ success: false, error: err}));
