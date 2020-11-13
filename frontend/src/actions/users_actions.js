@@ -47,7 +47,6 @@ export const updatePicture = (user) => dispatch => {
 }
 
 export const updateUser = (user) => dispatch => {
-    // debugger
     return UsersAPIUtil.updateUser(user).then((payload) => {
             dispatch(receiveUser(payload))
     },

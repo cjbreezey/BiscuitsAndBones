@@ -9,7 +9,6 @@ import { RECEIVE_EVENTS, RECEIVE_EVENT, REMOVE_EVENT } from '../actions/event_ac
       case RECEIVE_EVENT:
         // newState = oldstate.filter(event => event._id === action.eventId)
         // return newState
-        debugger 
         return { [action.event._id]: action.event }
       case REMOVE_EVENT:
         newState = oldstate.filter(event => event._id !== action.eventId)

@@ -8,9 +8,8 @@ class EventShow extends React.Component {
     }
 
     componentDidMount() {
-        debugger 
         this.props.fetchEvent(this.props.match.params.event_id);
-        // this.props.fetchUsers();
+        this.props.fetchUsers();
 
     }
 
@@ -23,30 +22,41 @@ class EventShow extends React.Component {
     // }
 
     render() {
-        debugger
-        if (!this.props.event) return null;
-        // if (this.state.event.length === 0) {
-        //     return (
-        //         <div className="events-index-container">
-        //             <h1>There are no Events</h1>
-        //             <Link to={'/new_event'}>Create an Event</Link>
-        //         </div>)
+      debugger;
+      if (!this.props.event) return null;
+      if (!this.props.event.attendees) return null;
+      if (!this.props.users) return null;
+      let attendeesName = [];
+      // let filteredUsers = this.props.users.filter(user => this.props.event.attendees.includes(user._id))
+      // this.props.users.map(user => {
+      //     // if (this.props.event.attendees.includes(user.id)){
+      //     //     attendeesname.push(user.name)
+      //     return attendeesname.push(user.name)
+      //     }
+      // )
 
-        // } else {
-            return (
-                <div className="events-index-container">
-                    <div className="index-left">
-                        <div className="create-event-box">
-                            <h2 className="event-index-header">All Events</h2>
-                            <Link className="create-event-link" to={'/new_event'}>Create an Event</Link>
-                        </div>
-                    <p>{this.props.event.description}</p>
-                    <p>this is below description</p>
-                    </div>
-                </div>
-            );
-        }
+      let filteredUsers = Object.values(this.props.users).filter(user => this.props.event.attendees.includes(user._id)).map(user => user.name)
+      
+      let filtered = filteredUsers.map((username) => {
+            return <li>{username}</li>;
+      });
+      return (
+        <div className="events-index-container">
+          <div className="index-left">
+            <div className="create-event-box">
+              <h2 className="event-index-header">All Events</h2>
+              <Link className="create-event-link" to={"/new_event"}>
+                Create an Event
+              </Link>
+            </div>
+            <p>{this.props.event.description}</p>
+            <ul>{filtered}</ul>
+            <p>this is below description</p>
+          </div>
+        </div>
+      );
     }
-// }
+    }
+
 
 export default withRouter(EventShow);
