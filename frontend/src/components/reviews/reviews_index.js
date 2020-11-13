@@ -15,13 +15,13 @@ class ReviewsIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchReviews();
-    // this.props.fetchUsers();
+
     
   }
 
   componentWillMount() {
     this.props.fetchReviews();
-    // this.props.fetchUsers();
+
   }
 
   componentWillReceiveProps(newState) {

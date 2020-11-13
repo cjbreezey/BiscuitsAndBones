@@ -28,9 +28,9 @@ const upload = multer({
         metadata: function (req, file, cb) {
             cb(null, { fieldname: "TESTING_METADATA"});
         },
-        // contentType: multerS3.AUTO_CONTENT_TYPE,
+        content: multerS3.AUTO_CONTENT_TYPE,
         key: function (req, file, cb) {
-            cb(null, file.originalname);
+            cb(null, `${Date.now().toString()}` + "-" + file.originalname);
         },
     }),
 });

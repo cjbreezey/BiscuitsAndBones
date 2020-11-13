@@ -1,4 +1,5 @@
 import axios from "axios";
+// import $ from 'jquery';
 
 export const fetchUsers = () => {
     return axios.get('/api/users/')
@@ -9,7 +10,6 @@ export const fetchUser = (id) => {
 }
 
 export const updateUser = (data) => {
-    debugger
     return axios.patch(`/api/users/${data.id}`, data)
 }
 

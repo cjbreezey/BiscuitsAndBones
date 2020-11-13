@@ -21,7 +21,7 @@ class Events extends React.Component {
 
   componentWillMount() {
     this.props.fetchEvents();
-    this.props.fetchUsers();
+    // this.props.fetchUsers();
   }
 
   componentWillReceiveProps(newState) {

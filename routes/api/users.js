@@ -12,6 +12,7 @@ const upload = require("../../services/image_upload");
 const singleUpload = upload.single("image");
 
 // const bodyParser = require('body-parser');
+// let urlencodedParser = bodyParser.urlencoded({ extended: false })
 // router.use(bodyParser.urlencoded({extended: true}))
 
 // mongoose.lset('useFindAndModify', false);
@@ -91,7 +92,6 @@ router.patch("/:id", passport.authenticate('jwt', { session: false }), (req, res
   }
   let filter = { _id: req.user.id };
   let update = req.body;
-  debugger 
   User.findOneAndUpdate(filter, {$set: {id: filter, name: req.body.name, bio: req.body.bio, pet_name: req.body.pet_name}}, { new: true })
     .then(user => {
       let updateUser = {
