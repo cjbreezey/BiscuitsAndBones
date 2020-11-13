@@ -5,8 +5,7 @@
     flex-direction: row;
     height: 100vh;
     width: 100vw;
-    /* background-image: url(./background3.jpg); */
-    background: slateblue;
+    background-image: url(./background3.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
