@@ -17,7 +17,7 @@
 }
 
 .profile-upcoming-events {
-    height: 50vh;
+    height: fit-content;
 }
 
 .profile-upcoming-events > h3 {
@@ -51,7 +51,7 @@
 }
 
 .profile-past-events {
-    height: 30vh;
+    height: fit-content;
     margin-top: -20px;
 }
 
