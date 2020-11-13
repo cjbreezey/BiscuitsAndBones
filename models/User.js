@@ -27,10 +27,6 @@ const UserSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'events'
   }],
-  playdates: [{
-    type: Schema.Types.ObjectId,
-    ref: 'events'
-  }]
 }, {
   timestamps: true
 })
