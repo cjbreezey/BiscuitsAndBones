@@ -5,7 +5,8 @@
     flex-direction: row;
     height: 100vh;
     width: 100vw;
-    background-image: url(./background3.jpg);
+    /* background-image: url(./background3.jpg); */
+    background: slateblue;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -17,11 +18,14 @@
     left: 5px;
     top: 50px;
     display: flex;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     width: 275px;
-    height: 100vh;
+    height: fit-content;
+    padding-bottom: 25px;
     justify-content: flex-start;
     align-items: center;
     margin-top: 0;
@@ -76,7 +80,7 @@
     top: 50px;
     padding-bottom: 50px;
     overflow: scroll;
-    height: 100vh;
+    height: 55vh;
     margin-top: 0;
     margin-bottom: 0;
     width: 75%;
@@ -140,7 +144,7 @@
     padding-bottom: 5px;
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
-    height: 475px;
+    height: 150px;
     opacity: 1;
     -webkit-transition:height, 0.3s linear;
     -moz-transition: height, 0.3s linear;
@@ -160,12 +164,12 @@
     font-weight: 600;
     display: none;
     position: relative;
-    top: 150px;
+    top: 15px;
     border-radius: 5px;
     padding-bottom: 10px;
 }
 
-.event-dropdown-items li:first-child {
+/* .event-dropdown-items li:first-child {
     border-radius: 10px;
     margin-left: -15px;
     margin-right: -15px;
@@ -175,13 +179,13 @@
     top: -130px;
     margin-bottom: -115px;
     overflow: hidden;
-}
+} */
 
-.event-dropdown-items li:nth-child(2) {
+.event-dropdown-items li:first-child {
     font-size: 25px;
 }
 
-.event-dropdown-items li:nth-child(6) {
+.event-dropdown-items li:nth-child(5) {
     float: right;
 }
 
@@ -191,8 +195,8 @@
 
 input.join-event-input[type=submit] {
     bottom: 30px;
-    right: -47px;
-    width: 115%;
+    right: -40px;
+    width: 100%;
     height: 35px;
     background-color: seagreen;
     color: white;
@@ -290,6 +294,7 @@ input.join-event-input[type=submit] {
 
 .index-event-description {
     padding-right: 100px;
+    float: none;
 }
 
 input.create-event-input[type=text] {
