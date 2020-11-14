@@ -378,9 +378,9 @@ input.create-event-input[type=submit] {
     min-width: 1200px;
     max-width: 1200px;
     max-height: 100px;
-    position: fixed;
-    padding-top: 630px;
-    left: 350px;
+    position: relative;
+    padding-top: 560px;
+    left: 100px;
 }
 
 #carousel-image{
