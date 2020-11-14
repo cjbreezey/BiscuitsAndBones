@@ -63,33 +63,18 @@ class ProfileItem extends React.Component {
                   <div className="event-item">
                       <h3 onClick={this.dropdownClick} >{this.props.event.title}</h3>
                       {deletebutton}
+                      <Link to={`/events/${this.props.event._id}`}>
+                      <button>See More Details</button>
+              </Link>
                   </div>
                   <div id={`dropdown-slide-${this.props.event._id}`} className="event-dropdown">
                       <ul id={`dropdown-items-${this.props.event._id}`} className="event-dropdown-items">
-                          <li><Map className="google-map" style={{ width: 'auto', height: '300px' }} google={this.props.google}
-                            initialCenter={{
-                              lat: this.props.event.lat,
-                              lng: this.props.event.lng
-                            }}
-                            center={{
-                              lat: this.props.event.lat,
-                              lng: this.props.event.lng
-                            }}
-                          >
-                            <Marker
-                              position={{
-                                lat: this.props.event.lat,
-                                lng: this.props.event.lng
-                              }}
-                            />
-                          </Map></li>
                           <li>{this.props.event.location}</li>
                           <li>{this.props.event.date.slice(0, 10)}</li>
                           <li>{this.props.event.time}</li>
                           <li className="index-event-description">{this.props.event.description}</li>
                       </ul>
                   </div>
-                   
               </div>
           );
         }

@@ -11,14 +11,6 @@ class EventBox extends React.Component {
     this.dropdownClick = this.dropdownClick.bind(this);
   }
 
-  // handleclick(e) {
-  //   this.props.deleteEvent(this.props.event._id)
-  // }
-
-  // componentDidMount() {
-  //   this.props.fetchEvent(this.props.event._id);
-  // }
-
   dropdownClick(e) {
     let dropdown = document.getElementById(`dropdown-slide-${this.props.event._id}`)
     dropdown.classList.toggle('open')
@@ -83,29 +75,6 @@ class EventBox extends React.Component {
               id={`dropdown-items-${this.props.event._id}`}
               className="event-dropdown-items"
             >
-              {/* <button onClick={() => this.props.joinEvent(this.props.event._id)}></button> */}
-              <li>
-                <Map
-                  className="google-map"
-                  style={{ width: "auto", height: "300px" }}
-                  google={this.props.google}
-                  initialCenter={{
-                    lat: this.props.event.lat,
-                    lng: this.props.event.lng,
-                  }}
-                  center={{
-                    lat: this.props.event.lat,
-                    lng: this.props.event.lng,
-                  }}
-                >
-                  <Marker
-                    position={{
-                      lat: this.props.event.lat,
-                      lng: this.props.event.lng,
-                    }}
-                  />
-                </Map>
-              </li>
               <li>{this.props.event.location}</li>
               <li>
                 {this.props.event.date.slice(0, 10)}, {this.props.event.time} -

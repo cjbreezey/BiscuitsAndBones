@@ -52,23 +52,6 @@ class PastProfileItem extends React.Component {
     }
 
     render() {
-        // if (!this.props.event) return null;
-
-        // let deletebutton;
-        // if (this.props.currentUser && this.props.currentUser.id === this.props.event.host_id) {
-        //     deletebutton = <button onClick={() => this.props.deleteEvent(this.props.event._id)}> X </button>
-        // } else {
-        //     deletebutton = null
-        // }
-
-           // let deletebutton;
-        // if (this.props.currentUser && this.props.currentUser.id === this.props.event.host_id) {
-        //     deletebutton = <button onClick={() => this.props.deleteEvent(this.props.event._id)}> X </button>
-        // } else {
-        //     deletebutton = null
-        // }
-
-
         if (!this.props.event.date) return null
 
         let day = new Date();
@@ -81,34 +64,20 @@ class PastProfileItem extends React.Component {
                 <div className="event-item-container">
                     <div className="event-item">
                         <h3 onClick={this.dropdownClick} >{this.props.event.title}</h3>
+                        <Link to={`/events/${this.props.event._id}`}>
+                        <button>See More Details</button>
+                         </Link>
                         <CreateReview currentUser={this.props.currentUser} event={this.props.event} createReview={this.props.createReview}/>
                     </div>
                     <div id={`dropdown-slide-${this.props.event._id}`} className="event-dropdown">
                         <ul id={`dropdown-items-${this.props.event._id}`} className="event-dropdown-items">
-                            <li><Map className="google-map" style={{ width: 'auto', height: '300px' }} google={this.props.google}
-                                initialCenter={{
-                                    lat: this.props.event.lat,
-                                    lng: this.props.event.lng
-                                }}
-                                center={{
-                                    lat: this.props.event.lat,
-                                    lng: this.props.event.lng
-                                }}
-                            >
-                                <Marker
-                                    position={{
-                                        lat: this.props.event.lat,
-                                        lng: this.props.event.lng
-                                    }}
-                                />
-                            </Map></li>
                             <li>{this.props.event.location}</li>
                             <li>{this.props.event.date.slice(0, 10)}</li>
                             <li>{this.props.event.time}</li>
                             <li>{this.props.event.description}</li>
                         </ul>
                     </div>
-                     <ReviewsIndex event={this.props.event} reviews={this.props.reviews} fetchReviews={this.props.fetchReviews} currentUser={this.props.currentUser}  deleteReview={this.props.deleteReview}/>
+                     {/* <ReviewsIndex event={this.props.event} reviews={this.props.reviews} fetchReviews={this.props.fetchReviews} currentUser={this.props.currentUser}  deleteReview={this.props.deleteReview}/> */}
                 </div>
             );
         }
