@@ -368,4 +368,24 @@ input.create-event-input[type=submit] {
     font-family: 'Pacifico', cursive;
 } */
 
+#carousel-container{
+    /* padding-top: 300px; */
+    min-width: 1200px;
+    max-width: 1200px;
+    max-height: 100px;
+    position: fixed;
+    padding-top: 630px;
+    left: 350px;
+}
+
+#carousel-image{
+    min-width: 300px;
+    max-height: 190px;
+
+}
+
+#carousel-title{
+    font-size: 40px;
+    color: white;
+}
 
