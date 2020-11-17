@@ -45,6 +45,40 @@ class Events extends React.Component {
               <h2 className="event-index-header">All Events</h2>
               <Link className="create-event-link" to={'/new_event'}>Create an Event</Link>
             </div>
+            <div className="social-links">
+                <div>
+                <p className="sidebar-name">Peter Min</p>
+                <div className="our-links">
+                  <a href="https://github.com/pmin825" target="_blank"><i className="fa fa-github-square" aria-hidden="true"/></a>
+                  <a href="https://www.linkedin.com/in/peter-min-02a62a13a/" target="_blank"><i className="fa fa-linkedin-square" aria-hidden="true"/></a>
+                  <a href="https://angel.co/u/peter-min-1" target="_blank"><i className="fa fa-angellist" aria-hidden="true"></i></a>
+                </div>
+              </div>
+              <div>
+                <p className="sidebar-name">Jonathan Siu</p>
+                <div className="our-links">
+                  <a href="https://github.com/jonsiu826" target="_blank"><i className="fa fa-github-square" aria-hidden="true"/></a>
+                  <a href="https://www.linkedin.com/in/jonathansiu826/" target="_blank"><i className="fa fa-linkedin-square" aria-hidden="true"/></a>
+                   <a href="https://angel.co/jonathan-siu-2" target="_blank"><i className="fa fa-angellist" aria-hidden="true"></i></a>
+                </div>
+              </div>
+              <div>
+                <p className="sidebar-name">Chris Lee</p>
+                <div className="our-links">
+                  <a href="https://github.com/cjbreezey" target="_blank"><i className="fa fa-github-square" aria-hidden="true"/></a>
+                  <a href="https://www.linkedin.com/in/christopher-j-lee/" target="_blank"><i className="fa fa-linkedin-square" aria-hidden="true"/></a>
+                  <a href="https://angel.co/u/christopher-lee-93" target="_blank"><i className="fa fa-angellist" aria-hidden="true"></i></a>
+                </div>
+              </div>
+              <div>
+                <p className="sidebar-name">Taylor Lee</p>
+                <div className="our-links">
+                  <a href="https://github.com/xtaylor117" target="_blank"><i className="fa fa-github-square" aria-hidden="true"/></a>
+                  <a href="https://www.linkedin.com/in/taylorlee117/" target="_blank"><i className="fa fa-linkedin-square" aria-hidden="true"/></a>
+                  <a href="https://angel.co/u/taylor-lee-18" target="_blank"><i className="fa fa-angellist" aria-hidden="true"></i></a>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="index-right">
             <ul className="events-list">
