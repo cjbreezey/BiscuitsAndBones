@@ -1,5 +1,4 @@
 import React from "react";
-import EventBox from "./event_box";
 import "./events.css";
 
 class EditEvent extends React.Component {

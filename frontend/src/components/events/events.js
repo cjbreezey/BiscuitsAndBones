@@ -1,7 +1,6 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import EventBox from './event_box';
-import EventCreate from './event_create';
 import './events.css';
 import Carousel from 'react-elastic-carousel';
 
