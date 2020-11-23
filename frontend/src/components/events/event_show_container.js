@@ -9,6 +9,7 @@ const mapStateToProps = (state, ownProps) => {
     // let currentUser = state.session.id 
     
     return {
+        currentUser: state.session.user,
         event: state.events[ownProps.match.params.event_id],
         users: state.users
         // currentUser 
