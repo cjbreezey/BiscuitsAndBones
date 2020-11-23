@@ -16,6 +16,11 @@
     flex-direction: column;
 }
 
+.profile-upcoming-events > .events-list {
+    border-bottom: none;
+    flex-wrap: nowrap;
+}
+
 .profile-upcoming-events {
     height: fit-content;
 }
@@ -36,6 +41,10 @@
     top: 0;
     height: 100%;
     position: relative;
+}
+
+.profile-event-item-container {
+
 }
 
 .profile-past-events > h3 {
@@ -85,6 +94,7 @@
     flex-direction: column;
     align-items: center;
     padding-left: 0;
+    text-align: center;
     list-style: none;
 }
 
@@ -103,4 +113,27 @@
     border-radius: 5px;
     border: 1px solid white;
     object-fit: cover;
+}
+
+.profile-event-item {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.844);
+    box-shadow: 0px 0px 10px white;
+    height: 130px;
+    z-index: 5;
+}
+
+.profile-event-item button {
+    background: slategrey;
+    outline: none;
+    margin-left: 10px;
+    border: none;
+    height: 30px;
+    border-radius: 5px;
+    color: white;
 }
