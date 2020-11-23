@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import React from 'react';
 import { GoogleApiWrapper } from 'google-maps-react';
-import CreateReview from '../reviews/reviews_create';
+import ReviewCreate from '../reviews/reviews_create';
 
 
 class PastProfileItem extends React.Component {
@@ -63,10 +63,11 @@ class PastProfileItem extends React.Component {
                 <div className="event-item-container">
                     <div className="event-item">
                         <h3 onClick={this.dropdownClick} >{this.props.event.title}</h3>
-                        <Link to={`/events/${this.props.event._id}`}>
+                        <Link to={`/pastevents/${this.props.event._id}`}>
                         <button>See More Details</button>
                          </Link>
-                        <CreateReview currentUser={this.props.currentUser} event={this.props.event} createReview={this.props.createReview}/>
+                          {/* <button onClick={() => this.props.openModal("review")}>Review Event</button> */}
+                        {/* <ReviewCreate currentUser={this.props.currentUser} event={this.props.event} createReview={this.props.createReview}/> */}
                     </div>
                     <div id={`dropdown-slide-${this.props.event._id}`} className="event-dropdown">
                         <ul id={`dropdown-items-${this.props.event._id}`} className="event-dropdown-items">
