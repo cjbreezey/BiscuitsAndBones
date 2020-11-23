@@ -1,8 +1,7 @@
 import React from "react";
-import { withRouter, Link } from "react-router-dom";
-import EventBox from './event_box'
+import { Link } from "react-router-dom";
 import EditEvent from './edit_event'
-import { GoogleApiWrapper, Map, InfoWindow, Marker } from 'google-maps-react'
+import { GoogleApiWrapper, Map, Marker } from 'google-maps-react'
 
 class EventShow extends React.Component {
     constructor(props) {
@@ -43,8 +42,7 @@ class EventShow extends React.Component {
       if (!this.props.event.attendees) return null;
       if (!this.props.users) return null;
 
-      let host = Object.values(this.props.users).filter(user => this.props.event.host_id === user._id)
-      let attendeesName = [];
+      // let host = Object.values(this.props.users).filter(user => this.props.event.host_id === user._id)
       let filteredUsers = Object.values(this.props.users).filter(user => this.props.event.attendees.includes(user._id)).map(user => user.name)
 
       let filtered = filteredUsers.map((username) => {
