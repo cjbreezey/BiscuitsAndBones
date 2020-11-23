@@ -549,6 +549,16 @@ input.create-event-input[type=submit] {
     padding-bottom: 20px;
 }
 
+#carousel-container{
+    /* padding-top: 300px; */
+    min-width: 1200px;
+    max-width: 1200px;
+    max-height: 100px;
+    position: relative;
+    padding-top: 560px;
+    left: 100px;
+}
+
 
 .event-show-attendees {
     position: absolute;
