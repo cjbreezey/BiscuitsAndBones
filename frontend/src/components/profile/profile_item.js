@@ -2,9 +2,6 @@ import { Link } from 'react-router-dom'
 import React from 'react';
 import { GoogleApiWrapper } from 'google-maps-react';
 
-
-
-
 class ProfileItem extends React.Component {
     constructor(props) {
         super(props)
