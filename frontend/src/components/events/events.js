@@ -32,11 +32,11 @@ class Events extends React.Component {
 
   render() {
 
-           const breakPoints = [
-            {width: 400, itemsToShow: 2},
-            {width: 700, itemsToShow: 3},
-            {width: 900, itemsToShow: 4},
-            {width: 1100, itemsToShow: 5}
+        const breakPoints = [
+            {width: 400, itemsToShow: 3},
+            {width: 700, itemsToShow: 4},
+            {width: 900, itemsToShow: 5},
+            {width: 1100, itemsToShow: 6}
         ]
         const photos = [
           {

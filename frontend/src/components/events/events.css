@@ -676,6 +676,20 @@ input.create-event-input[type=submit] {
     z-index: 1000;
 }
 
+.show-host-link {
+    position: absolute;
+    bottom: 50px;
+    left: 60px;
+    z-index: 1000;
+    text-decoration: none;
+    background: gold;
+    padding: 3px;
+    color: black;
+    font-family: 'Oswald';
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
 .fa-caret-left {
     font-size: 40px;
     position: absolute;

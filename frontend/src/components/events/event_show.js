@@ -123,10 +123,15 @@ class EventShow extends React.Component {
               </Map></li>
               <li className="event-show-location">{this.props.event.location}</li>
               <li><img className="host-picture" src={this.renderHost()} /></li>
+              <li>
+                <Link className="show-host-link" to={`/profile/${this.props.event.host_id}`}>
+                  Host's Profile
+                </Link>
+              </li>
               <li className="event-show-description"><i class="fa fa-caret-left"></i>{this.props.event.description}</li>
               <li className="calendar-date">
                 <div>Save the date!</div>
-                <div className="month">{MONTHS[month]}</div>
+                <div className="month">{MONTHS[parseInt(month, 10)]}</div>
                 <div className="day">{day}</div>
               </li>
               <p id="event-attendees">Event Attendees</p>
