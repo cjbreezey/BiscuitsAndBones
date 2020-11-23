@@ -15,6 +15,12 @@ class Profile extends React.Component {
         //   events: []
         // }
     }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.match.params.user_id !== prevProps.match.params.user_id) {
+      this.props.fetchUser(this.props.match.params.user_id)
+    }
+  }
     
     componentDidMount() {
         // console.log(this.props.currentUser.id)

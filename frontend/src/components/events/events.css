@@ -406,7 +406,21 @@ input.create-event-input[type=submit] {
     text-align: center;
 }
 
-
+#carousel-container{
+    display: flex;
+    min-width: 900px;
+    max-width: 1200px;
+    max-height: 250px;
+    position: fixed;
+    bottom: -10px;
+    left: 330px;
+    padding-top: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    /* background: rgba(46, 139, 86, 0.593); */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
 
 #carousel-image {
     width: 200px;
@@ -535,16 +549,15 @@ input.create-event-input[type=submit] {
     padding-bottom: 20px;
 }
 
-#carousel-container{
-    /* padding-top: 300px; */
+/* #carousel-container{
+    padding-top: 300px;
     min-width: 1200px;
     max-width: 1200px;
     max-height: 100px;
     position: relative;
     padding-top: 560px;
     left: 100px;
-}
-
+} */
 
 .event-show-attendees {
     position: absolute;
