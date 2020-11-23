@@ -1,7 +1,7 @@
 import {Link} from 'react-router-dom'
 import React from 'react';
 import EditEvent from './edit_event'
-import { GoogleApiWrapper, Map, InfoWindow, Marker } from 'google-maps-react'
+import { GoogleApiWrapper } from 'google-maps-react'
 
 class EventBox extends React.Component {
   constructor(props) {

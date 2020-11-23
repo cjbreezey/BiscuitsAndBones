@@ -1,5 +1,4 @@
 import React from 'react';
-import { withRouter, Link } from 'react-router-dom';
 import ReviewsIndexItem from '../reviews/reviews_index_item'
 import './reviews.css'
 

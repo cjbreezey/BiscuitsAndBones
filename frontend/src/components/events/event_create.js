@@ -1,9 +1,7 @@
 import React from 'react';
-import EventBox from './event_box';
 import './events.css'
-import EventMap from '../map/event_map'
 import PlacesAutocomplete, { geocodeByAddress, getLatLng, } from 'react-places-autocomplete';
-import { GoogleApiWrapper, Map, InfoWindow, Marker } from 'google-maps-react'
+import { GoogleApiWrapper, Map, Marker } from 'google-maps-react'
 
 class EventCreate extends React.Component {
   constructor(props) {

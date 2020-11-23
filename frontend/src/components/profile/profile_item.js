@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import React from 'react';
-import { GoogleApiWrapper, Map, InfoWindow, Marker } from 'google-maps-react';
+import { GoogleApiWrapper } from 'google-maps-react';
 
 
 
