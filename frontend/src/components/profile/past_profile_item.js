@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import React from 'react';
-import { GoogleApiWrapper, Map, InfoWindow, Marker } from 'google-maps-react';
-import ReviewsIndex from '../reviews/reviews_index';
+import { GoogleApiWrapper } from 'google-maps-react';
 import CreateReview from '../reviews/reviews_create';
 
 

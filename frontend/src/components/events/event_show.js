@@ -26,7 +26,7 @@ class EventShow extends React.Component {
       if (!this.props.event) return null;
       if (!this.props.event.attendees) return null;
       if (!this.props.users) return null;
-      let attendeesName = [];
+      
       // let filteredUsers = this.props.users.filter(user => this.props.event.attendees.includes(user._id))
       // this.props.users.map(user => {
       //     // if (this.props.event.attendees.includes(user.id)){
