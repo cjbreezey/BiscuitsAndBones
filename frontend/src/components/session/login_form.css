@@ -67,3 +67,16 @@
     margin-top:0;
     color: red;
 }
+
+.demo-button {
+  width: 100%;
+  background-color: slategrey;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  font-family: 'Pacifico', cursive;
+}

@@ -104,7 +104,7 @@ class LoginForm extends React.Component {
 
   render() {
 
-    const demoButton = <button onClick={this.demoLogin}>Demo Login!</button>
+    const demoButton = <button className="demo-button" onClick={this.demoLogin}>Demo Login!</button>
 
     return (
       <div className="login-form">
