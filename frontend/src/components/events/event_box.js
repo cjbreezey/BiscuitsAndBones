@@ -41,7 +41,7 @@ class EventBox extends React.Component {
     if (!this.props.event) return null;
     let deletebutton;
     if (this.props.currentUser && this.props.currentUser.id === this.props.event.host_id) {
-      deletebutton = <button onClick={() => this.props.deleteEvent(this.props.event._id)}> X </button>
+      deletebutton = <button onClick={() => this.props.deleteEvent(this.props.event._id)}><i class="fa fa-trash"></i></button>
     } else {
       deletebutton = null
     }
@@ -58,13 +58,10 @@ class EventBox extends React.Component {
           <div className="event-item">
             <div className="title-bar">
               <h3 onClick={this.dropdownClick}>{this.props.event.title}</h3>
-              <h3 onClick={this.dropdownClick} >
+              {/* <h3 onClick={this.dropdownClick} >
                 {this.props.event.date.slice(0, 10)}
-              </h3>
+              </h3> */}
               {deletebutton}
-              <Link to={`/events/${this.props.event._id}`}>
-                <button>See More Details</button>
-              </Link>
             </div>
           </div>
           <div
@@ -75,17 +72,22 @@ class EventBox extends React.Component {
               id={`dropdown-items-${this.props.event._id}`}
               className="event-dropdown-items"
             >
-              <li>{this.props.event.location}</li>
-              <li>
-                {this.props.event.date.slice(0, 10)}, {this.props.event.time} -
-                Playdate Attendees: {this.props.event.attendees.length}
-              </li>
+              {/* <li>Where: {this.props.event.location}</li> */}
               <li className="index-event-description">
                 {this.props.event.description}
               </li>
+              <li className="attendees-num">
+                {/* {this.props.event.date.slice(0, 10)}, {this.props.event.time} - */}
+                Playdate Attendees: {this.props.event.attendees.length}
+              </li>
               <li>
-                <Link to={`/profile/${this.props.event.host_id}`}>
+                <Link className="host-link" to={`/profile/${this.props.event.host_id}`}>
                   Host's Profile
+                </Link>
+              </li>
+              <li>
+                <Link className="event-details-button" to={`/events/${this.props.event._id}`}>
+                  <button>See More Details</button>
                 </Link>
               </li>
               <li>
@@ -94,6 +96,9 @@ class EventBox extends React.Component {
                   currentUser={this.props.currentUser}
                   updateEvent={this.props.updateEvent}
                 />
+              </li>
+              <li>
+                <i onClick={this.dropdownClick} className="fa fa-chevron-up"></i>
               </li>
             </ul>
           </div>

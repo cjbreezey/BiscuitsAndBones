@@ -36,11 +36,11 @@ class EditEvent extends React.Component {
 
     if (this.props.event.attendees.includes(this.props.currentUser.id)) {
       button =  <form className="join-event-form" onSubmit={this.handleSubmitLeave}>
-                  <input className="join-event-input" type="submit" value="Leave Event" />
+                  <input className="join-event-input" type="submit" value="Leave Playdate" />
                 </form>
     } else {
       button = <form className="join-event-form" onSubmit={this.handleSubmitJoin}>
-                       <input className="join-event-input" type="submit" value="Join Event" />
+                       <input className="join-event-input" type="submit" value="Join Playdate!" />
                    </form>
     }
   
