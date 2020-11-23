@@ -10,9 +10,12 @@ import ProfileContainer from './profile/profile_container';
 import EventCreateContainer from './events/event_create_container';
 import EditProfileContainer from './profile/edit_profile_container';
 import EventShowContainer from './events/event_show_container';
+import Modal from './modal/modal';
+
 
 const App = () => (
   <div>
+    <Modal />
     <NavBarContainer />
     <Switch>
       <AuthRoute exact path="/" component={MainPage} />
