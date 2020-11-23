@@ -30,7 +30,7 @@ class Profile extends React.Component {
     editLink() {
       if (this.props.currentUser) {
         return (
-          <Link to={`/users/${this.props.currentUser.id}/edit`}>Edit</Link>
+          <button onClick={() => this.props.openModal("editprofile")}>Edit</button>
         )
       }
     }

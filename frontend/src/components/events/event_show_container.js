@@ -6,13 +6,13 @@ import EventShow from './event_show';
 const mapStateToProps = (state, ownProps) => {
     // product: state.entities.products[ownProps.match.params.productId],
     // let event = ownProps.match.params.event_id;
-    // let currentUser = state.session.id 
+    let currentUser = state.session.user
     
     return {
         currentUser: state.session.user,
         event: state.events[ownProps.match.params.event_id],
-        users: state.users
-        // currentUser 
+        users: state.users,
+        currentUser 
     }
 }
 
