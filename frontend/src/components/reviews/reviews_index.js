@@ -39,7 +39,7 @@ class ReviewsIndex extends React.Component {
       return (
         <div className="past-event-reviews">
             <h1 className="month">All Reviews</h1>
-            <ul className="event-show-attendees">
+            <ul className="review-box">
               {this.state.reviews.map((review) => {
                 return <ReviewsIndexItem review={review} key={review._id} event={this.props.event} currentUser={this.props.currentUser} deleteReview={this.props.deleteReview} />
               })}
