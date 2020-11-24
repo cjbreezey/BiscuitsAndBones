@@ -10,10 +10,12 @@ export const fetchUser = (id) => {
 }
 
 export const updateUser = (data) => {
+    debugger
     return axios.patch(`/api/users/${data.id}`, data)
 }
 
 export const updatePicture = (formData) => {
+    debugger 
     return axios.post(`/api/users/${formData.get("id")}/add-profile-pictures`, formData )
 }
 

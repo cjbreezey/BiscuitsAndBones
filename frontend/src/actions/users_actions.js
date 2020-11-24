@@ -40,6 +40,7 @@ export const fetchUser = (id) => dispatch => {
 }
 
 export const updatePicture = (user) => dispatch => {
+    debugger 
     return UsersAPIUtil.updatePicture(user).then((payload) => {
             dispatch(receiveUser(payload))
     },
@@ -47,6 +48,7 @@ export const updatePicture = (user) => dispatch => {
 }
 
 export const updateUser = (user) => dispatch => {
+    debugger 
     return UsersAPIUtil.updateUser(user).then((payload) => {
             dispatch(receiveUser(payload))
     },

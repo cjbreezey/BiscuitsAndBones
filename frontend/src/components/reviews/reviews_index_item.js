@@ -14,15 +14,16 @@ class ReviewsIndexItem extends React.Component {
         } else {
             deletebutton = null
         }
-        if (this.props.review.event_id === this.props.event._id){
-           return  (<div id={`reviews-items-${this.props.event._id}`} className="reviews-list">
+        debugger
+        // if (this.props.review.event_id === this.props.event._id){
+           return  <div  className="reviews-list">
                 <li className="review-rating">{this.props.review.rating}</li>
                 <li>{this.props.review.description}</li>
                 {deletebutton}
-            </div>)
-        } else {
-            return null 
-        }
+            </div>
+        // } else {
+        //     return null 
+        // }
     }
 }
 

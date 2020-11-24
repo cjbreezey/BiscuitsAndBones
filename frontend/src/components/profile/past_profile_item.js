@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import React from 'react';
 import { GoogleApiWrapper } from 'google-maps-react';
-import CreateReview from '../reviews/reviews_create';
+import ReviewCreate from '../reviews/reviews_create';
 
 
 class PastProfileItem extends React.Component {
