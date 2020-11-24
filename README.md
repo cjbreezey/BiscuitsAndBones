@@ -39,4 +39,6 @@ Biscuits and Bones, or B&B for short, is a web application which lets pet owners
   * Demo-login for users who want to test site before signing up
   * Secure User Authentication using BCrypt hashing
   
-[![Image from Gyazo](https://i.gyazo.com/9f71b7f413929146aa1933bfb9c164be.gif)](https://gyazo.com/9f71b7f413929146aa1933bfb9c164be)
+
+
+
