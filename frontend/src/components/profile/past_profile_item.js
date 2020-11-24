@@ -9,45 +9,10 @@ class PastProfileItem extends React.Component {
         super(props)
 
         this.handleclick = this.handleclick.bind(this);
-        this.dropdownClick = this.dropdownClick.bind(this);
     }
 
     handleclick(e) {
         this.props.deleteEvent(this.props.event._id)
-    }
-
-    dropdownClick(e) {
-        let dropdown = document.getElementById(`dropdown-slide-${this.props.event._id}`)
-        dropdown.classList.toggle('open')
-
-        let dropdownItem = document.getElementById(`dropdown-items-${this.props.event._id}`)
-        let reviewsItems = document.getElementById(`reviews-slide-${this.props.event._id}`)
-       
-        if (reviewsItems.style.display === "") {
-            reviewsItems.style.display = "block";
-        }
-        else if (reviewsItems.style.display === "none") {
-            reviewsItems.style.display = "block";
-        } else {
-            reviewsItems.style.borderbottom = "none"
-            reviewsItems.style.display = "none";
-        }
-
-        if (dropdownItem.style.display === "") {
-            dropdownItem.style.borderbottom = "1px solid black"
-            dropdownItem.style.display = "block";
-        }
-        else if (dropdownItem.style.display === "none") {
-            dropdownItem.style.borderbottom = "1px solid black"
-            dropdownItem.style.display = "block";
-        } else {
-            dropdownItem.style.borderbottom = "none"
-            dropdownItem.style.display = "none";
-        }
-        dropdownItem.scrollIntoView({
-            behavior: "smooth",
-            block: "center"
-        })
     }
 
     render() {
@@ -60,22 +25,12 @@ class PastProfileItem extends React.Component {
             return null
         } else {
             return (
-                <div className="event-item-container">
-                    <div className="event-item">
-                        <h3 onClick={this.dropdownClick} >{this.props.event.title}</h3>
-                        <Link to={`/pastevents/${this.props.event._id}`}>
-                        <button>See More Details</button>
+                <div className="profile-event-item-container">
+                    <div className="profile-event-item">
+                        <h3 onClick={this.dropdownClick}>{this.props.event.title}</h3>
+                        <Link to={`/events/${this.props.event._id}`}>
+                        <button className="details-button">See More Details</button>
                          </Link>
-                          {/* <button onClick={() => this.props.openModal("review")}>Review Event</button> */}
-                        {/* <ReviewCreate currentUser={this.props.currentUser} event={this.props.event} createReview={this.props.createReview}/> */}
-                    </div>
-                    <div id={`dropdown-slide-${this.props.event._id}`} className="event-dropdown">
-                        <ul id={`dropdown-items-${this.props.event._id}`} className="event-dropdown-items">
-                            <li>{this.props.event.location}</li>
-                            <li>{this.props.event.date.slice(0, 10)}</li>
-                            <li>{this.props.event.time}</li>
-                            <li>{this.props.event.description}</li>
-                        </ul>
                     </div>
                      {/* <ReviewsIndex event={this.props.event} reviews={this.props.reviews} fetchReviews={this.props.fetchReviews} currentUser={this.props.currentUser}  deleteReview={this.props.deleteReview}/> */}
                 </div>

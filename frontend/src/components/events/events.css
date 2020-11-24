@@ -6,10 +6,19 @@
     height: 100vh;
     width: 100vw;
     background-image: url(./background3.jpg);
-    /* background: white; */
+    /* background: antiquewhite; */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+}
+
+.events-index-container .events-list {
+    background-image: url(./bulletin.jpg);
+    object-fit: cover;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: 2px ridge saddlebrown;
+    border-top: none;
 }
 
 .index-left {
@@ -29,16 +38,17 @@
     justify-content: flex-start;
     align-items: center;
     margin-top: 0;
-    background: rgba(255, 255, 255, 0.556);
+    /* background: rgba(255, 255, 255, 0.556); */
 }
 
 .create-event-box {
     margin-top: 20px;
-    background: rgba(119, 136, 153, 0.508);
+    background: whitesmoke;
     border-radius: 5px;
     width: 70%;
     height: fit-content;
     padding-bottom: 10px;
+    margin-left: -10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -92,19 +102,14 @@
     top: 50px;
     padding-bottom: 20px;
     padding-top: 20px;
-    height: 55vh;
+    height: 60vh;
     margin-top: 0;
     margin-bottom: 0;
-    width: 75.7vw;
+    width: 76.3vw;
     padding-right: 0;
-    padding-left: 8px;
-    margin-left: 18px;
-    border-bottom: 1px double white;
-    /* border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px; */
-    /* background: rgba(128, 128, 128, 0.707); */
-    /* background-image: linear-gradient(rgba(255, 255, 255, 0),  rgba(255, 255, 255, 0.281), white); */
+    padding-left: 11px;
 }
+
 
 
 .events-list::-webkit-scrollbar {
@@ -113,7 +118,8 @@
 
 .event-item h3 {
     cursor: pointer;
-    width: 95%;
+    width: 160px;
+    overflow-wrap: break-word;
 }
 
 
@@ -146,10 +152,20 @@
     padding-left: 10px;
     padding-right: 10px;
     border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.844);
+    background-color: rgba(245, 245, 245, 0.70);
     box-shadow: 0px 0px 10px white;
     height: 130px;
     z-index: 5;
+    transition: 0.3s;
+}
+
+.focus {
+    background: white;
+}
+
+.event-item:hover {
+    background: white;
+    cursor: pointer;
 }
 
 
@@ -236,6 +252,7 @@ input.join-event-input[type=submit] {
     font-family: Montserrat;
     font-weight: 600;
     font-size: 14px;
+    transition: 0.3s;
 }
 
 .host-link {
@@ -285,6 +302,8 @@ input.join-event-input[type=submit] {
     width: 100%;
     align-items: center;
     text-align: center;
+    font-family: 'Nerko One', cursive;
+    font-size: 18px;
 }
 
 .title-bar h3:nth-child(2) {
@@ -396,35 +415,38 @@ input.create-event-input[type=submit] {
 
 .social-links {
     width: 80%;
-    border: 1px solid black;
+    border: 1px solid white;
     margin-top: 15px;
+    margin-left: -10px;
     padding-bottom: 10px;
     border-radius: 5px;
+    background: cadetblue;
 }
 
 .sidebar-name {
     text-align: center;
+    font-family: Pacifico;
+    font-size: 20px;
 }
 
 #carousel-container{
+    border-top: 1px solid white;
     display: flex;
     min-width: 900px;
     max-width: 1200px;
     max-height: 250px;
     position: fixed;
-    bottom: -10px;
+    bottom: -40px;
     left: 330px;
     padding-top: 15px;
     padding-left: 10px;
     padding-right: 10px;
     /* background: rgba(46, 139, 86, 0.593); */
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
 }
 
 #carousel-image {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
     border: 1px solid white;
     border-radius: 5px;
@@ -432,6 +454,12 @@ input.create-event-input[type=submit] {
 
 #carousel-name {
     margin-top: -5px;
+    background: rebeccapurple;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    color: white;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .carousel-box {
@@ -445,6 +473,11 @@ input.create-event-input[type=submit] {
     color: white;
 }
 
+.host-link:hover, .event-details-button button:hover, input.join-event-input[type=submit]:hover {
+    background: white;
+    color: black;
+}
+
 .host-link {
     display: flex;
     justify-content: center;
@@ -453,6 +486,7 @@ input.create-event-input[type=submit] {
     color: black;
     text-align: center;
     background: gold;
+    transition: 0.3s;
 }
 
 .event-details-button {
@@ -471,6 +505,7 @@ input.create-event-input[type=submit] {
     font-family: Montserrat;
     font-weight: 600;
     font-size: 14px;
+    transition: 0.3s;
 }
 
 .attendees-num {
@@ -549,16 +584,6 @@ input.create-event-input[type=submit] {
     padding-bottom: 20px;
 }
 
-/* #carousel-container{
-    padding-top: 300px;
-    min-width: 1200px;
-    max-width: 1200px;
-    max-height: 100px;
-    position: relative;
-    padding-top: 560px;
-    left: 100px;
-} */
-
 .event-show-attendees {
     position: absolute;
     list-style: none;
@@ -572,9 +597,15 @@ input.create-event-input[type=submit] {
     padding-top: 15px;
     padding-bottom: 15px;
     height: fit-content;
+    max-height: 200px;
     background: rgba(255, 255, 255, 0.709);
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+    overflow: auto;
+}
+
+.event-show-attendees::-webkit-scrollbar {
+  display: none;
 }
 
 .calendar-date div:first-child {
@@ -646,6 +677,13 @@ input.create-event-input[type=submit] {
     color: white;
     margin-left: 5px;
     margin-right: 5px;
+}
+
+.fa-map-pin {
+    font-size: 30px;
+    position: absolute; 
+    transform: translate(100px, -54px);
+    color: gray;
 }
 
 .event-show-attendees input.join-event-input[type=submit] {

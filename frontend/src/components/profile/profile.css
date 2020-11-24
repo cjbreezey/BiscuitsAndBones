@@ -14,6 +14,7 @@
 .profile-container > .events-list {
     display: flex;
     flex-direction: column;
+    overflow: auto;
 }
 
 .profile-upcoming-events {
@@ -36,6 +37,17 @@
     top: 0;
     height: 100%;
     position: relative;
+    border-bottom: none;
+    width: fit-content;
+}
+
+.profile-event-item-container {
+    min-width: 150px;
+    margin-top: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .profile-past-events > h3 {
@@ -59,16 +71,17 @@
     top: 0;
     height: 100%;
     position: relative;
+    border-bottom: none;
 }
 
 .profile-box {
-    padding-top: 15px;
-    padding-bottom: 15px;
     margin-top: 20px;
-    background: rgba(119, 136, 153, 0.508);
+    background: whitesmoke;
     border-radius: 5px;
     width: 70%;
     height: fit-content;
+    padding-bottom: 10px;
+    margin-left: -10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -85,6 +98,7 @@
     flex-direction: column;
     align-items: center;
     padding-left: 0;
+    text-align: center;
     list-style: none;
 }
 
@@ -103,4 +117,57 @@
     border-radius: 5px;
     border: 1px solid white;
     object-fit: cover;
+}
+
+.profile-event-item {
+    margin-top: 5px;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.844);
+    box-shadow: 0px 0px 10px white;
+    height: 130px;
+    z-index: 5;
+}
+
+/* .profile-event-item button:last-child {
+    position: absolute;
+    background: slategrey;
+    transform: translateX(-105px);
+    top: 115px;
+    outline: none;
+    margin-left: 10px;
+    border: none;
+    height: 30px;
+    border-radius: 5px;
+    color: white;
+    font-size: 11px;
+} */
+
+.details-button {
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin-left: 15px;
+    background: slategrey;
+    font-family: 'Oswald';
+    transition: 0.3s;
+}
+
+.details-button:hover {
+    background: seagreen;
+}
+
+
+.trash-button {
+    border: none;
+    margin-left: 10px;
+    background: none;
+}
+
+.profile-event-item button:hover {
+    cursor: pointer;
 }
