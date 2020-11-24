@@ -4,7 +4,6 @@ class ReviewCreate extends React.Component {
   constructor(props) {
       super(props);
       this.handleSubmit = this.handleSubmit.bind(this);
-
       this.state = {
           rating: "",
           description: "",
@@ -18,16 +17,17 @@ class ReviewCreate extends React.Component {
   }
 
   handleSubmit(e){
-     e.preventDefault();
-     let review = {
-         rating: this.state.rating,
-         description: this.state.description,
-        event_id: this.state.event_id,
-        reviewer_id: this.state.reviewer_id 
-     };
-    this.props.createReview(review)
-    this.setState({description: ''})
-    this.setState({rating: ''})
+    e.preventDefault();
+    let review = {
+      rating: this.state.rating,
+      description: this.state.description,
+      event_id: this.state.event_id,
+      reviewer_id: this.state.reviewer_id,
+    };
+    this.props.createReview(review);
+    this.setState({ description: "" });
+    this.setState({ rating: "" });
+    this.props.closeModal();
   }
 
 
@@ -42,7 +42,7 @@ class ReviewCreate extends React.Component {
                 onChange={this.update('description')}
                 placeholder="Description"
                 />
-            <button onClick={this.handleSubmit}> Create Review</button>
+            <button onClick={this.handleSubmit} > Create Review</button>
         </form>
       )
   }

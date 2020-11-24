@@ -28,6 +28,7 @@ class ReviewsIndex extends React.Component {
   }
 
   render() {
+    debugger
     if (this.state.reviews.length === 0) {
       return (
       <div>

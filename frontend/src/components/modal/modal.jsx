@@ -2,7 +2,7 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import EditProfileContainer from '../profile/edit_profile_container';
-// import ReviewCreate from '../reviews/review_create';
+import ReviewCreateContainer from '../reviews/reviews_create_container';
 import './modal.css';
 
 function Modal({modal, closeModal}) {
@@ -14,9 +14,9 @@ function Modal({modal, closeModal}) {
     case 'editprofile':
       component = <EditProfileContainer />;
       break;
-    // case 'review':
-    //   component = <ReviewCreate />
-    //   break;
+    case 'review':
+      component = <ReviewCreateContainer />
+      break;
     default:
       return null;
   }
