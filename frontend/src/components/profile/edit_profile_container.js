@@ -16,7 +16,6 @@ const mapStateToProps = (state, ownProps) => {
     }
 
     let profile = profileUser || defaultProfile
-    debugger 
     return {
         loggedIn: state.session.isAuthenticated,
         currentUser: state.session.user,

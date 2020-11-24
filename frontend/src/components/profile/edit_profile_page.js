@@ -10,7 +10,6 @@ class EditProfilePage extends React.Component {
   }
 
   // componentDidUpdate(prevProps) {
-  //   // debugger
   //   if (this.props.currentUser.id !== prevProps.currentUser.id) {
   //     this.props.fetchUser(this.props.currentUser.id);
   //   }

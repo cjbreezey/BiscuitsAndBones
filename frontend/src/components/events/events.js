@@ -63,25 +63,25 @@ class Events extends React.Component {
 
             },
             {
-                name: "Chris",
+                name: "JD",
                 url: "https://biscuitsandbones-profilepics.s3.us-west-1.amazonaws.com/puppyprofile.jpeg",
                 link: "/profile/5f964b26e1a56307c8e30a44"
 
             },
             {
-                name: "Peter",
+                name: "Tri",
                 url: "https://biscuitsandbones-profilepics.s3.us-west-1.amazonaws.com/1605243626151-gamephoto.png",
                 link: "/profile/5f9645728dd566007162b85b"
 
             },
           
             {
-                name: "Taylor",
+                name: "Kevin",
                 url: "https://biscuitsandbones-profilepics.s3.us-west-1.amazonaws.com/Screen%20Shot%202020-11-12%20at%2010.31.19%20AM.png",
                 link: "/profile/5f9791529752b708b14a2f9e"
             },
             {
-                name: "Jonathan",
+                name: "Jacky",
                 url: "https://biscuitsandbones-profilepics.s3.us-west-1.amazonaws.com/puppyprofile.jpeg",
                 link: "/profile/5f970d7ac22fd94cbc59c1eb"
 
@@ -94,7 +94,7 @@ class Events extends React.Component {
       return (
       <div className="events-index-container">
           <h1>There are no Events</h1>
-          <Link to={'/new_event'}>Create an Event</Link>
+          <Link to={'/new_event'}>Setup a Playdate!</Link>
       </div>)
 
     } else {
@@ -103,7 +103,7 @@ class Events extends React.Component {
           <div className="index-left">
             <div className="create-event-box">
               <h2 className="event-index-header">All Events</h2>
-              <Link className="create-event-link" to={'/new_event'}>Create an Event</Link>
+              <Link className="create-event-link" to={'/new_event'}>Setup a Playdate!</Link>
             </div>
             <div className="social-links">
                 <div>
