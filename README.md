@@ -39,20 +39,20 @@ Biscuits and Bones, or B&B for short, is a web application which lets pet owners
   * Demo-login for users who want to test site before signing up
   * Secure User Authentication using BCrypt hashing
   
-(Gif of login)
+[![Image from Gyazo](https://i.gyazo.com/78c75706c0492d1ed925945759150149.gif)](https://gyazo.com/78c75706c0492d1ed925945759150149)
 
 ### Google Maps/Places Autocomplete
 
  * User's can type out a location and Autocomplete API will give suggestions based on text input
  * Inputted location will automatically move map and place a marker at given location
  
-(Gif of Map working)
+[![Image from Gyazo](https://i.gyazo.com/7a05723b265af96b03e2bd237dc4cb2d.gif)](https://gyazo.com/7a05723b265af96b03e2bd237dc4cb2d)
 
 ### Dropdown Event Bulletin Board
 
  * User's can click an event to trigger a dropdown for more information about the event
  
-(Gif of dropping down events)
+[![Image from Gyazo](https://i.gyazo.com/a7893ec6b36acc35da9fdd3b682be33c.gif)](https://gyazo.com/a7893ec6b36acc35da9fdd3b682be33c)
 
 ## Code Snippets
 
