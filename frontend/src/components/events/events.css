@@ -798,6 +798,13 @@ input.create-event-input[type=submit] {
     color: white;
 }
 
+button.sc-bdfBwQ.kyJvRZ.rec.rec-arrow.rec.rec-arrow-left {
+    background-color: gold;
+}
+
+button.sc-bdfBwQ.bTybGL.rec.rec-arrow.rec.rec-arrow-right {
+    background-color: gold;
+}
 
 
 /* glow */

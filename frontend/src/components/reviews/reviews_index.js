@@ -28,7 +28,6 @@ class ReviewsIndex extends React.Component {
   }
 
   render() {
-    debugger
     if (this.state.reviews.length === 0) {
       return (
       <div>
@@ -40,7 +39,7 @@ class ReviewsIndex extends React.Component {
         <div className="past-event-reviews">
             <h1 className="month">All Reviews</h1>
             <ul className="review-box">
-              {this.state.reviews.map((review) => {
+              {this.state.reviews.filter(review => review.event_id === this.props.event._id).map((review) => {
                 return <ReviewsIndexItem review={review} key={review._id} event={this.props.event} currentUser={this.props.currentUser} deleteReview={this.props.deleteReview} />
               })}
             </ul>

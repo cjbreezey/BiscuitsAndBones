@@ -39,7 +39,7 @@ class Profile extends React.Component {
         return (
           <div className="create-edit-button-container">
             <button className="profile-edit-button" onClick={() => this.props.openModal("editprofile")}>Edit</button>
-            <Link className="create-event-link" to={'/new_event'}>Create an Event</Link>
+            <Link className="create-event-link" to={'/new_event'}>Set Up a Playdate</Link>
           </div>
         )
       }

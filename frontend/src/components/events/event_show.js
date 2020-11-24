@@ -61,7 +61,7 @@ class EventShow extends React.Component {
             <div className="create-event-box">
               <h2 className="event-index-header">{this.props.event.title}</h2>
               <Link className="create-event-link" to={"/new_event"}>
-                Create an Event
+                Setup a Playdate!
               </Link>
             </div>
             <div className="social-links">

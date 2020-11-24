@@ -94,7 +94,7 @@ class Events extends React.Component {
       return (
       <div className="events-index-container">
           <h1>There are no Events</h1>
-          <Link to={'/new_event'}>Create an Event</Link>
+          <Link to={'/new_event'}>Setup a Playdate!</Link>
       </div>)
 
     } else {
@@ -103,7 +103,7 @@ class Events extends React.Component {
           <div className="index-left">
             <div className="create-event-box">
               <h2 className="event-index-header">All Events</h2>
-              <Link className="create-event-link" to={'/new_event'}>Create an Event</Link>
+              <Link className="create-event-link" to={'/new_event'}>Setup a Playdate!</Link>
             </div>
             <div className="social-links">
                 <div>
