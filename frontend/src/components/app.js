@@ -19,14 +19,14 @@ const App = () => (
     <Modal />
     <NavBarContainer />
     <Switch>
-      <AuthRoute exact path="/" component={MainPage} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
+      <AuthRoute exact path="/" component={MainPage} />
       <ProtectedRoute exact path="/users/:id/edit" component={EditProfileContainer} />
       <ProtectedRoute exact path="/pastevents/:event_id" component={PastEventShowContainer} />
       <ProtectedRoute exact path="/events/:event_id" component={EventShowContainer} />
-      <ProtectedRoute exact path="/events" component={EventsContainer} />
       <ProtectedRoute exact path="/profile/:user_id" component={ProfileContainer} />
+      <ProtectedRoute exact path="/events" component={EventsContainer} />
       <ProtectedRoute exact path="/new_event" component={EventCreateContainer} />
     </Switch>
   </div>
