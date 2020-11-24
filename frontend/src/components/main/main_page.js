@@ -17,7 +17,7 @@ class MainPage extends React.Component {
           <p className="gtku"> Who are we? </p>
           <div className="main-links">
             <div>
-              Peter Min
+              <p className='main-name'>Peter Min</p>
               <div className="our-links">
                 <a href="https://github.com/pmin825" target="_blank" rel="noreferrer"><i className="fa fa-github" aria-hidden="true"/></a>
                 <a href="https://www.linkedin.com/in/peter-min-02a62a13a/" target="_blank" rel="noreferrer"><i className="fa fa-linkedin" aria-hidden="true"/></a>
@@ -25,7 +25,7 @@ class MainPage extends React.Component {
               </div>
             </div>
             <div>
-              Jonathan Siu
+              <p className='main-name'>Jonathan Siu</p>
               <div className="our-links">
                 <a href="https://github.com/jonsiu826" target="_blank" rel="noreferrer"><i className="fa fa-github" aria-hidden="true"/></a>
                 <a href="https://www.linkedin.com/in/jonathansiu826/" target="_blank" rel="noreferrer"><i className="fa fa-linkedin" aria-hidden="true"/></a>
@@ -33,7 +33,7 @@ class MainPage extends React.Component {
               </div>
             </div>
             <div>
-              Chris Lee
+              <p className='main-name'>Chris Lee</p>
               <div className="our-links">
                 <a href="https://github.com/cjbreezey" target="_blank"><i className="fa fa-github" aria-hidden="true"/></a>
                 <a href="https://www.linkedin.com/in/christopher-j-lee/" target="_blank"><i className="fa fa-linkedin" aria-hidden="true"/></a>
@@ -41,7 +41,7 @@ class MainPage extends React.Component {
               </div>
             </div>
             <div>
-              Taylor Lee
+              <p className='main-name'>Taylor Lee</p>
               <div className="our-links">
                 <a href="https://github.com/xtaylor117" target="_blank"><i className="fa fa-github" aria-hidden="true"/></a>
                 <a href="https://www.linkedin.com/in/taylorlee117/" target="_blank"><i className="fa fa-linkedin" aria-hidden="true"/></a>

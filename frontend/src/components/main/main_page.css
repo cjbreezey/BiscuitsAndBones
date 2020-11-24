@@ -49,7 +49,13 @@
     color: black;
 }
 
-.main-links {
+.main-name {
+    position: relative;
+    top: -30px;
+    font-size: 25px;
+}
+
+/* .main-links {
     width: 60%;
     margin-left: 20%;
     display: flex;
@@ -57,11 +63,31 @@
     color: black;
     text-align: center;
     font-family: Oswald;
+} */
+
+.main-links {
+    width: 80%;
+    margin-left: 10%;
+    display: flex;
+    justify-content: space-around;
+    color: black;
+    text-align: center;
+    font-family: Oswald;
+}
+
+
+.social-links .our-links {
+    display: flex;
+    position: relative;
+    left: 64px;
+    top: -4px;
 }
 
 .our-links {
     display: flex;
-    justify-content: center;
+    position: relative;
+    top: -37px;
+
 }
 
 .our-links a {
@@ -69,9 +95,10 @@
 }
 
 .fa-github, .fa-linkedin, .fa-angellist {
-    color: darkslategray;
+    color: white;
     font-size: 35px;
-    margin-left: 10px;
+    margin-left:px;
     margin-top: -20px;
+    margin-right:px;
 }
 
