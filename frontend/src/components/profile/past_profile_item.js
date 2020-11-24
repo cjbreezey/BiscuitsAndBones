@@ -28,7 +28,7 @@ class PastProfileItem extends React.Component {
                 <div className="profile-event-item-container">
                     <div className="profile-event-item">
                         <h3 onClick={this.dropdownClick}>{this.props.event.title}</h3>
-                        <Link to={`/events/${this.props.event._id}`}>
+                        <Link to={`/pastevents/${this.props.event._id}`}>
                         <button className="details-button">See More Details</button>
                          </Link>
                     </div>
