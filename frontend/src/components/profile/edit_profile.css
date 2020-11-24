@@ -1,3 +1,122 @@
-.edit-form-container {
-    margin-top: 50px;
+
+
+.edit-form-wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    justify-content: space-evenly;
+    width: 700px;
+    /* height: 500px; */
+
+    /* background-color: whitesmoke; */
 }
+
+
+.edit-field {
+    /* font-size: 20px; */
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    outline: none;
+    font-family: Oswald;
+}
+
+.edit-form-wrap button {
+    height: 40px;
+    margin-top: 42px;
+    font-family: Oswald;
+    outline: none;
+    border: none;
+    border-radius: .25rem;
+    background-color: darkslategray;
+    color: white;
+    
+}
+
+.edit-form-wrap button:hover {
+    background-color: seagreen;
+    top: -10px;
+    box-shadow: rgba(0, 0, 0, .25);
+}
+
+.edit-form-wrap button:hover {
+    top: -10px;
+    box-shadow: rgba(0, 0, 0, .25);
+    cursor: pointer;
+}
+
+.edit-form-wrap button:active {
+  background-color: seagreen;
+  box-shadow: 0 3px #666;
+  transform: translate(2px, 4px);
+}
+
+.edit-form-wrap label {
+    font-size: 24px;
+    font-family: 'Pacifico', cursive;
+    margin-top: -20px;
+    /* padding: 10px; */
+}
+
+.input-file {
+    margin-bottom: 15px;
+    outline: none;
+    font-family: Oswald;
+}
+
+.close {
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.close-x {
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+
+.editprofile-button {
+    /* height: 40px; */
+    /* margin-top: 42px; */
+    font-family: Oswald;
+    outline: none;
+    border: none;
+    border-radius: .25rem;
+    background-color: darkslategray;
+    color: white;
+    cursor: pointer;
+}
+
+.profile-info button:hover {
+    background-color: seagreen;
+}
+
+.profile-info button:active {
+  background-color: seagreen;
+  box-shadow: 0 3px #666;
+  transform: translate(2px, 4px);
+}
+
+.event-show-attendees button {
+    font-family: Oswald;
+    outline: none;
+    border: none;
+    border-radius: .25rem;
+    background-color: darkslategray;
+    color: white;
+    cursor: pointer;
+    padding: 3px;
+}
+
+.event-show-attendees button:hover {
+    background-color: seagreen;
+}
+
+.event-show-attendees button:active {
+    background-color: seagreen;
+    box-shadow: 0 3px #666;
+    transform: translate(2px, 4px);    
+}
+

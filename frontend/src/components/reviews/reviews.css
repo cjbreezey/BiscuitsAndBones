@@ -45,3 +45,75 @@
     display: none;
 }
 
+.reviews-form button {
+    font-family: Oswald;
+    outline: none;
+    border: none;
+    border-radius: .25rem;
+    background-color: darkslategray;
+    color: white;
+    cursor: pointer;
+    padding: 3px;
+    height: 50px;
+    width: 45%;
+}
+
+.reviews-form button:active {
+    background-color: seagreen;
+    box-shadow: 0 3px #666;
+    transform: translate(2px, 4px); 
+}
+
+.reviews-form {
+    height: 200px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: -20px;
+}
+
+.reviews-form input {
+    outline: none;
+    font-family: Oswald;
+    padding: 10px;
+    /* margin-top: 10px; */
+    /* margin-bottom: 10px; */
+}
+
+.reviews-form textarea {
+    outline: none;
+    font-family: Oswald;
+    padding: 10px;
+    resize: none;
+}
+
+.reviews-form label {
+    font-family: 'Pacifico', cursive;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: 
+}
+
+.num-input {
+    height: 50px;
+    width: 45%;
+    
+}
+
+.num-input {
+    text-align: center;
+}
+
+.num-input[type=number] {
+    text-overflow: clip;
+}
+
+.rev-description {
+    height: 80px;
+}
+
+.rating-button-div {
+    display: flex;
+    justify-content: space-between;
+}
