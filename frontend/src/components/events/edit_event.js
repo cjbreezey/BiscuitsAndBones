@@ -13,6 +13,7 @@ class EditEvent extends React.Component {
 
 
   handleSubmitJoin(e) {
+    debugger
     e.preventDefault();
     this.props.event.attendees.push(this.props.currentUser.id)
     this.props.updateEvent(this.props.event);
@@ -23,7 +24,11 @@ class EditEvent extends React.Component {
     e.preventDefault();
     this.props.event.attendees = this.props.event.attendees.filter(attendee => attendee !== this.props.currentUser.id)
     this.props.updateEvent(this.props.event);
-    alert(`You have left "${this.props.event.title}"`)
+    alert(`You have left "${this.props.event.title}"`);
+  }
+
+  routeToEvent() {
+    this.props.history.push(`/events/${this.props.event._id}`);
   }
 
   // componentWillReceiveProps(nextProps) {
