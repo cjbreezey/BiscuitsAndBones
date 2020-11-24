@@ -67,14 +67,15 @@ class EditProfilePage extends React.Component {
     return (
       <div className="edit-form-container">
         <div>
-          <form onSubmit={this.handleSubmit}>
+          <form className="edit-form-wrap" onSubmit={this.handleSubmit}>
             <label>
               Picture
-              <input type="file" onChange={this.handleFile} />
+              <input className="input-file" type="file" onChange={this.handleFile} />
             </label>
             <label>
               Name
               <input
+                className="edit-field"
                 type="text"
                 value={this.state.name}
                 onChange={this.update("name")}
@@ -83,6 +84,7 @@ class EditProfilePage extends React.Component {
             <label>
               Bio
               <input
+                className="edit-field"
                 type="textarea"
                 value={this.state.bio}
                 onChange={this.update("bio")}
@@ -91,12 +93,15 @@ class EditProfilePage extends React.Component {
             <label>
               Pet Name
               <input
+                className="edit-field"
                 type="text"
                 value={this.state.pet_name}
                 onChange={this.update("pet_name")}
               />
             </label>
+            <label>
             <button onClick={this.props.handleSubmit}>Submit</button>
+            </label>
           </form>
         </div>
       </div>
