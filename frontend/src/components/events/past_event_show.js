@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import EditEvent from "./edit_event";
 import { GoogleApiWrapper, Map, Marker } from "google-maps-react";
+import ReviewsIndex from '../reviews/reviews_index';
 
 class PastEventShow extends React.Component {
   constructor(props) {
@@ -224,6 +225,7 @@ class PastEventShow extends React.Component {
               <i class="fa fa-caret-left"></i>
               {this.props.event.description}
             </li>
+            <ReviewsIndex event={this.props.event} reviews={this.props.reviews} fetchReviews={this.props.fetchReviews} currentUser={this.props.currentUser}  deleteReview={this.props.deleteReview}/>
             {/* <li className="calendar-date">
               <div>Save the date!</div>
               <div className="month">{MONTHS[parseInt(month, 10)]}</div>
@@ -233,7 +235,9 @@ class PastEventShow extends React.Component {
             <ul className="event-show-attendees">
               {filtered}
               <li>
-                <button onClick={() => this.props.openModal('review')}>Review Event</button>
+                <button onClick={() => this.props.openModal("review")}>
+                  Review Event
+                </button>
                 {/* <EditEvent
                   event={this.props.event}
                   currentUser={this.props.currentUser}
