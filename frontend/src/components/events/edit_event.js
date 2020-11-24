@@ -1,5 +1,6 @@
 import React from "react";
 import "./events.css";
+import { withRouter} from 'react-router-dom'
 
 class EditEvent extends React.Component {
   constructor(props) {
@@ -13,23 +14,24 @@ class EditEvent extends React.Component {
 
 
   handleSubmitJoin(e) {
-    debugger
+    // debugger
     e.preventDefault();
     this.props.event.attendees.push(this.props.currentUser.id)
-    this.props.updateEvent(this.props.event);
-    alert(`You have joined "${this.props.event.title}"`)
+    this.props.updateEvent(this.props.event,this.routeToEvent());
   }
 
   handleSubmitLeave(e) {
     e.preventDefault();
     this.props.event.attendees = this.props.event.attendees.filter(attendee => attendee !== this.props.currentUser.id)
-    this.props.updateEvent(this.props.event);
-    alert(`You have left "${this.props.event.title}"`);
+    this.props.updateEvent(this.props.event, this.routeToEvent());
+    
   }
 
   routeToEvent() {
     this.props.history.push(`/events/${this.props.event._id}`);
   }
+
+  
 
   // componentWillReceiveProps(nextProps) {
   //   this.setState({updatedEvent: nextProps.updatedEvent.attendees});
@@ -70,4 +72,4 @@ class EditEvent extends React.Component {
   }
 }
 
-export default EditEvent;
+export default withRouter(EditEvent);

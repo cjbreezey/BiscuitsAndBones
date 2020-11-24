@@ -37,7 +37,7 @@ class EditProfilePage extends React.Component {
         this.props.closeModal();
       });
     } else {
-      this.props.updateUser(this.state, this.routeToProfile());
+      this.props.updateUser(this.state);
       this.props.closeModal();
     }
   }
