@@ -32,14 +32,34 @@
 }
 
 .reviews-list > button {
-    position: fixed;
-    left: 255px;
+    position: relative;
+    transform: translateY(3px);
+    margin-right: 3px;
+    height: 18px;
+    outline: none;
+    border: 1px solid white;
+    background: red;
+    color: white;
+    border-radius: 10px;
+    transition: 0.3s;
+    font-size: 8px;
 }
 
-.reviews-list li:last-child {
+review-box::-webkit-scrollbar {
+  display: none;
+}
+
+.reviews-list > button:hover {
+    cursor: pointer;
+    background: gray;
+}
+
+
+.review-description {
     color: black;
-    width: 100%;
-    padding-right: 20px;
+    width: 215px;
+    padding-left: 20px;
+    text-align: center;
 }
 
 .review-rating {
@@ -50,6 +70,7 @@
     font-family: 'Pacifico';
     font-size: 29px;
 }
+
 
 .review-index-header * {
     display: none;
@@ -130,15 +151,31 @@
     bottom: 215px;
 }
 
-.past-event-reviews > .event-show-attendees {
-    top: 430px;
+.review-box {
+    bottom: 142px;
     height: fit-content;
     max-height: 190px;
-    overflow: auto;
     padding-bottom: 0px;
+    position: absolute;
+    list-style: none;
+    left: 57.5%;
+    font-size: 20px;
+    color: black;
+    padding-left: 0px;
+    width: 215px;
+    text-align: center;
+    padding-top: 15px;
+    height: fit-content;
+    background: rgba(255, 255, 255, 0.709);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    overflow-y: scroll;
+    overflow-x: visible;
 }
 
-.past-event-reviews > .event-show-attendees > .reviews-list:last-child {
+
+
+.review-box > .reviews-list:last-child {
     margin-bottom: 0px;
 }
 
@@ -151,3 +188,8 @@
     -webkit-text-stroke-color: black;
 }
 
+
+.past-event-reviews {
+    height: 300px;
+    width: 300px;
+}

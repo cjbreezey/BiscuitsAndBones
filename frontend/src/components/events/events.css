@@ -468,7 +468,7 @@ input.create-event-input[type=submit] {
     margin-left: -10px;
     padding-bottom: 10px;
     border-radius: 5px;
-    background: cadetblue;
+    background: rgba(95, 158, 160, 0.538);
 }
 
 .sidebar-name {
@@ -762,7 +762,7 @@ input.create-event-input[type=submit] {
 
 .host-picture {
     position: absolute;
-    bottom: 60px;
+    top: 475px;
     width: 125px;
     height: 125px;
     border-radius: 5px;
@@ -773,7 +773,7 @@ input.create-event-input[type=submit] {
 
 .show-host-link {
     position: absolute;
-    bottom: 50px;
+    top: 583px;
     left: 60px;
     z-index: 1000;
     text-decoration: none;
