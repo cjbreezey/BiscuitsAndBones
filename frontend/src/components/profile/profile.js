@@ -15,6 +15,12 @@ class Profile extends React.Component {
         //   events: []
         // }
     }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.match.params.user_id !== prevProps.match.params.user_id) {
+      this.props.fetchUser(this.props.match.params.user_id)
+    }
+  }
     
     componentDidMount() {
         // console.log(this.props.currentUser.id)
@@ -30,7 +36,7 @@ class Profile extends React.Component {
     editLink() {
       if (this.props.currentUser) {
         return (
-          <Link to={`/users/${this.props.currentUser.id}/edit`}>Edit</Link>
+          <button onClick={() => this.props.openModal("editprofile")}>Edit</button>
         )
       }
     }

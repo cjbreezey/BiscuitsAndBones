@@ -13,7 +13,9 @@ class EventBox extends React.Component {
 
   dropdownClick(e) {
     let dropdown = document.getElementById(`dropdown-slide-${this.props.event._id}`)
+    let event = document.getElementById(`event-item-${this.props.event._id}`)
     dropdown.classList.toggle('open')
+    event.classList.toggle('focus')
     
     let dropdownItem = document.getElementById(`dropdown-items-${this.props.event._id}`)
     
@@ -41,7 +43,7 @@ class EventBox extends React.Component {
     if (!this.props.event) return null;
     let deletebutton;
     if (this.props.currentUser && this.props.currentUser.id === this.props.event.host_id) {
-      deletebutton = <button onClick={() => this.props.deleteEvent(this.props.event._id)}><i class="fa fa-trash"></i></button>
+      deletebutton = <button onClick={() => this.props.deleteEvent(this.props.event._id)}><i className="fa fa-trash"></i></button>
     } else {
       deletebutton = null
     }
@@ -55,9 +57,11 @@ class EventBox extends React.Component {
     } else {
       return (
         <div className="event-item-container">
-          <div className="event-item">
+          <div onClick={this.dropdownClick} className="event-item" id={`event-item-${this.props.event._id}`}>
+            <i className="fa fa-map-pin"></i>
+
             <div className="title-bar">
-              <h3 onClick={this.dropdownClick}>{this.props.event.title}</h3>
+              <h3>{this.props.event.title}</h3>
               {/* <h3 onClick={this.dropdownClick} >
                 {this.props.event.date.slice(0, 10)}
               </h3> */}

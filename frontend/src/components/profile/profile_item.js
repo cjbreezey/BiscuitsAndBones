@@ -2,9 +2,6 @@ import { Link } from 'react-router-dom'
 import React from 'react';
 import { GoogleApiWrapper } from 'google-maps-react';
 
-
-
-
 class ProfileItem extends React.Component {
     constructor(props) {
         super(props)
@@ -21,7 +18,7 @@ class ProfileItem extends React.Component {
 
         let deletebutton;
         if (this.props.currentUser && this.props.currentUser.id === this.props.event.host_id) {
-            deletebutton = <button onClick={() => this.props.deleteEvent(this.props.event._id)}><i class="fa fa-trash"></i></button>
+            deletebutton = <button className="trash-button" onClick={() => this.props.deleteEvent(this.props.event._id)}><i className="fa fa-trash"></i></button>
         } else {
             deletebutton = null
         }
@@ -38,10 +35,10 @@ class ProfileItem extends React.Component {
             <div className="profile-event-item-container">
                   <div className="profile-event-item">
                       <h3>{this.props.event.title}</h3>
-                      {deletebutton}
                       <Link to={`/events/${this.props.event._id}`}>
-                        <button>See More Details</button>
+                        <button className="details-button">See More Details</button>
                       </Link>
+                      {deletebutton}
                   </div>
               </div>
           );

@@ -69,7 +69,9 @@
 }
 
 .fa-github, .fa-linkedin, .fa-angellist {
-    color: white;
-    font-size: 45px;
+    color: darkslategray;
+    font-size: 35px;
+    margin-left: 10px;
+    margin-top: -20px;
 }
 

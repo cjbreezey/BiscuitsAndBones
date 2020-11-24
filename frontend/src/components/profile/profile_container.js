@@ -3,6 +3,7 @@ import { fetchEvents, deleteEvent} from '../../actions/event_actions';
 import { fetchUser } from '../../actions/users_actions';
 import Profile from './profile';
 import { fetchReviews, deleteReview, createReview} from '../../actions/review_actions';
+import { openModal, closeModal } from "../../actions/modal_actions";
 
 const mapStateToProps = (state, ownProps) => {
   const profileUser = ownProps.match.params.user_id
@@ -27,6 +28,7 @@ const mapDispatchToProps = dispatch => {
     fetchReviews: () => dispatch(fetchReviews()),
     deleteReview: (id) => dispatch(deleteReview(id)),
     createReview: (id) => dispatch(createReview(id)),
+    openModal: (modal) => dispatch(openModal(modal))
   };
 };
 

@@ -1,8 +1,7 @@
 import React from "react";
-import { withRouter, Link } from "react-router-dom";
-import EventBox from './event_box'
+import { Link } from "react-router-dom";
 import EditEvent from './edit_event'
-import { GoogleApiWrapper, Map, InfoWindow, Marker } from 'google-maps-react'
+import { GoogleApiWrapper, Map, Marker } from 'google-maps-react'
 
 class EventShow extends React.Component {
     constructor(props) {
@@ -43,12 +42,11 @@ class EventShow extends React.Component {
       if (!this.props.event.attendees) return null;
       if (!this.props.users) return null;
 
-      let host = Object.values(this.props.users).filter(user => this.props.event.host_id === user._id)
-      let attendeesName = [];
+      // let host = Object.values(this.props.users).filter(user => this.props.event.host_id === user._id)
       let filteredUsers = Object.values(this.props.users).filter(user => this.props.event.attendees.includes(user._id)).map(user => user.name)
 
       let filtered = filteredUsers.map((username) => {
-            return <li><i class="fa fa-paw"></i>{username}<i class="fa fa-paw"></i></li>;
+            return <li><i className="fa fa-paw"></i>{username}<i className="fa fa-paw"></i></li>;
       });
 
       const MONTHS = ['FILLER', 'JAN', 'FEB', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC']
@@ -128,7 +126,7 @@ class EventShow extends React.Component {
                   Host's Profile
                 </Link>
               </li>
-              <li className="event-show-description"><i class="fa fa-caret-left"></i>{this.props.event.description}</li>
+              <li className="event-show-description"><i className="fa fa-caret-left"></i>{this.props.event.description}</li>
               <li className="calendar-date">
                 <div>Save the date!</div>
                 <div className="month">{MONTHS[parseInt(month, 10)]}</div>
@@ -138,11 +136,11 @@ class EventShow extends React.Component {
               <ul className="event-show-attendees">
                 {filtered}
                 <li>
-                <EditEvent
-                  event={this.props.event}
-                  currentUser={this.props.currentUser}
-                  updateEvent={this.props.updateEvent}
-                />
+                  <EditEvent
+                    event={this.props.event}
+                    currentUser={this.props.currentUser}
+                    updateEvent={this.props.updateEvent}
+                  />
                 </li>
               </ul>
             </ul>

@@ -13,7 +13,7 @@
 }
 
 .nav-bar.logged-in {
-    background: rgba(46, 139, 86, 0.556);
+    background: darkslategray;
     border-bottom: .5px black ridge;
 }
 
