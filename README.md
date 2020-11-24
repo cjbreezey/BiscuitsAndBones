@@ -121,35 +121,26 @@ Utilizing Google Maps API and Places Autocomplete API, we were able to create a 
  </div>
 ```
 
-AWS Code Snippet
+Incorporating Amazon S3 to leverage its scalability, user's are able to upload and edit their profile image. We also implement Multer Express/Node.js middleware in our singleUpload function, helping us handle and parse multipart/form-data when a user uploads a file. Finally we use $set on the profilePicture to update the newly added image, along with all existing fields from the input documents. 
 
 ```js
-const s3 = new aws.S3(); 
-aws.config.update({
-    // secretAccessKey: process.env.AWS_ACCESS_KEY_ID,
-    // accessKeyId: process.env.AWS_SECRET_ACCESS_KEY,
-    region: "us-west-1"
-});
-const fileFilter = (req, file, cb) => {
-    if (file.mimetype === "image/jpeg" || file.mimetype === "image/png") {
-        cb(null, true);
-    } else {
-        cb(new Error("Invalid file type, only JPEG and PNG is allowed!"), false);
+router.post("/:id/add-profile-pictures", function (req, res) {
+  const uid = req.params.id;
+  singleUpload(req, res, function (err){
+    if (err) {
+      return res.json({
+        success: false,
+        errors: {
+          title: "image upload error",
+          detail: err.message,
+          error: err,
+        },
+      });
     }
-};
-const upload = multer({
-    fileFilter,
-    storage: multerS3({      
-        acl: "public-read",
-        s3,
-        bucket: "biscuitsandbones-profilepics",
-        metadata: function (req, file, cb) {
-            cb(null, { fieldname: "TESTING_METADATA"});
-        },
-        content: multerS3.AUTO_CONTENT_TYPE,
-        key: function (req, file, cb) {
-            cb(null, `${Date.now().toString()}` + "-" + file.originalname);
-        },
-    }),
+    let update = {$set: { profilePicture: req.file.location }};
+    User.findByIdAndUpdate(uid, update, {new: true})
+      .then((user) => res.status(200).json({ success: true, user: user }))
+      .catch((err) => res.status(400).json({ success: false, error: err}));
+  });
 });
 ```
