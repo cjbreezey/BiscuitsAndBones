@@ -3,6 +3,7 @@ import { updateEvent } from '../../actions/event_actions';
 import EditEvent from './edit_event'
 
 const mapStateToProps = (state) => {
+    debugger
     return {
         currentUser: state.session.user,
         event: state.event
