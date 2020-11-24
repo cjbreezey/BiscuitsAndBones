@@ -152,7 +152,7 @@ review-box::-webkit-scrollbar {
 }
 
 .review-box {
-    top: 430px;
+    bottom: 142px;
     height: fit-content;
     max-height: 190px;
     padding-bottom: 0px;
@@ -189,3 +189,7 @@ review-box::-webkit-scrollbar {
 }
 
 
+.past-event-reviews {
+    height: 300px;
+    width: 300px;
+}
