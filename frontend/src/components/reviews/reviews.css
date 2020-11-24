@@ -28,6 +28,7 @@
 .reviews-list {
     display: flex;
     margin-bottom: 10px;
+    border-bottom: 1px solid white;
 }
 
 .reviews-list > button {
@@ -35,10 +36,19 @@
     left: 255px;
 }
 
+.reviews-list li:last-child {
+    color: black;
+    width: 100%;
+    padding-right: 20px;
+}
+
 .review-rating {
     color: seagreen;
-    position: relative;
-    left: -13px;
+    margin-top: -18px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: 'Pacifico';
+    font-size: 29px;
 }
 
 .review-index-header * {
@@ -92,7 +102,6 @@
     font-family: 'Pacifico', cursive;
     margin-top: 5px;
     margin-bottom: 5px;
-    font-family: 
 }
 
 .num-input {
@@ -117,3 +126,28 @@
     display: flex;
     justify-content: space-between;
 }
+.past-event-reviews > .month {
+    bottom: 215px;
+}
+
+.past-event-reviews > .event-show-attendees {
+    top: 430px;
+    height: fit-content;
+    max-height: 190px;
+    overflow: auto;
+    padding-bottom: 0px;
+}
+
+.past-event-reviews > .event-show-attendees > .reviews-list:last-child {
+    margin-bottom: 0px;
+}
+
+.fa-star {
+    position: absolute;
+    color: gold;
+    font-size: 25px;
+    transform: translate(6px, 16px);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+

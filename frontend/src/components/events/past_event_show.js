@@ -235,7 +235,7 @@ class PastEventShow extends React.Component {
             <ul className="event-show-attendees">
               {filtered}
               <li>
-                <button onClick={() => this.props.openModal("review")}>
+                <button className="create-event-link" onClick={() => this.props.openModal("review")}>
                   Review Event
                 </button>
                 {/* <EditEvent

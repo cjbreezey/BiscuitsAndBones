@@ -37,10 +37,9 @@ class ReviewsIndex extends React.Component {
 
     } else {
       return (
-        <div>
-              <h1 className="review-index-header">All Reviews</h1>
-              
-            <ul id={`reviews-slide-${this.props.event._id}`} className="reviews-index">
+        <div className="past-event-reviews">
+            <h1 className="month">All Reviews</h1>
+            <ul className="event-show-attendees">
               {this.state.reviews.map((review) => {
                 return <ReviewsIndexItem review={review} key={review._id} event={this.props.event} currentUser={this.props.currentUser} deleteReview={this.props.deleteReview} />
               })}

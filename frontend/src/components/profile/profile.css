@@ -158,7 +158,8 @@
 }
 
 .details-button:hover {
-    background: seagreen;
+    background: darkslategray;
+    color: white;
 }
 
 
