@@ -33,16 +33,21 @@ class ReviewCreate extends React.Component {
 
   render(){
       return(
-        <form>
-          <input type="text" value={this.state.rating} onChange={this.update('rating')} placeholder="Enter a rating from 1 - 5">
-          </input>
-          <input 
+        <form className="reviews-form">
+          <label>Feedback</label>
+          <textarea 
+                className="rev-description"
                 type="text"
                 value={this.state.description}
                 onChange={this.update('description')}
-                placeholder="Description"
+                placeholder="Leave event feedback!"
                 />
-            <button onClick={this.handleSubmit} > Create Review</button>
+          <label> Rating  </label>
+          <div className="rating-button-div">
+          <input className="num-input" type="number" min="1" max="5" value={this.state.rating} onChange={this.update('rating')} placeholder="1 - 5">
+          </input>
+          <button onClick={this.handleSubmit} > Create Review</button>
+          </div>
         </form>
       )
   }
