@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { updateEvent } from '../../actions/event_actions';
 import EditEvent from './edit_event'
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state) => {
     return {
@@ -15,4 +16,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(EditEvent);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(EditEvent));

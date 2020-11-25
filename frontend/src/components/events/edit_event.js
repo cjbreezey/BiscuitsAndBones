@@ -1,5 +1,6 @@
 import React from "react";
 import "./events.css";
+import {withRouter} from 'react-router-dom';
 
 class EditEvent extends React.Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class EditEvent extends React.Component {
     e.preventDefault();
     this.props.event.attendees.push(this.props.currentUser.id)
     this.props.updateEvent(this.props.event);
-    alert(`You have joined "${this.props.event.title}"`)
+
   }
 
   handleSubmitLeave(e) {
@@ -42,7 +43,7 @@ class EditEvent extends React.Component {
                        <input className="join-event-input" type="submit" value="Join Playdate!" />
                    </form>
     }
-  
+    debugger 
 
     // {this.props.event.attendees.includes((this.props.currentUser.id)) => {
     //     button =  <form className="join-event-form" onSubmit={this.handleSubmit}>
@@ -65,4 +66,4 @@ class EditEvent extends React.Component {
   }
 }
 
-export default EditEvent;
+export default withRouter(EditEvent);
