@@ -2,7 +2,7 @@ import {connect} from 'react-redux';
 import {fetchUser, updatePicture, updateUser} from '../../actions/users_actions'
 import EditProfilePage from './edit_profile_page'
 import { withRouter } from 'react-router-dom';
-import { openModal, closeModal } from "../../actions/modal_actions";
+import { closeModal } from "../../actions/modal_actions";
 
 const mapStateToProps = (state, ownProps) => {
     const profileInfo = ownProps.match.params.id

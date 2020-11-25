@@ -7,10 +7,6 @@ class EventShow extends React.Component {
     constructor(props) {
         super(props);
 
-        // this.state = {
-        //   hostPicture: ""
-        // }
-
       this.renderHost = this.renderHost.bind(this)
     }
 
@@ -18,14 +14,6 @@ class EventShow extends React.Component {
       this.props.fetchEvent(this.props.match.params.event_id);
       this.props.fetchUsers();
     }
-
-    // componentWillMount() {
-    //     this.props.fetchEvent(event);
-    // }
-
-    // componentWillReceiveProps(newState) {
-    //     this.setState({ events: newState.events });
-    // }
 
     renderHost() {
       let host = Object.values(this.props.users).filter(user => this.props.event.host_id === user._id)
@@ -42,7 +30,6 @@ class EventShow extends React.Component {
       if (!this.props.event.attendees) return null;
       if (!this.props.users) return null;
 
-      // let host = Object.values(this.props.users).filter(user => this.props.event.host_id === user._id)
       let filteredUsers = Object.values(this.props.users).filter(user => this.props.event.attendees.includes(user._id)).map(user => user.name)
 
       let filtered = filteredUsers.map((username) => {
@@ -149,9 +136,6 @@ class EventShow extends React.Component {
       );
     }
     }
-
-
-// export default withRouter(EventShow);
 
 export default GoogleApiWrapper({
   apiKey: (process.env.REACT_APP_SECRET_KEY)

@@ -10,8 +10,6 @@ const reviews = require("./routes/api/reviews");
 const path = require('path')
 const cors = require("cors");
 
-// app.use(cors());
-
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('frontend/build'));
   app.get('/', (req, res) => {
@@ -26,7 +24,6 @@ mongoose
 
 app.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
 app.use(bodyParser.json({limit: '50mb', extended: true}));
-// app.use(bodyParser.json({ type: 'application/*+json' }))
 app.use(cors());
 app.use(passport.initialize());
 require('./config/passport')(passport)

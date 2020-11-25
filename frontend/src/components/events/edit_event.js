@@ -14,7 +14,6 @@ class EditEvent extends React.Component {
 
 
   handleSubmitJoin(e) {
-    // debugger
     e.preventDefault();
     this.props.event.attendees.push(this.props.currentUser.id)
     this.props.updateEvent(this.props.event,this.routeToEvent());
@@ -31,12 +30,6 @@ class EditEvent extends React.Component {
     this.props.history.push(`/events/${this.props.event._id}`);
   }
 
-  
-
-  // componentWillReceiveProps(nextProps) {
-  //   this.setState({updatedEvent: nextProps.updatedEvent.attendees});
-  // }
-
   render() {
     let button;
 
@@ -49,24 +42,10 @@ class EditEvent extends React.Component {
                        <input className="join-event-input" type="submit" value="Join Playdate!" />
                    </form>
     }
-  
-
-    // {this.props.event.attendees.includes((this.props.currentUser.id)) => {
-    //     button =  <form className="join-event-form" onSubmit={this.handleSubmit}>
-    //                   <input className="join-event-input" type="submit" value="Leave Event" />
-    //                 </form>
-    //   } else {
-    //     button = <form className="join-event-form" onSubmit={this.handleSubmit}>
-    //                   <input className="join-event-input" type="submit" value="Join Event" />
-    //               </form>
-    //   }
-    // })}
 
     return (
       <div className="join-event-container">
         {button}
-        {/* <EventBox description={this.state.newEvent} /> */}
-        {/* <EventMap /> */}
       </div>
     );
   }

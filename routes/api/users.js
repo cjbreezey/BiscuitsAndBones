@@ -11,12 +11,6 @@ const validateUserUpdate = require('../../validation/update_user');
 const upload = require("../../services/image_upload");
 const singleUpload = upload.single("image");
 
-// const bodyParser = require('body-parser');
-// let urlencodedParser = bodyParser.urlencoded({ extended: false })
-// router.use(bodyParser.urlencoded({extended: true}))
-
-// mongoose.lset('useFindAndModify', false);
-
 //REGISTER
 router.post("/signup", (req, res) => {
   const { errors, isValid } = validateSignUpInput(req.body);
@@ -97,7 +91,6 @@ router.patch("/:id", passport.authenticate('jwt', { session: false }), (req, res
       let updateUser = {
         id: user._id,
         name: user.name, 
-        // photoUrl: user.photoUrl,
         profilePicture: user.profilePicture,
         bio: user.bio,
         pet_name: user.pet_name

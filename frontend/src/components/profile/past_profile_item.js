@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom'
 import React from 'react';
 import { GoogleApiWrapper } from 'google-maps-react';
-import ReviewCreate from '../reviews/reviews_create';
-
 
 class PastProfileItem extends React.Component {
     constructor(props) {
@@ -32,7 +30,6 @@ class PastProfileItem extends React.Component {
                         <button className="details-button">See More Details</button>
                          </Link>
                     </div>
-                     {/* <ReviewsIndex event={this.props.event} reviews={this.props.reviews} fetchReviews={this.props.fetchReviews} currentUser={this.props.currentUser}  deleteReview={this.props.deleteReview}/> */}
                 </div>
             );
         }

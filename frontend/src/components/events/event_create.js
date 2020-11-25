@@ -119,7 +119,6 @@ class EventCreate extends React.Component {
                       const className = suggestion.active
                         ? 'suggestion-item--active'
                         : 'suggestion-item';
-                      // inline style for demonstration purpose
                       const style = suggestion.active
                         ? { backgroundColor: '#fafafa', cursor: 'pointer' }
                         : { backgroundColor: '#ffffff', cursor: 'pointer' };
@@ -164,7 +163,6 @@ class EventCreate extends React.Component {
   }
 }
 
-// export default EventCreate;
 export default GoogleApiWrapper({
   apiKey: (process.env.REACT_APP_SECRET_KEY)
 })(EventCreate)

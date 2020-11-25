@@ -15,14 +15,11 @@ class Events extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchEvents();
-    // this.props.fetchUsers();
-    
+    this.props.fetchEvents();    
   }
 
   componentWillMount() {
     this.props.fetchEvents();
-    // this.props.fetchUsers();
   }
 
   componentWillReceiveProps(newState) {
@@ -142,14 +139,12 @@ class Events extends React.Component {
           </div>
         <div className="index-right">
             <ul className="events-list">
-              {/* <EventCreate /> */}
               {this.state.events.map((event) => {
                 return <EventBox event={event} key={event._id} currentUser={this.props.currentUser} deleteEvent={this.props.deleteEvent} joinEvent={this.props.joinEvent} updateEvent={this.props.updateEvent}/>
               })}
             </ul>
         </div>
         <div id="carousel-container">
-          {/* <h2 id="carousel-title">Fellow Animal Lovers</h2> */}
             <Carousel breakPoints={breakPoints}>
                   {photos.map((photo , idx) => {
                       return(

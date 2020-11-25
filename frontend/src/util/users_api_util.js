@@ -1,5 +1,4 @@
 import axios from "axios";
-// import $ from 'jquery';
 
 export const fetchUsers = () => {
     return axios.get('/api/users/')
@@ -16,8 +15,4 @@ export const updateUser = (data) => {
 export const updatePicture = (formData) => { 
     return axios.post(`/api/users/${formData.get("id")}/add-profile-pictures`, formData )
 }
-
-// export const updatePicture = (data) => {
-//     return axios.post(`/api/users/add-profile-pictures` , data)
-// }
 

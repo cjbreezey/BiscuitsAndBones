@@ -11,6 +11,4 @@ export const createReview = data => {
 export const deleteReview = id => {
   return axios.delete(`/api/reviews/${id}`)
 };
-// export const updateReview = review => {
-//   return axios.patch(`/api/reviews/${review._id}`, review)
-// };
+

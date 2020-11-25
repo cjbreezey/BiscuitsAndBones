@@ -6,14 +6,10 @@
     align-items: center; 
     justify-content: space-evenly;
     width: 700px;
-    /* height: 500px; */
-
-    /* background-color: whitesmoke; */
 }
 
 
 .edit-field {
-    /* font-size: 20px; */
     width: 100%;
     height: 40px;
     padding: 10px;
@@ -57,7 +53,6 @@
     font-size: 24px;
     font-family: 'Pacifico', cursive;
     margin-top: -20px;
-    /* padding: 10px; */
 }
 
 .input-file {
@@ -78,8 +73,6 @@
 }
 
 .editprofile-button {
-    /* height: 40px; */
-    /* margin-top: 42px; */
     font-family: Oswald;
     outline: none;
     border: none;

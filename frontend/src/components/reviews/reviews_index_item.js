@@ -1,11 +1,6 @@
 import React from 'react';
 
 class ReviewsIndexItem extends React.Component {
-    constructor(props){
-        super(props)
-       
-    }
-
 
     render(){
         let deletebutton;
@@ -15,15 +10,11 @@ class ReviewsIndexItem extends React.Component {
             deletebutton = null
         }
         
-        // if (this.props.review.event_id === this.props.event._id){
            return  <div  className="reviews-list">
                 <li className="review-rating">{this.props.review.rating}<i className="fa fa-star"></i></li>
                 <li className="review-description">{this.props.review.description}</li>
                 {deletebutton}
             </div>
-        // } else {
-        //     return null 
-        // }
     }
 }
 

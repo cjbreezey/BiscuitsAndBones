@@ -1,11 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const mongoose = require('mongoose');
 const passport = require('passport');
-// const ObjectId = mongoose.Types.ObjectId;
 
 const Review = require('../../models/Review');
-const User = require('../../models/User');
 const validateReviewInput = require('../../validation/reviews');
 
 router.get('/', (req, res) => {
@@ -32,13 +29,6 @@ router.get('/:id', (req, res) => {
       .catch(e => res.status(404).json({ noreviewfound: 'No Review Found' }))
   }
 );
-
-// router.patch('/:id', (req, res) => {
-//     Review.findByIdAndUpdate(req.params.id, req.body, { new: true })
-//       .populate("user", "username")
-//       .then(node => res.json(node))
-//       .catch(err => res.status(404).json(err))
-// });
 
 router.post(
     '/',

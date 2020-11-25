@@ -4,7 +4,6 @@ import EditEvent from './edit_event'
 import { withRouter} from 'react-router';
 
 const mapStateToProps = (state, ownProps) => {
-    debugger
     return {
         currentUser: state.session.user,
         event: state.event
