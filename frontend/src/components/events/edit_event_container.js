@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { updateEvent } from '../../actions/event_actions';
 import EditEvent from './edit_event'
-import { withRouter} from 'react-router';
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
     return {

@@ -1,6 +1,6 @@
 import React from "react";
 import "./events.css";
-import { withRouter} from 'react-router-dom'
+import {withRouter} from 'react-router-dom';
 
 class EditEvent extends React.Component {
   constructor(props) {
