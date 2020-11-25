@@ -468,7 +468,7 @@ input.create-event-input[type=submit] {
     max-width: 1200px;
     max-height: 250px;
     position: fixed;
-    bottom: -40px;
+    bottom: -35px;
     left: 330px;
     padding-top: 15px;
     padding-left: 10px;
