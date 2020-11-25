@@ -7,7 +7,7 @@ class ReviewCreate extends React.Component {
       this.state = {
           rating: "",
           description: "",
-          event_id: this.props.event._id,
+          event_id: this.props.event[0]._id,
           reviewer_id: this.props.currentUser.id
       }
   }

@@ -15,14 +15,11 @@ class Events extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchEvents();
-    // this.props.fetchUsers();
-    
+    this.props.fetchEvents();    
   }
 
   componentWillMount() {
     this.props.fetchEvents();
-    // this.props.fetchUsers();
   }
 
   componentWillReceiveProps(newState) {
@@ -40,13 +37,13 @@ class Events extends React.Component {
         const photos = [
           {
                 name: "Chris",
-                url: "https://biscuitsandbones-profilepics.s3.us-west-1.amazonaws.com/puppyprofile.jpeg",
+                url: "https://biscuitsandbones-profilepics.s3.us-west-1.amazonaws.com/1606175522153-B%26B.png",
                 link: "/profile/5f964b26e1a56307c8e30a44"
 
             },
             {
                 name: "Peter",
-                url: "https://biscuitsandbones-profilepics.s3.us-west-1.amazonaws.com/1605243626151-gamephoto.png",
+                url: "https://biscuitsandbones-profilepics.s3.us-west-1.amazonaws.com/1606242848852-babycheetah.jpg",
                 link: "/profile/5f9645728dd566007162b85b"
 
             },
@@ -58,32 +55,32 @@ class Events extends React.Component {
             },
             {
                 name: "Jonathan",
-                url: "https://biscuitsandbones-profilepics.s3.us-west-1.amazonaws.com/image%20%282%29.png",
-                link: "/profile/5f970d7ac22fd94cbc59c1eb"
+                url: "https://biscuitsandbones-profilepics.s3.us-west-1.amazonaws.com/1606241211649-hedgehog.jpeg",
+                link: "/profile/5fbd4b39fa4608758111f730"
 
             },
             {
-                name: "Chris",
-                url: "https://biscuitsandbones-profilepics.s3.us-west-1.amazonaws.com/puppyprofile.jpeg",
-                link: "/profile/5f964b26e1a56307c8e30a44"
+                name: "JD",
+                url: "https://biscuitsandbones-profilepics.s3.us-west-1.amazonaws.com/1606243563819-jdbat.jpg",
+                link: "/profile/5fbd52e5b21902ebeeedf8fa"
 
             },
             {
-                name: "Peter",
-                url: "https://biscuitsandbones-profilepics.s3.us-west-1.amazonaws.com/1605243626151-gamephoto.png",
-                link: "/profile/5f9645728dd566007162b85b"
+                name: "Tri",
+                url: "https://biscuitsandbones-profilepics.s3.us-west-1.amazonaws.com/1606243734534-trisloth.jpg",
+                link: "/profile/5fbd5513b21902ebeeedf8fb"
 
             },
           
             {
-                name: "Taylor",
-                url: "https://biscuitsandbones-profilepics.s3.us-west-1.amazonaws.com/Screen%20Shot%202020-11-12%20at%2010.31.19%20AM.png",
-                link: "/profile/5f9791529752b708b14a2f9e"
+                name: "Jacky",
+                url: "https://biscuitsandbones-profilepics.s3.us-west-1.amazonaws.com/1606243906210-cat_tree.jpg",
+                link: "/profile/5fbd55c1b21902ebeeedf8fc"
             },
             {
-                name: "Jonathan",
-                url: "https://biscuitsandbones-profilepics.s3.us-west-1.amazonaws.com/puppyprofile.jpeg",
-                link: "/profile/5f970d7ac22fd94cbc59c1eb"
+                name: "Kevin",
+                url: "https://biscuitsandbones-profilepics.s3.us-west-1.amazonaws.com/1606247579922-cat.png",
+                link: "/profile/5fbd6383ac66998b2da2cf88"
 
             }
          
@@ -94,7 +91,7 @@ class Events extends React.Component {
       return (
       <div className="events-index-container">
           <h1>There are no Events</h1>
-          <Link to={'/new_event'}>Create an Event</Link>
+          <Link to={'/new_event'}>Setup a Playdate!</Link>
       </div>)
 
     } else {
@@ -103,7 +100,7 @@ class Events extends React.Component {
           <div className="index-left">
             <div className="create-event-box">
               <h2 className="event-index-header">All Events</h2>
-              <Link className="create-event-link" to={'/new_event'}>Create an Event</Link>
+              <Link className="create-event-link" to={'/new_event'}>Setup a Playdate!</Link>
             </div>
             <div className="social-links">
                 <div>
@@ -142,14 +139,12 @@ class Events extends React.Component {
           </div>
         <div className="index-right">
             <ul className="events-list">
-              {/* <EventCreate /> */}
               {this.state.events.map((event) => {
                 return <EventBox event={event} key={event._id} currentUser={this.props.currentUser} deleteEvent={this.props.deleteEvent} joinEvent={this.props.joinEvent} updateEvent={this.props.updateEvent}/>
               })}
             </ul>
         </div>
         <div id="carousel-container">
-          {/* <h2 id="carousel-title">Fellow Animal Lovers</h2> */}
             <Carousel breakPoints={breakPoints}>
                   {photos.map((photo , idx) => {
                       return(

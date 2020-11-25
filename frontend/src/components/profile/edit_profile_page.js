@@ -9,20 +9,8 @@ class EditProfilePage extends React.Component {
     this.handleFile = this.handleFile.bind(this);
   }
 
-  // componentDidUpdate(prevProps) {
-  //   // debugger
-  //   if (this.props.currentUser.id !== prevProps.currentUser.id) {
-  //     this.props.fetchUser(this.props.currentUser.id);
-  //   }
-  // }
-
   handleSubmit(e) {
     e.preventDefault();
-    // let user = {
-    //     name: this.state.name,
-    //     bio: this.state.bio,
-    //     pet_name: this.state.pet_name
-    // };
     let profileId = this.props.currentUser.id;
     const formData = new FormData();
     formData.append("name", this.state.name);
@@ -30,14 +18,13 @@ class EditProfilePage extends React.Component {
     formData.append("bio", this.state.bio);
     formData.append("pet_name", this.state.pet_name);
     formData.append("id", profileId);
-    // this.props.updatePicture(formData)
     if (formData.get("image") !== "undefined") {
       this.props.updatePicture(formData).then(() => {
         this.props.updateUser(this.state, this.routeToProfile());
         this.props.closeModal();
       });
     } else {
-      this.props.updateUser(this.state, this.routeToProfile());
+      this.props.updateUser(this.state);
       this.props.closeModal();
     }
   }

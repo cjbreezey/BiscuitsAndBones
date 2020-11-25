@@ -3,7 +3,7 @@ import { updateEvent } from '../../actions/event_actions';
 import EditEvent from './edit_event'
 import { withRouter } from 'react-router-dom';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
     return {
         currentUser: state.session.user,
         event: state.event

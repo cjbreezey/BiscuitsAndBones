@@ -8,12 +8,6 @@ import './profile.css'
 class Profile extends React.Component {
     constructor(props) {
         super(props);
-        // this.state = {
-        //   name: this.props.currentUser.name,
-        //   bio: this.props.currentUser.bio,
-        //   pet_name: this.props.currentUser.pet_name,
-        //   events: []
-        // }
     }
 
   componentDidUpdate(prevProps) {
@@ -23,10 +17,8 @@ class Profile extends React.Component {
   }
     
     componentDidMount() {
-        // console.log(this.props.currentUser.id)
         this.props.fetchEvents();
         this.props.fetchUser(this.props.profileUser);
-        // this.props.fetchUser(this.props.currentUser.id)
     }
 
     componentWillReceiveProps(newState) {
@@ -34,9 +26,12 @@ class Profile extends React.Component {
     }
     
     editLink() {
-      if (this.props.currentUser) {
+      if (this.props.currentUser.id === this.props.profileInfo.id) {
         return (
-          <button className="profile-edit-button" onClick={() => this.props.openModal("editprofile")}>Edit</button>
+          <div className="create-edit-button-container">
+            <button className="profile-edit-button" onClick={() => this.props.openModal("editprofile")}>Edit</button>
+            <Link className="create-event-link" to={'/new_event'}>Set Up a Playdate</Link>
+          </div>
         )
       }
     }
@@ -57,7 +52,6 @@ class Profile extends React.Component {
                     <li>{this.props.profileInfo.pet_name}</li>
                     <li>{this.editLink()}</li>
                   </ul>
-                  <Link className="create-event-link" to={'/new_event'}>Create an Event</Link>
                 </div>
               </div>
               <div className="index-right">
@@ -80,7 +74,6 @@ class Profile extends React.Component {
                     <li>Pet Name: {this.props.profileInfo.pet_name}</li>
                     <li>{this.editLink()}</li>
                   </ul>
-                  <Link className="create-event-link" to={'/new_event'}>Create an Event</Link>
                 </div>
               </div>
               <div className="index-right">

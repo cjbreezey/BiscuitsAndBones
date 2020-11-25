@@ -38,7 +38,6 @@
     height: 100%;
     position: relative;
     border-bottom: none;
-    width: fit-content;
 }
 
 .profile-event-item-container {
@@ -133,20 +132,6 @@
     height: 130px;
     z-index: 5;
 }
-
-/* .profile-event-item button:last-child {
-    position: absolute;
-    background: slategrey;
-    transform: translateX(-105px);
-    top: 115px;
-    outline: none;
-    margin-left: 10px;
-    border: none;
-    height: 30px;
-    border-radius: 5px;
-    color: white;
-    font-size: 11px;
-} */
 
 .details-button {
     outline: none;

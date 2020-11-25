@@ -35,5 +35,3 @@ module.exports = function validateEventInput(data) {
     isValid: Object.keys(errors).length === 0
   };
 };        
-
-// lng: event.lng, 

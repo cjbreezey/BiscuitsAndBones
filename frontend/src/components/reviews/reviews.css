@@ -60,6 +60,7 @@ review-box::-webkit-scrollbar {
     width: 215px;
     padding-left: 20px;
     text-align: center;
+    padding-bottom: 10px;
 }
 
 .review-rating {
@@ -108,8 +109,6 @@ review-box::-webkit-scrollbar {
     outline: none;
     font-family: Oswald;
     padding: 10px;
-    /* margin-top: 10px; */
-    /* margin-bottom: 10px; */
 }
 
 .reviews-form textarea {
@@ -148,11 +147,12 @@ review-box::-webkit-scrollbar {
     justify-content: space-between;
 }
 .past-event-reviews > .month {
-    bottom: 215px;
+    top: 355px;
+    bottom: auto;
 }
 
 .review-box {
-    bottom: 142px;
+    top: 429px;
     height: fit-content;
     max-height: 190px;
     padding-bottom: 0px;

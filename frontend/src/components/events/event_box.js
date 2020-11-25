@@ -7,7 +7,6 @@ class EventBox extends React.Component {
   constructor(props) {
     super(props)
 
-    // this.handleclick = this.handleclick.bind(this);
     this.dropdownClick = this.dropdownClick.bind(this);
   }
 
@@ -62,9 +61,6 @@ class EventBox extends React.Component {
 
             <div className="title-bar">
               <h3>{this.props.event.title}</h3>
-              {/* <h3 onClick={this.dropdownClick} >
-                {this.props.event.date.slice(0, 10)}
-              </h3> */}
               {deletebutton}
             </div>
           </div>
@@ -76,12 +72,10 @@ class EventBox extends React.Component {
               id={`dropdown-items-${this.props.event._id}`}
               className="event-dropdown-items"
             >
-              {/* <li>Where: {this.props.event.location}</li> */}
               <li className="index-event-description">
                 {this.props.event.description}
               </li>
               <li className="attendees-num">
-                {/* {this.props.event.date.slice(0, 10)}, {this.props.event.time} - */}
                 Playdate Attendees: {this.props.event.attendees.length}
               </li>
               <li>
@@ -112,7 +106,6 @@ class EventBox extends React.Component {
   }
 }
 
-// export default EventBox;
 export default GoogleApiWrapper({
   apiKey: (process.env.REACT_APP_SECRET_KEY)
 })(EventBox)

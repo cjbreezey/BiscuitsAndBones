@@ -1,17 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import EditEvent from "./edit_event";
 import { GoogleApiWrapper, Map, Marker } from "google-maps-react";
 import ReviewsIndex from '../reviews/reviews_index';
 
 class PastEventShow extends React.Component {
   constructor(props) {
     super(props);
-
-    // this.state = {
-    //   hostPicture: ""
-    // }
-
     this.renderHost = this.renderHost.bind(this);
   }
 
@@ -19,14 +13,6 @@ class PastEventShow extends React.Component {
     this.props.fetchEvent(this.props.match.params.event_id);
     this.props.fetchUsers();
   }
-
-  // componentWillMount() {
-  //     this.props.fetchEvent(event);
-  // }
-
-  // componentWillReceiveProps(newState) {
-  //     this.setState({ events: newState.events });
-  // }
 
   renderHost() {
     let host = Object.values(this.props.users).filter(
@@ -45,7 +31,6 @@ class PastEventShow extends React.Component {
     if (!this.props.event.attendees) return null;
     if (!this.props.users) return null;
 
-    // let host = Object.values(this.props.users).filter(user => this.props.event.host_id === user._id)
     let filteredUsers = Object.values(this.props.users)
       .filter((user) => this.props.event.attendees.includes(user._id))
       .map((user) => user.name);
@@ -60,32 +45,13 @@ class PastEventShow extends React.Component {
       );
     });
 
-    const MONTHS = [
-      "FILLER",
-      "JAN",
-      "FEB",
-      "MARCH",
-      "APRIL",
-      "MAY",
-      "JUNE",
-      "JULY",
-      "AUG",
-      "SEP",
-      "OCT",
-      "NOV",
-      "DEC",
-    ];
-
-    let month = this.props.event.date.slice(5, 7);
-    let day = this.props.event.date.slice(8, 10);
-
     return (
       <div className="events-index-container">
         <div className="index-left">
           <div className="create-event-box">
             <h2 className="event-index-header">{this.props.event.title}</h2>
             <Link className="create-event-link" to={"/new_event"}>
-              Create an Event
+              Setup a Playdate!
             </Link>
           </div>
           <div className="social-links">
@@ -226,11 +192,6 @@ class PastEventShow extends React.Component {
               {this.props.event.description}
             </li>
             <ReviewsIndex event={this.props.event} reviews={this.props.reviews} fetchReviews={this.props.fetchReviews} currentUser={this.props.currentUser}  deleteReview={this.props.deleteReview}/>
-            {/* <li className="calendar-date">
-              <div>Save the date!</div>
-              <div className="month">{MONTHS[parseInt(month, 10)]}</div>
-              <div className="day">{day}</div>
-            </li> */}
             <p id="event-attendees">Event Attendees</p>
             <ul className="event-show-attendees">
               {filtered}
@@ -238,11 +199,6 @@ class PastEventShow extends React.Component {
                 <button className="create-event-link" onClick={() => this.props.openModal("review")}>
                   Review Event
                 </button>
-                {/* <EditEvent
-                  event={this.props.event}
-                  currentUser={this.props.currentUser}
-                  updateEvent={this.props.updateEvent}
-                /> */}
               </li>
             </ul>
           </ul>

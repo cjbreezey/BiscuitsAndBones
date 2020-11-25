@@ -29,11 +29,9 @@ const EventSchema = new Schema({
   },
   lat: {
     type: Number,
-    // required: true,
   },
   lng: {
     type: Number, 
-    // required: true,
   },
   attendees: [{
     type: Schema.Types.ObjectId,
