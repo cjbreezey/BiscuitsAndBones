@@ -144,7 +144,20 @@ class PastEventShow extends React.Component {
           </div>
         </div>
         <div className="show-index-right">
-          <div className="show-background" />
+          <div className="show-background">
+            <li className="event-show-location">{this.props.event.location}</li>
+              <div className="bottom-show-container">
+                <div className="host-and-pic">
+                  <li><img className="host-picture" src={this.renderHost()} /></li>
+                  <li>
+                    <Link className="show-host-link" to={`/profile/${this.props.event.host_id}`}>
+                      Host's Profile
+                    </Link>
+                  </li>
+                </div>
+                <li className="event-show-description"><i className="fa fa-caret-left"></i>{this.props.event.description}</li>
+              </div>
+          </div>
           <ul className="event-show-elements">
             <li>
               <Map
@@ -175,7 +188,7 @@ class PastEventShow extends React.Component {
                 />
               </Map>
             </li>
-            <li className="event-show-location">{this.props.event.location}</li>
+            {/* <li className="event-show-location">{this.props.event.location}</li>
             <li>
               <img className="host-picture" src={this.renderHost()} />
             </li>
@@ -190,7 +203,7 @@ class PastEventShow extends React.Component {
             <li className="event-show-description">
               <i class="fa fa-caret-left"></i>
               {this.props.event.description}
-            </li>
+            </li> */}
             <ReviewsIndex event={this.props.event} reviews={this.props.reviews} fetchReviews={this.props.fetchReviews} currentUser={this.props.currentUser}  deleteReview={this.props.deleteReview}/>
             <p id="event-attendees">Event Attendees</p>
             <ul className="event-show-attendees">
