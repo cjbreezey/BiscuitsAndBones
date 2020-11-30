@@ -455,6 +455,8 @@ input.create-event-input[type=submit] {
     background: rgba(95, 158, 160, 0.538);
 }
 
+
+
 .sidebar-name {
     text-align: center;
     font-family: Pacifico;
@@ -567,26 +569,42 @@ input.create-event-input[type=submit] {
 }
 
 .event-show-location {
-    position: relative;
+    /* position: relative; */
     color: white;
     border-bottom: 1px double white;
-    top: 375px;
+    /* top: 375px; */
     font-family: Montserrat;
     font-weight: 600;
     font-size: 25px;
-    width: 50vw;
-    height: 75px;
-    margin-bottom: 10px;
+    /* width: 50vw; */
+    /* height: 75px; */
+    margin-top: 10px;
+    margin-bottom: 20px;
     background: rgba(112, 128, 144, 0.504);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     padding: 5px;
     text-align: center;
+    padding-bottom: 10px;
+    text-overflow: ellipsis;
+    list-style: none;
+    /* display: flex;
+    justify-content: center; */
+    /* overflow: auto; */
+    
+}
+
+
+
+.fix-show {
+    display: flex;
+    flex-direction: column;
 }
 
 .event-show-description {
-    position: relative;
-    top: 390px;
+    /* position: relative; */
+    /* top: 355px; */
+    height: fit-content;
     width: 38vw;
     left: 150px;
     text-align: center;
@@ -671,6 +689,14 @@ input.create-event-input[type=submit] {
     padding-bottom: 7px;
 }
 
+.fa.fa-angellist{
+    margin-left: 10px;
+}
+
+.fa.fa-github{
+    margin-right:10px;
+}
+
 
 #event-attendees {
     background: gold;
@@ -720,19 +746,26 @@ input.create-event-input[type=submit] {
 }
 
 .show-background {
+
     bottom: 40px;
     left: 27px;
     position: absolute;
     width: 52vw;
-    height: 50%;
-    background-image: linear-gradient(rgba(255, 255, 255, 0), slategray 10%);
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    max-height: fit-content;
+    min-height: 260px;
+    /* background-image: linear-gradient(rgba(255, 255, 255, 0), slategray 10%); */
+    background-color: slategray;
+    /* border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px; */
+    border-radius: 5px;
+    margin-top: 50px;
+    padding-bottom: 20px;
+    display: flex;
 }
 
 .host-picture {
-    position: absolute;
-    top: 475px;
+    /* position: relative; */
+    /* top: 470px; */
     width: 125px;
     height: 125px;
     border-radius: 5px;
@@ -741,10 +774,14 @@ input.create-event-input[type=submit] {
     z-index: 1000;
 }
 
+/* .fix-pos {
+    position: absolute;
+} */
+
 .show-host-link {
     position: absolute;
-    top: 583px;
-    left: 60px;
+    /* top: 583px; */
+    left: 35px;
     z-index: 1000;
     text-decoration: none;
     background: gold;
@@ -753,12 +790,15 @@ input.create-event-input[type=submit] {
     font-family: 'Oswald';
     border-radius: 5px;
     border: 1px solid black;
+    list-style: none;
+    cursor: pointer;
+    margin-top: -20px;
 }
 
 .fa-caret-left {
     font-size: 40px;
     position: absolute;
-    left: -12px;
+    left: 154px;
     color: white;
 }
 
@@ -769,3 +809,33 @@ button.sc-bdfBwQ.kyJvRZ.rec.rec-arrow.rec.rec-arrow-left {
 button.sc-bdfBwQ.bTybGL.rec.rec-arrow.rec.rec-arrow-right {
     background-color: gold;
 }
+
+.show-background li {
+    list-style: none;
+}
+
+.show-background {
+    display: flex;
+    flex-direction: column;
+    z-index: 60;
+    top: 335px;
+
+}
+
+.bottom-show-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.host-and-pic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.google-map {
+    z-index: 50;
+    height: 50%;
+    position: absolute;
+}
+

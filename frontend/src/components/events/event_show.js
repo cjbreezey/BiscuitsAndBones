@@ -87,7 +87,20 @@ class EventShow extends React.Component {
             </div>
           </div>
           <div className="show-index-right">
-            <div className="show-background"/>
+            <div className="show-background">
+              <li className="event-show-location">{this.props.event.location}</li>
+              <div className="bottom-show-container">
+                <div className="host-and-pic">
+                  <li><img className="host-picture" src={this.renderHost()} /></li>
+                  <li>
+                    <Link className="show-host-link" to={`/profile/${this.props.event.host_id}`}>
+                      Host's Profile
+                    </Link>
+                  </li>
+                </div>
+                <li className="event-show-description"><i className="fa fa-caret-left"></i>{this.props.event.description}</li>
+              </div>
+            </div>
             <ul className="event-show-elements">
               <li><Map className="google-map" style={{ width: '50vw', height: '300px', position: 'relative', top: '50px', border: '1px solid black', borderRadius: '10px'}} google={this.props.google}
                 initialCenter={{
@@ -106,14 +119,16 @@ class EventShow extends React.Component {
                   }}
                 />
               </Map></li>
+              {/* <div class="fix-pos">
               <li className="event-show-location">{this.props.event.location}</li>
+              </div>
               <li><img className="host-picture" src={this.renderHost()} /></li>
               <li>
                 <Link className="show-host-link" to={`/profile/${this.props.event.host_id}`}>
                   Host's Profile
                 </Link>
               </li>
-              <li className="event-show-description"><i className="fa fa-caret-left"></i>{this.props.event.description}</li>
+              <li className="event-show-description"><i className="fa fa-caret-left"></i>{this.props.event.description}</li> */}
               <li className="calendar-date">
                 <div>Save the date!</div>
                 <div className="month">{MONTHS[parseInt(month, 10)]}</div>
