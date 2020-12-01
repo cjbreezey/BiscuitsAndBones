@@ -24,7 +24,10 @@ class EventCreate extends React.Component {
       }
 
       this.handleSubmit = this.handleSubmit.bind(this);
-  } 
+  }
+  
+
+
 
   componentWillReceiveProps(nextProps) {
       this.setState({newEvent: nextProps.newEvent.description});

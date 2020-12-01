@@ -9,6 +9,8 @@ class ProfileItem extends React.Component {
         this.handleclick = this.handleclick.bind(this);
     }
 
+    
+
     handleclick(e) {
         this.props.deleteEvent(this.props.event._id)
     }

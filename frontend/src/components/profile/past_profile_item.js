@@ -13,6 +13,8 @@ class PastProfileItem extends React.Component {
         this.props.deleteEvent(this.props.event._id)
     }
 
+    
+
     render() {
         if (!this.props.event.date) return null
 

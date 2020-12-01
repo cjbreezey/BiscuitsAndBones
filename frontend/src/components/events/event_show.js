@@ -15,6 +15,9 @@ class EventShow extends React.Component {
       this.props.fetchUsers();
     }
 
+    
+
+
     renderHost() {
       let host = Object.values(this.props.users).filter(user => this.props.event.host_id === user._id)
 
@@ -32,8 +35,8 @@ class EventShow extends React.Component {
 
       let filteredUsers = Object.values(this.props.users).filter(user => this.props.event.attendees.includes(user._id)).map(user => user.name)
 
-      let filtered = filteredUsers.map((username) => {
-            return <li><i className="fa fa-paw"></i>{username}<i className="fa fa-paw"></i></li>;
+      let filtered = filteredUsers.map((username, idx) => {
+            return <li key={idx}><i className="fa fa-paw"></i>{username}<i className="fa fa-paw"></i></li>;
       });
 
       const MONTHS = ['FILLER', 'JAN', 'FEB', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC']

@@ -10,6 +10,9 @@ class EventBox extends React.Component {
     this.dropdownClick = this.dropdownClick.bind(this);
   }
 
+
+
+
   dropdownClick(e) {
     let dropdown = document.getElementById(`dropdown-slide-${this.props.event._id}`)
     let event = document.getElementById(`event-item-${this.props.event._id}`)
