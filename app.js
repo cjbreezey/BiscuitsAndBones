@@ -10,22 +10,11 @@ const reviews = require("./routes/api/reviews");
 const path = require('path')
 const cors = require("cors");
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('frontend/build'));
-  app.get('/*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'frontend/public/index.html'));
-  })
-  app.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "https://biscuitsnbones.herokuapp.com"); 
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-  });
-}
 
 mongoose
-  .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log("Connected to MongoDB successfully"))
-  .catch(err => console.log(err));
+.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
+.then(() => console.log("Connected to MongoDB successfully"))
+.catch(err => console.log(err));
 
 app.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
 app.use(bodyParser.json({limit: '50mb', extended: true}));
@@ -36,6 +25,13 @@ require('./config/passport')(passport)
 app.use("/api/users", users);
 app.use("/api/events", events);
 app.use("/api/reviews", reviews);
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('frontend/build'));
+  app.get('/*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'frontend/public/index.html'));
+  })
+}
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server is running on port ${port}`));
