@@ -2,7 +2,7 @@
 
 ## Overview
 
-Biscuits and Bones, or B&B for short, is a web application which lets pet owners and pet lovers host, attend, and socialize at playdate events tailored for all animals. The goal of B&B is to provide a platform for animal enthusiasts to gather and let their animals let loose and feel more irrelephant (pun intended)!
+Biscuits and Bones, or B&B for short, is a web application which lets pet owners and pet lovers host, attend, and socialize at playdate events tailored for all animals. The goal of B&B is to provide a platform for animal enthusiasts to gather and let their animals let loose and feel more relephant (pun intended)!
 
 [B&B Live](https://biscuitsnbones.herokuapp.com/#/)
 
