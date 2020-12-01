@@ -13,8 +13,13 @@ const cors = require("cors");
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('frontend/build'));
   app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'frontend/public/index.html'));
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
   })
+  app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "https://biscuitsnbones.herokuapp.com"); 
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
 }
 
 mongoose
