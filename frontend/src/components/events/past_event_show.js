@@ -14,6 +14,9 @@ class PastEventShow extends React.Component {
     this.props.fetchUsers();
   }
 
+
+  compon
+
   renderHost() {
     let host = Object.values(this.props.users).filter(
       (user) => this.props.event.host_id === user._id
