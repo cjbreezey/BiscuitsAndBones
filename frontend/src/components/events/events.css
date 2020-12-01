@@ -326,7 +326,7 @@ input.join-event-input[type=submit] {
     position: relative;
     top: 5.5vh;
     left: 225px;
-    z-index: 5;
+    z-index: 100;
     display: flex;
     flex-direction: column;
 }
