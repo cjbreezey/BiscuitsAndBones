@@ -101,7 +101,7 @@ class EventShow extends React.Component {
                     </Link>
                   </li>
                 </div>
-                <li className="event-show-description"><i className="fa fa-caret-left"></i>{this.props.event.description}</li>
+                <li className="event-show-description">{this.props.event.description}</li>
               </div>
             </div>
             <ul className="event-show-elements">
