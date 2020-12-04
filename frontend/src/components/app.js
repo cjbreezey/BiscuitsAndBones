@@ -12,7 +12,7 @@ import EditProfileContainer from './profile/edit_profile_container';
 import EventShowContainer from './events/event_show_container';
 import Modal from './modal/modal';
 import PastEventShowContainer from './events/past_event_show_container';
-import EditEventContainer from './events/edit_event_container'
+import EditEventFormContainer from './events/edit_event_form_container'
 
 
 const App = () => (
@@ -24,7 +24,7 @@ const App = () => (
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <AuthRoute exact path="/" component={MainPage} />
       <ProtectedRoute exact path="/users/:id/edit" component={EditProfileContainer} />
-      <ProtectedRoute exact path="/events/:event_id/join" component={EditEventContainer}/> 
+      <ProtectedRoute exact path="/events/:event_id/edit" component={EditEventFormContainer}/>
       <ProtectedRoute exact path="/pastevents/:event_id" component={PastEventShowContainer} />
       <ProtectedRoute exact path="/events/:event_id" component={EventShowContainer} />
       <ProtectedRoute exact path="/profile/:user_id" component={ProfileContainer} />

@@ -101,10 +101,11 @@
     color: white;
     cursor: pointer;
     padding: 3px;
+    z-index: 100;
 }
 
 .event-show-attendees button:hover {
-    background-color: seagreen;
+    background-color: seagreen
 }
 
 .event-show-attendees button:active {

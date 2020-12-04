@@ -5,13 +5,13 @@ import {withRouter} from 'react-router-dom';
 class EditEvent extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = this.props.event;
     this.handleSubmitJoin = this.handleSubmitJoin.bind(this);
     this.handleSubmitLeave = this.handleSubmitLeave.bind(this);
 
   }
 
+  
 
   handleSubmitJoin(e) {
     e.preventDefault();
@@ -30,10 +30,23 @@ class EditEvent extends React.Component {
     this.props.history.push(`/events/${this.props.event._id}`);
   }
 
-  render() {
-    let button;
+  routeToIndex() {
+    this.props.history.push('/events');
+  }
 
-    if (this.props.event.attendees.includes(this.props.currentUser.id)) {
+  routeToEditEvent(){
+    this.props.history.push(`/events/${this.props.event._id}/edit`);
+  }
+
+  render() {
+    let button; 
+    let deleteButton;
+    let editButton;
+
+    if (this.props.currentUser && this.props.currentUser.id === this.props.event.host_id) {
+      button = <button className="edit-event" onClick={() => this.routeToEditEvent()}>Edit Event</button>
+      deleteButton = <button className="delete-event" onClick={() => this.props.deleteEvent(this.props.event._id).then(() => this.routeToIndex())}>Cancel Event</button>
+    } else if (this.props.event.attendees.includes(this.props.currentUser.id)) {
       button =  <form className="join-event-form" onSubmit={this.handleSubmitLeave}>
                   <input className="join-event-input" type="submit" value="Leave Playdate" />
                 </form>
@@ -46,6 +59,7 @@ class EditEvent extends React.Component {
     return (
       <div className="join-event-container">
         {button}
+        {deleteButton}
       </div>
     );
   }
