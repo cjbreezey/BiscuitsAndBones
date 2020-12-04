@@ -171,6 +171,7 @@ review-box::-webkit-scrollbar {
     border-bottom-right-radius: 5px;
     overflow-y: scroll;
     overflow-x: visible;
+    z-index: 100;
 }
 
 
