@@ -291,6 +291,36 @@ input.join-event-input[type=submit] {
     transition: 0.3s;
 }
 
+.edit-event {
+    margin-top: 5px;
+    background-color: seagreen;
+    border: none;
+    color: white;
+    cursor: pointer;
+    width: 180px;
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.delete-event {
+    margin-top: 5px;
+    background-color: rgba(255, 0, 0, 0.815);
+    border: none;
+    color: white;
+    cursor: pointer;
+    width: 180px;
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.delete-show {
+    z-index: 999;
+}
+
 .host-link {
     text-decoration: none;
 }
@@ -506,8 +536,8 @@ input.create-event-input[type=submit] {
     color: white;
 }
 
-.host-link:hover, .event-details-button button:hover, input.join-event-input[type=submit]:hover {
-    background: white;
+.host-link:hover, .delete-event:hover, .edit-event:hover, .event-details-button button:hover, input.join-event-input[type=submit]:hover {
+    background: whitesmoke;
     color: black;
 }
 
@@ -638,6 +668,7 @@ input.create-event-input[type=submit] {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     overflow: auto;
+    z-index: 100;
 }
 
 .event-show-attendees::-webkit-scrollbar {
@@ -742,7 +773,6 @@ input.create-event-input[type=submit] {
     font-weight: 400;
     font-size: 14px;
     padding: 3px;
-    
 }
 
 .show-background {

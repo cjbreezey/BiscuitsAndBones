@@ -145,6 +145,7 @@ class EventShow extends React.Component {
                     event={this.props.event}
                     currentUser={this.props.currentUser}
                     updateEvent={this.props.updateEvent}
+                    deleteEvent={this.props.deleteEvent}
                   />
                 </li>
               </ul>
